@@ -1,6 +1,6 @@
-# 201708React-shoppingMall
+﻿# 201708React-shoppingMall
 This is a multi-point mall
-<<<<<<< HEAD
+
 组长
 我是组员
 我是组员
