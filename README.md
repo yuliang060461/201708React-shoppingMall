@@ -1,7 +1,9 @@
 # 201708React-shoppingMall
 This is a multi-point mall
+<<<<<<< HEAD
 组长
 我是组员
-我是组员fuqiang
+我是组员
 王博仪
->>>>>>> b3b0517bcc798449816b2203cf7353ec3a181fba
+会员页面
+
