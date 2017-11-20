@@ -12,11 +12,23 @@ export default class List extends Component{
                     </ul>
                 </section>
                 <section className="list-search">
-
+                    <span className="icon-back">&lt;</span>
+                    <div className="tool-bar">
+                        <i className="iconfont icon-sousuo1"/>
+                        <input type="text" placeholder="搜索多点超市商品/三旗百汇店"/>
+                    </div>
+                    <div className="screen">
+                        <span>筛选</span>
+                    </div>
                 </section>
                 <section className="list-body">
                     <section className="list-nav">
-
+                        <dl>
+                            <dt>推荐商品</dt>
+                            <dd>品尝时光</dd>
+                            <dd>幸福晚饭</dd>
+                            <dd>幸福晚饭</dd>元气早餐
+                        </dl>
                     </section>
                     <section className="list-detail">
 
