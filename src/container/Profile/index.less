@@ -1,0 +1,162 @@
+
+.profile{
+  height: 100%;
+  position: relative;
+}
+.profile-header{
+  display: flex;
+  width: 100%;
+  height: 130px;
+  background: url("../../images/mine-top-banner-bg.png");
+  background-size: cover;
+  align-items: center;
+  .to-login{
+    position: absolute;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    .title{
+      color: #fff;
+    }
+    .to-btn{
+      box-sizing: border-box;
+      margin-top: 5px;
+      height: 24px;
+      width: 82px;
+      line-height: 24px;
+      padding: 0 20px;
+      background-color: #fff;
+      color: #ff5700;
+      border-radius: 12px;
+    }
+  }
+  .discount-code{
+    position: absolute;
+    right: 15px;
+    background: url("../../images/offline-barcode.png");
+    width: 104px;
+    height: 25px;
+    background-size: cover;
+  }
+}
+
+.my-order-state{
+  background-color: #fff;
+  height: 130px;
+  .order{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
+    .my-order{
+
+    }
+    .all-order{
+      color: gray;
+    }
+  }
+  .order-state{
+    display: flex;
+    padding: 20px 0;
+    .item-state{
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      color: gray;
+      i{
+        color: #ff5700;
+        font-weight: 600;
+      }
+      span{
+        &:nth-of-type(1){
+          color: #36383f;
+        }
+      }
+    }
+  }
+}
+
+.myAssets{
+  margin: 10px 0;
+  background-color: #fff;
+  .myAssets-title{
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .myAssets-state{
+    display: flex;
+    padding: 20px 0;
+    color: gray;
+    .item-myAssets{
+      position: relative;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      span{
+        color: gray;
+      }
+      .item-top{
+        color: #36383f;
+        font-weight: 600;
+      }
+    }
+  }
+  .recharge{
+    &:after{
+      position: absolute;
+      content: '去充值';
+      display: inline-block;
+      height: 10px;
+      line-height: 10px;
+      font-size: 10px;
+      background-color: #eb2243;
+      border-radius: 10px 10px 10px 0;
+      color: #fff;
+      padding: 3px 5px;
+      top:-15px;
+      right: -15px;
+    }
+  }
+}
+.myServer{
+  margin: 10px 0 0 0;
+  background-color: #fff;
+  .myServer-title{
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .myServer-list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: gray;
+    .myServer-item{
+      position: relative;
+      box-sizing: border-box;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      i{
+        font-size: 20px;
+        color: #ff5700;
+        font-weight: 600;
+      }
+    }
+    .item-more{
+      position: absolute;
+      bottom: 0;
+      color: #ccc;
+    }
+  }
+}
