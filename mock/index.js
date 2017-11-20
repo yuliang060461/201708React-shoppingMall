@@ -5,7 +5,7 @@ var cookieParser=require("cookie-parser");
 app.use(cookieParser());
 app.use(function(req,res,next){
     //允许的来源
-    res.header('Access-Control-Allow-Origin','http://localhost:8080');
+    res.header('Access-Control-Allow-Origin','*');
     //允许客户端请求的方法
     res.header('Access-Control-Allow-Methods','GET,POST,OPTIONS,PUT,DELETE');
     //允许客户端发送的请求头
@@ -19,7 +19,6 @@ app.use(function(req,res,next){
         next();
     }
 });
-
 
 let session=require("express-session");
 // app.use(session({
@@ -42,14 +41,11 @@ app.get("/index",function (req,res) {
 })
 
 
-app.get("/globalSelect",function (req,res) {
+app.get("/duodianchaoshi",function (req,res) {
     res.set('Content-Type','application/json');
-   fs.createReadStream("./globalSelect/globalSelect.json").pipe(res)
+   fs.createReadStream("./duodianchaoshi/duodianchaoshi.json").pipe(res)
 });
-app.get("/multipointSupermarket",function (req,res) {
-    res.set('Content-Type','application/json');
-    fs.createReadStream("./multipointSupermarket/MultipointSupermarket.json").pipe(res)
-});
+
 app.get("/hotSale",function (req,res) {
     res.set('Content-Type','application/json');
     fs.createReadStream("./hotSale/hotSale.json").pipe(res)
