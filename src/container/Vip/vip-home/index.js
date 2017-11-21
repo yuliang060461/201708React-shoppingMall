@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import './index.less';
-import xx1 from '../../images/xx.jpg';
-import xx2 from '../../images/ss.jpg';
-import yw from '../../images/yw.jpg';
-import qd from '../../images/qiandao.png';
+import xx1 from '../images/xx.jpg';
+import xx2 from '../images/ss.jpg';
+import yw from '../images/yw.jpg';
+import qd from '../images/qiandao.png';
 export default class Viphome extends Component {
     render() {
         return (
@@ -49,19 +49,19 @@ export default class Viphome extends Component {
                     </div>
                     <div className="list-down">
                             <span className="list-down-ls">
-                                <i className="iconfont icon-evaluate"></i>
+                                <i className="iconfont icon-fenxiang1"></i>
                                 <p>新手特权</p>
                             </span>
                         <span className="list-down-ls">
-                                <i className="iconfont icon-selectionfill"></i>
+                                <i className="iconfont icon-kefu"></i>
                                 <p>线下特惠</p>
                             </span>
                         <span className="list-down-ls">
-                                <i className="iconfont icon-sponsor"></i>
+                                <i className="iconfont icon-duigou"></i>
                                 <p>积分加价购</p>
                             </span>
                         <span className="list-down-ls">
-                                <i className="iconfont icon-more_light"></i>
+                                <i className="iconfont icon-tianjia"></i>
                                 <p>全部权益</p>
                             </span>
                     </div>
