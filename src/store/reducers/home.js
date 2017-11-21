@@ -4,21 +4,24 @@
 import * as types from '../action-types';
 let initState={
     sliders:[],
-    panelTitle:{
-        panelTitle1:{},
-        panelTitle2:{}
+    hSliders:[],
+    zhuTiLeYuan:{
+        titleUrl:'',
+        dataList:[]
     },
-    panelBody:{
-        panelBody1:{
-            images:[]
-        },
-        panelBody2:{
-            images:[]
-        }
+    advertising:[],
+    chaoShiYou:{
+        titleUrl:'',
+        dataList:[]
     },
-    panelBottom:{
-        images1:{}
+    jzsx:{
+        titleUrl:'',
+        dataList:[]
     },
+    shcb:{
+        titleUrl:'',
+        dataList:[]
+    }
 
 
 
@@ -28,6 +31,28 @@ export default function (state = initState, action) {
         case types.GETHOMEDATA:
             return{
                 ...state,
+                sliders:[...action.payload.sliders],
+                zhuTiLeYuan:{
+                    titleUrl:action.payload.zhuTiLeYuan.titleUrl,
+                    dataList:[...action.payload.zhuTiLeYuan.dataList]
+                },
+                advertising:[...action.payload.advertising],
+                chaoShiYou:{
+                    titleUrl:action.payload.chaoShiYou.titleUrl,
+                    dataList:[...action.payload.chaoShiYou.dataList]
+                },
+                jzsx:{
+                    titleUrl:action.payload.jiZhiShengXian.titleUrl,
+                    dataList:[...state.jzsx.dataList,...action.payload.jiZhiShengXian.dataList[0].dataList]
+                },
+                shcb:{
+                    titleUrl:action.payload.shengHuoChangBan.titleUrl,
+                    dataList:[...action.payload.shengHuoChangBan.dataList]
+                }
+
+
+
+               /* ...state,
                 sliders:[...state.sliders,...action.payload[0].dataList],
                 panelTitle:{...state.panelTitle,
                     panelTitle1:action.payload[2].dataList[0],
@@ -47,8 +72,14 @@ export default function (state = initState, action) {
                     ...state.panelBottom,
                     images1:action.payload[4].dataList[0]
 
-                }
+                }*/
             };
+
+        case types.GETHOTHOMEDATA:
+            return{
+                ...state,
+                hSliders:[...action.payload.sliders]
+            }
         default :
             return state;
     }

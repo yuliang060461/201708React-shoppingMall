@@ -1,0 +1,376 @@
+body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, *, img, ol, li, span, i, em, a {
+  margin: 0;
+  padding: 0;
+  font-family: '微软雅黑', sans-serif;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset, img {
+  border: 0;
+}
+ol, ul {
+  list-style: none;
+}
+caption, th {
+  text-align: left;
+}
+q:before, q:after {
+  content: ''
+}
+abbr, acronym {
+  border: 0
+}
+img {
+  border: none;
+  outline: none
+}
+img, input, select, textarea, button {
+  outline: none;
+}
+textarea {
+  resize: none;
+}
+.f14 {
+  font-size:14px;
+}
+.f16{
+  font-size:16px;
+}
+.f20{
+  font-size: 20px;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.fb{
+  font-weight: bold;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearfix {
+  clear: both;
+  display: block;
+}
+.shoppingCartWrap{
+  position: relative;
+  background: #fff;
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  overflow: hidden;
+  position: fixed;
+  left:0;
+  top:0;
+  z-index:100;
+  border-bottom: 2px dashed #ddd;
+  line-height:70px;
+  height:70px;
+  width: 100%;
+  font-size:20px;
+}
+.h70{
+  height:70px;
+}
+.h50{
+  height:50px;
+}
+.headerReturn{
+}
+.headerTitle{
+  width: 80%;
+  text-align: center;
+  font-size:20px;
+  font-weight:bold;
+}
+.headerBtn{
+  border: none;
+  font-size:20px;
+}
+.shoppingCartAddr{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom:1px dashed #ddd;
+  padding:0 10px ;
+  font-size:14px;
+  line-height:40px;
+  height:40px;
+  width: 100%;
+ }
+.shoppingCartListBox{
+  width: 100%;
+}
+.shoppingCartList_tag{
+  border-bottom:1px dashed #ddd;
+  padding: 0 10px;
+  text-align:center;
+  font-size:16px;
+  line-height:50px;
+}
+.shoppingCartList_store{
+  border-bottom:1px dashed #ddd;
+  margin-bottom:15px;
+  line-height:30px;
+  font-size:14px;
+}
+.shoppingCartList_store input{
+  margin:0 10px;
+}
+.shoppingCartList{
+    width:100%;
+}
+.shoppingItem{
+  border-bottom:1px dashed #ddd;
+  padding:5px 0;
+  margin:8px 0;
+  height:120px;
+  line-height: 30px;
+  overflow: hidden;
+  position: relative;
+}
+.shoppingImg{
+  background: #fff;
+  border: 1px dashed #ddd;
+  float: left;
+  overflow: hidden;
+  text-align: center;
+  height:100px;
+  line-height:100px;
+  width:100px;
+}
+.shoppingInfoOpt{
+  float:left;
+  margin:50px 10px 0;
+}
+.shoppingImg img{
+  max-width: 100%;
+  min-height:100%;
+  vertical-align: middle;
+}
+.shoppingInfoBox{
+  overflow: hidden;
+  padding:10px;
+  width: 55%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height:30px;
+}
+.shoppingInfo{
+  font-weight: bold;
+  overflow: hidden;
+  float: right;
+  width: 100%;
+  line-height:30px;
+  height:60px;
+  font-size:14px;
+  color:#333;
+}
+.shoppingPrice{
+  overflow: hidden;
+  width:90px;
+  font-size: 14px;
+  color:#f87120;
+}
+.shoppingNum{
+  border:1px solid #999;
+  position: absolute;
+  bottom:20px;
+  right:10px;
+  display: flex;
+  flex-direction: row;
+  width: 70px;
+  height:30px;
+  line-height:30px;
+}
+.shoppingNum input{
+  border: none;
+  border-left:1px solid #ddd;
+  border-right:1px solid #ddd;
+  width:30px;
+}
+.shoppingSub,.shoppingPlus,.shoppingNum input{
+  text-align: center;
+}
+.shoppingSub,.shoppingPlus{
+  background: #fff;
+  width:20px;
+  border: none;
+}
+.shoppingCartForm{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width:100%;
+  height:80px;
+}
+.shoppingCartForm input{
+  line-height:40px;
+  margin:0 10px;
+}
+.shoppingPrice{
+  font-size:20px;
+}
+.shoppingNum{
+  font-size:20px;
+}
+.shoppingCartForm{
+  //border:1px solid #999;
+}
+.purchasePriceOpt{
+  float: left;
+  width: 20%;
+  line-height:80px;
+  font-size:14px;
+}
+.purchasePrice{
+    float: right;
+    width:80%;
+    font-size:14px;
+    height:100%;
+}
+.PriceFormEdit{
+  margin-top:10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: right;
+  float: left;
+  width:70%;
+  line-height:20px;
+  padding-right:5px;
+  height:100%;
+}
+.pPriceFormBtn{
+  border: none;
+  height:100%;
+  background: #f87120;
+  color:#fff;
+  float:right;
+  width:30%;
+}
+.PriceFormEdit span{
+  line-height:24px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.vm{
+  vertical-align: middle;
+}
+.price{
+    overflow: hidden;
+    max-width:100px;
+  }
+/****删除购物车**/
+.delShoppingForm{
+  position: fixed;
+  bottom: 50px;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  line-height:50px;
+  width: 100%;
+  height:50px;
+  background: #fff;
+}
+.delFormOpt{
+  margin-right:20px;
+}
+.delFormOpt input{
+   margin:0 9px;
+}
+.delFormAdd,.delFormBtn{
+  margin: 0 10px;
+  font-size: 14px;
+  width: 100px;
+  height:30px;
+  line-height:30px;
+}
+.delFormAdd{
+  border:1px solid #ddd;
+  background: #fff;
+}
+.delFormBtn{
+  background: #f87120;
+  color: #fff;
+  border:none;
+}
+/*************/
+.noShoppingContent{
+ // background: #ffffff;
+  margin-top:150px;
+  text-align: center;
+}
+.noShoppingContent img{
+   margin:50px auto 0;
+   width: 120px;
+   height:120px;
+}
+.noShoppingContent p{
+  font-size: 16px;
+  color: #333;
+  margin: 30px 0;
+}
+.noShoppingLink{
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  border:1px solid #f87120;
+  line-height:40px;
+  text-align: center;
+  font-size: 16px;
+  width: 120px;
+  height:40px;
+  margin: auto;
+
+}
+.noShoppingContent a{
+  color:#333;
+  display: block;
+}
+/*****优惠**/
+.activity{
+  padding: 0 10px;
+}
+.activity img{
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 16px;
+  heihgt:16px;
+}
+.activityInfo{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding:0 10px;
+  -webkit-border-radius:5px;
+  -moz-border-radius:5px;
+  border-radius:5px;
+  border: 1px solid #f87120;
+  background: #fef3c1;
+  height: 30px;
+  line-height:30px;
+}
+
+
+

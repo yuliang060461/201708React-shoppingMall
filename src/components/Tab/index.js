@@ -17,7 +17,7 @@ export default class Tab extends Component{
                     <i className="iconfont icon-huiyuanzhongxin"></i>
                     <span>会员</span>
                 </NavLink>
-                <NavLink to="#">
+                <NavLink to="/shoppingcart">
                     <i className="iconfont icon-gouwuche"></i>
                     <span>购物车</span>
                 </NavLink>

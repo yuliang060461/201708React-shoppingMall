@@ -1,32 +1,35 @@
 
-.mall-home{
-  height:100%;
-  width:100%;
-  overflow:hidden ;
-  img{
-    width:100%;
+.mall-home {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background:#fff;
+  img {
+    width: 100%;
     display: block;
   }
-  .content-scroll{
+  .content-scroll {
     position: absolute;
     overflow-x: hidden;
     overflow-y: scroll;
-    width:100%;
-    top:50px;
-    bottom:50px;
+    width: 100%;
+    top: 50px;
+    bottom: 50px;
+    margin-top:10px;
+    background:#fff;
   }
-  .home-header{
+  .home-header {
     width: 100%;
     overflow-x: auto;
     min-height: 40px;
     font-size: 0;
-    padding:10px 0 0;
+    padding: 10px 0 0;
     position: absolute;
     background: #fff;
-    top:0;
-    left:0;
-    z-index:100;
-    span{
+    top: 0;
+    left: 0;
+    z-index: 100;
+    span {
       text-align: center;
       margin-left: 17px;
       margin-right: 17px;
@@ -37,59 +40,152 @@
       padding-top: 10px;
       font-size: 14px;
       color: #ff8143;
-      img{
+      &.active{
+        border-bottom:2px solid #ff8143;
+      }
+      img {
         position: absolute;
         height: 12px;
         right: 0;
         top: 0;
-        -webkit-transform: translate3d(20%,0,0);
-        transform: translate3d(20%,0,0);
+        -webkit-transform: translate3d(20%, 0, 0);
+        transform: translate3d(20%, 0, 0);
       }
 
     }
   }
-  .pannel{
+  .pannel {
     background-color: #f6f6f6;
     z-index: 10;
     width: 100%;
     min-height: 200px;
-    .active1{
-      .panel-title{
-        width:100%;
-        height:30px;
+    .active1 {
+      .panel-title {
+        width: 100%;
+        height: 30px;
         margin-top: 10px;
       }
-      .panel-body{
-        width:100%;
+      .panel-body {
+        width: 100%;
       }
-      .row-1{
+      .row-1 {
         display: flex;
         flex-direction: column;
-        height:100%;
+        height: 100%;
       }
-      .row-2{
-        height:50%;
+      .row-2 {
+        height: 50%;
       }
-      .col-6{
+      .col-6 {
         display: flex;
-        flex:1;
+        flex: 1;
       }
-      .col-3{
-        width:33.3333%;
+      .col-3 {
+        width: 33.3333%;
       }
 
-      .ztly{
-        .panel-body-1-2{
-          height:220px;
-          display: flex;
+      .panel-body-1-2 {
+        height: 220px;
+        display: flex;
 
+      }
+      .panel-body-3-3 {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .goods-list{
+        background:#fff;
+        margin-top:10px;
+        ul{
+          display:flex;
+          flex-wrap: wrap;
+          padding-bottom:10px;
+          li{
+            width:20%;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
         }
       }
-      .csyx{
-        .panel-body-3-3{
+      .jzsx {
+        background: #fff;
+        li {
+          box-sizing: border-box;
+          position: relative;
+          padding: 10px;
+          span {
+            &.title {
+              overflow: hidden;
+              height: 36px;
+              margin-bottom: 10px;
+              color: #21292b;
+              font-size: 14px;
+              line-height: 18px;
+              display: block;
+            }
+          }
+          .pre-price {
+            display: block;
+            height: 20px;
+            color: grey;
+            font-size: 12px;
+          }
+          .price {
+            color: #ff712b;
+            font-size: 16px;
+            line-height: 1.2;
+          }
+          .tj_label {
+            position: absolute;
+            z-index: 15;
+            bottom: 3px;
+            left: 10px;
+            margin-bottom: 95px;
+            display: inline-block;
+            padding: 2px 3px;
+            color: #fff;
+            border-radius: 1px;
+            background: #ff6161;
+            font-size: 9px;
+            font-weight: 700;
+            line-height: 1;
+          }
+
+          .good-desc {
+            position: relative;
+            z-index: 2;
+            padding: 22px 0 0;
+            text-align: left;
+          }
+          .add-btn {
+            position: absolute;
+            z-index: 99;
+            right: 10px;
+            bottom: 8px;
+            border: 1px solid lightcoral;
+            width: 30px;
+            height: 20px;
+            text-align: center;
+            color: lightcoral;
+          }
+        }
+      }
+      .shcb{
+        .panel-body{
           display: flex;
           flex-wrap: wrap;
-
+          width:100%;
+          li{
+            width: 25%;
+            &:nth-child(1){
+              width:50%;
+            }
+            &:nth-child(2){
+              width:50%;
+            }
+          }
         }
       }
 

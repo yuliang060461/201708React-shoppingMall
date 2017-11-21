@@ -1,15 +1,19 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom'
 import './index.less'
-
-
+import actions from '../../store/actions/session'
+import {connect} from 'react-redux'
 export default class Profile extends Component{
     render(){
         return (
            <div className="profile">
                <section className="profile-header">
-                   <div className="to-login">
-                       <p className="title">Hello,你好</p>
-                       <a href="" className="to-btn">去登录</a>
+                   <div className="my-info">
+                       <img className="my-img" src={this.props.user?this.props.user.img:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3289761550,697278018&fm=27&gp=0.jpg'} alt=""/>
+                       <div className="to-login">
+                           <p className="title">Hello,你好</p>
+                           <Link to="/login/account" className="to-btn" href="">{this.props.user?'普通会员':'去登录'}</Link>
+                       </div>
                    </div>
                    <div className="discount-code">
                    </div>
@@ -102,4 +106,4 @@ export default class Profile extends Component{
         )
     }
 }
-
+connect(state=>state.session,actions)(Profile)
