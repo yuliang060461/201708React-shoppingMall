@@ -9,63 +9,76 @@
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/0bf16f80-9357-43c6-883a-f7f5446ef821_750H",
-            "resource": "https://a.dmall.com/act/Kqv6AGSnWXf.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/Kqv6AGSnWXf.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 1,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
+          },
+          {
+            "dataType": -1,
+            "imageUrl": "//wx.dmall.com/source/image/new-user-banner.png"
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/5dfcdb86-9207-4338-9e01-bd41ec119b11_750H",
-            "resource": "https://a.dmall.com/act/CIOMf3kvmRctWVF.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/CIOMf3kvmRctWVF.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 2,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/208959ec-d90d-43af-8f6e-ccf2cee0d21b_750H",
-            "resource": "http://m.qianmama.com/wap/market45102?channelId=45102&erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "http://m.qianmama.com/wap/market45102?channelId=45102&erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 3,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/49f9d34e-3fb7-48f4-8ef1-319204393cd1_750H",
-            "resource": "https://static.dmall.com/kayak-project/h5/html/2017/videostoryapp.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://static.dmall.com/kayak-project/h5/html/2017/videostoryapp.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 4,
-            "storeId": 186,
+            "storeId": 108,
+            "venderId": 1
+          },
+          {
+            "brandId": 0,
+            "dataType": 5,
+            "imageUrl": "https://img.dmallcdn.com/mIndex/201711/a942c845-d3bd-477a-a758-c42eed2c55de_750H",
+            "resource": "https://a.dmall.com/act/apDANo4dXz2.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
+            "sort": 5,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/41e6fa28-131f-491f-a47d-e29a9cde4422_750H",
-            "resource": "https://a.dmall.com/act/bqcnxmtXjWkU0MB.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
-            "sort": 5,
-            "storeId": 186,
+            "resource": "https://a.dmall.com/act/bqcnxmtXjWkU0MB.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
+            "sort": 6,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/cf13352f-f289-4d36-96f8-19ff6a1d9146_750H",
-            "resource": "https://a.dmall.com/act/iFjR4oQmfpUcJ.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
-            "sort": 6,
-            "storeId": 186,
+            "resource": "https://a.dmall.com/act/iFjR4oQmfpUcJ.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
+            "sort": 7,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/444ddd6a-2846-453e-8804-c9ad3bf4a32b_750H",
-            "resource": "https://a.dmall.com/act/rw8Ut4JMFW.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
-            "sort": 7,
-            "storeId": 186,
+            "resource": "https://a.dmall.com/act/rw8Ut4JMFW.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
+            "sort": 8,
+            "storeId": 108,
             "venderId": 1
           }
         ],
@@ -107,7 +120,7 @@
             "imageUrl": "https://img.dmallcdn.com/mIndex/201709/fd348b95-770c-49de-8bbc-98248be0ec60_750H",
             "resource": "",
             "sort": 1,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           }
         ],
@@ -131,27 +144,27 @@
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/86d60a29-39d3-4c25-b21e-18049ab72cf7_480x480H",
-            "resource": "https://a.dmall.com/act/wFkq0RQDl1ti.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/wFkq0RQDl1ti.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 1,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/d9fdad9f-25e9-45ea-bd3a-48ad56aebd22_480x480H",
-            "resource": "https://a.dmall.com/act/MDSZzTRsqJC0.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/MDSZzTRsqJC0.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 2,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/1f7e4380-8c0f-4109-ad36-458f3b346eee_480x480H",
-            "resource": "https://a.dmall.com/act/iptEukxCeNg.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/iptEukxCeNg.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 3,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           }
         ],
@@ -174,9 +187,9 @@
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/c181f91d-2f69-4472-95da-a347944ebbc1_750H",
-            "resource": "https://a.dmall.com/act/1yFC27dOvHne.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/1yFC27dOvHne.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 1,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           }
         ],
@@ -202,7 +215,7 @@
             "imageUrl": "https://img.dmallcdn.com/mIndex/201710/837c2320-4da2-4013-8345-27254a321474_750H",
             "resource": "",
             "sort": 1,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           }
         ],
@@ -226,27 +239,27 @@
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/b108ea99-59e8-4208-aea4-7b90da634cf3_360x360H",
-            "resource": "https://a.dmall.com/act/1hmjxtYdrDGCK.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/1hmjxtYdrDGCK.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 1,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/021af676-3524-4394-b42b-6eae887d2c1c_360x360H",
-            "resource": "https://a.dmall.com/act/gAU3TMBJIe.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/gAU3TMBJIe.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 2,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/2e300fcd-ee0a-468a-8341-2fc4836345d5_360x360H",
-            "resource": "https://a.dmall.com/act/FWcE0YSLrlas.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/FWcE0YSLrlas.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 3,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           }
         ],
@@ -270,27 +283,27 @@
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/652b3737-78b2-4191-9643-9ead73ab37a5_360x360H",
-            "resource": "https://a.dmall.com/act/CDW5wOJy3pmPKVd.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/CDW5wOJy3pmPKVd.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 1,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/c3ca2784-ef12-43ef-9ec2-84e00b472ef9_360x360H",
-            "resource": "https://a.dmall.com/act/nojqA5kgBE.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/nojqA5kgBE.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 2,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/b60d05a4-b965-4691-97d9-8540e43285ae_360x360H",
-            "resource": "https://a.dmall.com/act/j6UPD7yl8a1vpR.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/j6UPD7yl8a1vpR.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 3,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           }
         ],
@@ -314,27 +327,27 @@
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/a13b115a-10ef-4d9a-89bb-7837bf32ccaa_360x360H",
-            "resource": "https://a.dmall.com/act/kpw0HZbWRsyDKn3a.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/kpw0HZbWRsyDKn3a.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 1,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/aee38bc2-1aee-48d8-8382-d180b0a1ed8b_360x360H",
-            "resource": "https://a.dmall.com/act/6z1nbKY7si2TOrjM.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/6z1nbKY7si2TOrjM.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 2,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/c9008483-9d9a-4241-bc15-47b2cf251a0b_360x360H",
-            "resource": "https://a.dmall.com/act/etiBbT8cQC.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/etiBbT8cQC.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 3,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           }
         ],
@@ -358,9 +371,9 @@
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/a700988c-bb8f-4d0f-9f7e-c6a1500dccf5_750H",
-            "resource": "https://a.dmall.com/act/z37uDl6fP215dYHG.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/z37uDl6fP215dYHG.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 1,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           }
         ],
@@ -386,7 +399,7 @@
             "imageUrl": "https://img.dmallcdn.com/mIndex/201709/e679e542-62be-4ba9-8ae2-448a5caa79bf_750H",
             "resource": "",
             "sort": 1,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           }
         ],
@@ -410,54 +423,54 @@
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/e3c741e5-9a03-460a-8a9a-c016916c9359_480x480H",
-            "resource": "https://a.dmall.com/act/TzfRxZyYIt.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/TzfRxZyYIt.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 1,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/c13f832a-1d2d-446f-8650-5463ec2bf3c4_480x480H",
-            "resource": "https://a.dmall.com/act/iNwZRaJGol.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/iNwZRaJGol.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 2,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/bfb60642-25b5-46b1-b6c0-1186a02e4a22_480x480H",
-            "resource": "https://a.dmall.com/act/TR1LozEvdn.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/TR1LozEvdn.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 3,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/9dddb752-4237-4c32-972d-6c2bd75c8a71_480x480H",
-            "resource": "https://a.dmall.com/act/Jf8p7GiszP.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/Jf8p7GiszP.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 4,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/680bdbed-08b0-45b0-af42-c0d81f375d4d_480x480H",
-            "resource": "https://a.dmall.com/act/63Kic0zEHj.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/63Kic0zEHj.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 5,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
             "brandId": 0,
             "dataType": 5,
             "imageUrl": "https://img.dmallcdn.com/mIndex/201711/b0db783c-49ec-4c24-95ac-ee13f26152cc_480x480H",
-            "resource": "https://a.dmall.com/act/C2magxP6K0r.html?erpStoreId=186&dmfrom=wx&from=wx&shareKey=1511146494645",
+            "resource": "https://a.dmall.com/act/C2magxP6K0r.html?erpStoreId=108&dmfrom=wx&from=wx&shareKey=1511232446893",
             "sort": 6,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           }
         ],
@@ -482,7 +495,7 @@
             "imageUrl": "https://img.dmallcdn.com/mIndex/201709/68c366b5-7d62-466d-bd95-d5651c53811c_750H",
             "resource": "",
             "sort": 1,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           }
         ],
@@ -506,11 +519,11 @@
             "brandId": 0,
             "data": {
               "cornerSign": [],
-              "price": 790,
-              "stock": 101,
+              "price": 1000,
+              "stock": 206,
               "skuType": 1,
               "sell": true,
-              "name": "国产香蕉 6根",
+              "name": "国产红提 700g/1份",
               "promotionList": [
                 {
                   "typeName": "单品促销",
@@ -521,22 +534,22 @@
               ],
               "promotionDisplayLable": "特价",
               "skus": {
-                "shop": 186,
-                "title": "国产香蕉 6根",
-                "img": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
-                "skuId": 100015,
+                "shop": 108,
+                "title": "国产红提 700g/1份",
+                "img": "https://img.dmallcdn.com/20171015/8a33ab11-7be7-4ce8-abf6-699e21e91db8_360x360H",
+                "skuId": 104169,
                 "promotionInfo": ""
               },
               "showTitle": false,
-              "sku": 100015,
-              "promotionPrice": 690
+              "sku": 104169,
+              "promotionPrice": 890
             },
             "dataType": 3,
-            "imageUrl": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
-            "resource": "100015",
+            "imageUrl": "https://img.dmallcdn.com/20171015/8a33ab11-7be7-4ce8-abf6-699e21e91db8_360x360H",
+            "resource": "104169",
             "sort": 1,
-            "spId": 100015,
-            "storeId": 186,
+            "spId": 104169,
+            "storeId": 108,
             "venderId": 1
           },
           {
@@ -544,7 +557,7 @@
             "data": {
               "cornerSign": [],
               "price": 1080,
-              "stock": 67,
+              "stock": 33,
               "skuType": 1,
               "sell": true,
               "name": "琯溪红心蜜柚  1粒",
@@ -558,7 +571,7 @@
               ],
               "promotionDisplayLable": "特价",
               "skus": {
-                "shop": 186,
+                "shop": 108,
                 "title": "琯溪红心蜜柚  1粒",
                 "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
                 "skuId": 100202465,
@@ -573,7 +586,7 @@
             "resource": "100202465",
             "sort": 2,
             "spId": 100202465,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           },
           {
@@ -581,7 +594,7 @@
             "data": {
               "cornerSign": [],
               "price": 1250,
-              "stock": 69,
+              "stock": 301,
               "skuType": 1,
               "sell": true,
               "name": "丑桔 4粒",
@@ -595,7 +608,7 @@
               ],
               "promotionDisplayLable": "特价",
               "skus": {
-                "shop": 186,
+                "shop": 108,
                 "title": "丑桔 4粒",
                 "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
                 "skuId": 100116,
@@ -610,7 +623,7 @@
             "resource": "100116",
             "sort": 3,
             "spId": 100116,
-            "storeId": 186,
+            "storeId": 108,
             "venderId": 1
           }
         ],
@@ -634,7 +647,7 @@
             "data": {
               "cornerSign": [],
               "price": 780,
-              "stock": 58,
+              "stock": 103,
               "skuType": 1,
               "sell": true,
               "name": "西红柿 4粒",
@@ -648,7 +661,7 @@
               ],
               "promotionDisplayLable": "特价",
               "skus": {
-                "shop": 186,
+                "shop": 108,
                 "title": "西红柿 4粒",
                 "img": "https://img.dmallcdn.com/20170928/0e5028ea-805f-48fe-87a2-09b2fe9805b2_360x360H",
                 "skuId": 100344169,
@@ -663,7 +676,44 @@
             "resource": "100344169",
             "sort": 1,
             "spId": 100344169,
-            "storeId": 186,
+            "storeId": 108,
+            "venderId": 1
+          },
+          {
+            "brandId": 0,
+            "data": {
+              "cornerSign": [],
+              "price": 350,
+              "stock": 608,
+              "skuType": 1,
+              "sell": true,
+              "name": "玉田大白菜 1颗",
+              "promotionList": [
+                {
+                  "typeName": "单品促销",
+                  "subTypeName": "特价",
+                  "subType": 102,
+                  "type": 1
+                }
+              ],
+              "promotionDisplayLable": "特价",
+              "skus": {
+                "shop": 108,
+                "title": "玉田大白菜 1颗",
+                "img": "https://img.dmallcdn.com/20171010/6ff3f1e3-5a90-4a36-b49f-322c44eb9497_360x360H",
+                "skuId": 105903,
+                "promotionInfo": ""
+              },
+              "showTitle": false,
+              "sku": 105903,
+              "promotionPrice": 299
+            },
+            "dataType": 3,
+            "imageUrl": "https://img.dmallcdn.com/20171010/6ff3f1e3-5a90-4a36-b49f-322c44eb9497_360x360H",
+            "resource": "105903",
+            "sort": 2,
+            "spId": 105903,
+            "storeId": 108,
             "venderId": 1
           },
           {
@@ -671,7 +721,7 @@
             "data": {
               "cornerSign": [],
               "price": 410,
-              "stock": 108,
+              "stock": 171,
               "skuType": 1,
               "sell": true,
               "name": "新土豆 4粒",
@@ -685,7 +735,7 @@
               ],
               "promotionDisplayLable": "特价",
               "skus": {
-                "shop": 186,
+                "shop": 108,
                 "title": "新土豆 4粒",
                 "img": "https://img.dmallcdn.com/20171109/bf2b98d6-5ef3-447e-80db-cffc60f773a5_360x360H",
                 "skuId": 100344162,
@@ -698,46 +748,9 @@
             "dataType": 3,
             "imageUrl": "https://img.dmallcdn.com/20171109/bf2b98d6-5ef3-447e-80db-cffc60f773a5_360x360H",
             "resource": "100344162",
-            "sort": 2,
-            "spId": 100344162,
-            "storeId": 186,
-            "venderId": 1
-          },
-          {
-            "brandId": 0,
-            "data": {
-              "cornerSign": [],
-              "price": 420,
-              "stock": 33,
-              "skuType": 1,
-              "sell": true,
-              "name": "娃娃菜【精】500g",
-              "promotionList": [
-                {
-                  "typeName": "单品促销",
-                  "subTypeName": "特价",
-                  "subType": 102,
-                  "type": 1
-                }
-              ],
-              "promotionDisplayLable": "特价",
-              "skus": {
-                "shop": 186,
-                "title": "娃娃菜【精】500g",
-                "img": "https://img.dmallcdn.com/20170928/708c8d0b-367d-40fb-af69-06a58e83ac6d_360x360H",
-                "skuId": 100276383,
-                "promotionInfo": ""
-              },
-              "showTitle": false,
-              "sku": 100276383,
-              "promotionPrice": 390
-            },
-            "dataType": 3,
-            "imageUrl": "https://img.dmallcdn.com/20170928/708c8d0b-367d-40fb-af69-06a58e83ac6d_360x360H",
-            "resource": "100276383",
             "sort": 3,
-            "spId": 100276383,
-            "storeId": 186,
+            "spId": 100344162,
+            "storeId": 108,
             "venderId": 1
           }
         ],

@@ -1138,7 +1138,7 @@ function warnNoop(publicInstance, callerName) {
 }
 
 /**
- * This is the abstract API for an update queue.
+ * This is the abstract api for an update queue.
  */
 var ReactNoopUpdateQueue = {
   /**
@@ -1164,7 +1164,7 @@ var ReactNoopUpdateQueue = {
    *
    * @param {ReactClass} publicInstance The instance that should rerender.
    * @param {?function} callback Called after component is updated.
-   * @param {?string} callerName name of the calling function in the public API.
+   * @param {?string} callerName name of the calling function in the public api.
    * @internal
    */
   enqueueForceUpdate: function (publicInstance, callback, callerName) {
@@ -1181,7 +1181,7 @@ var ReactNoopUpdateQueue = {
    * @param {ReactClass} publicInstance The instance that should rerender.
    * @param {object} completeState Next state.
    * @param {?function} callback Called after component is updated.
-   * @param {?string} callerName name of the calling function in the public API.
+   * @param {?string} callerName name of the calling function in the public api.
    * @internal
    */
   enqueueReplaceState: function (publicInstance, completeState, callback, callerName) {
@@ -1197,7 +1197,7 @@ var ReactNoopUpdateQueue = {
    * @param {ReactClass} publicInstance The instance that should rerender.
    * @param {object} partialState Next partial state to be merged with state.
    * @param {?function} callback Called after component is updated.
-   * @param {?string} Name of the calling function in the public API.
+   * @param {?string} Name of the calling function in the public api.
    * @internal
    */
   enqueueSetState: function (publicInstance, partialState, callback, callerName) {
@@ -3612,12 +3612,12 @@ function executeDispatchesInOrder(event, simulated) {
 /**
  * Accumulates items that must not be null or undefined into the first one. This
  * is used to conserve memory by avoiding array allocations, and thus sacrifices
- * API cleanness. Since `current` can be null before being passed in and not
+ * api cleanness. Since `current` can be null before being passed in and not
  * null after this function, make sure to assign it back to `current`:
  *
  * `a = accumulateInto(a, b);`
  *
- * This API should be sparingly used. Try `accumulate` for something cleaner.
+ * This api should be sparingly used. Try `accumulate` for something cleaner.
  *
  * @return {*|array<*>} An accumulation of items.
  */
@@ -4093,7 +4093,7 @@ function listenerAtPhase(inst, event, propagationPhase) {
  * A small set of propagation patterns, each of which will accept a small amount
  * of information, and generate a set of "dispatch ready event objects" - which
  * are sets of events that have already been annotated with a set of dispatched
- * listener functions/ids. The API is designed this way to discourage these
+ * listener functions/ids. The api is designed this way to discourage these
  * propagation strategies from actually executing the dispatches, since we
  * always want to collect the entire set of dispatches before executing even a
  * single one.
@@ -4309,7 +4309,7 @@ var EventInterface = {
  * event should be released into the pool after being dispatched. Users that
  * need a persisted event should invoke `persist`.
  *
- * Synthetic events (and subclasses) implement the DOM Level 3 Events API by
+ * Synthetic events (and subclasses) implement the DOM Level 3 Events api by
  * normalizing browser quirks. Subclasses do not necessarily have to implement a
  * DOM interface; custom application-specific events can also subclass this.
  *
@@ -5030,8 +5030,8 @@ var ReactControlledComponent = Object.freeze({
 
 // Used as a way to call batchedUpdates when we don't have a reference to
 // the renderer. Such as when we're dispatching events or if third party
-// libraries need to call batchedUpdates. Eventually, this API will go away when
-// everything is batched by default. We'll then have a similar API to opt-out of
+// libraries need to call batchedUpdates. Eventually, this api will go away when
+// everything is batched by default. We'll then have a similar api to opt-out of
 // scheduled work and instead do synchronous work.
 
 // Defaults
@@ -5708,7 +5708,7 @@ var EnterLeaveEventPlugin = {
  */
 
 /**
- * This API should be called `delete` but we'd have to make sure to always
+ * This api should be called `delete` but we'd have to make sure to always
  * transform these to strings for IE support. When this transform is fully
  * supported we can rename it.
  */
@@ -6672,7 +6672,7 @@ function getModernOffsetsFromPoints(outerNode, anchorNode, anchorOffset, focusNo
  * Note: IE10+ supports the Selection object, but it does not support
  * the `extend` method, which means that even in modern IE, it's not possible
  * to programmatically create a backward selection. Thus, for all IE
- * versions, we use the old IE API to create our selections.
+ * versions, we use the old IE api to create our selections.
  *
  * @param {DOMElement|DOMTextNode} node
  * @param {object} offsets
@@ -8198,7 +8198,7 @@ function processChildContext(fiber, parentContext) {
     // somebody calls unstable_renderSubtreeIntoContainer() and we process
     // context from the parent component instance. The stack will be missing
     // because it's outside of the reconciliation, and so the pointer has not
-    // been set. This is rare and doesn't matter. We'll also remove that API.
+    // been set. This is rare and doesn't matter. We'll also remove that api.
     ReactDebugCurrentFiber.getCurrentFiberStackAddendum);
   }
 
@@ -9352,7 +9352,7 @@ var ReactFiberClassComponent = function (scheduleWork, computeExpirationForFiber
 var REACT_PORTAL_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.portal') || 0xeaca;
 
 function createPortal$1(children, containerInfo,
-// TODO: figure out the API for cross-renderer implementation.
+// TODO: figure out the api for cross-renderer implementation.
 implementation) {
   var key = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
 
@@ -10360,7 +10360,7 @@ function ChildReconciler(shouldClone, shouldTrackSideEffects) {
     return created;
   }
 
-  // This API will tag the children with the side-effect of the reconciliation
+  // This api will tag the children with the side-effect of the reconciliation
   // itself. They will be added to the side-effect list as we pass through the
   // children and the parent.
   function reconcileChildFibers(returnFiber, currentFirstChild, newChild, expirationTime) {
@@ -11362,7 +11362,7 @@ var ReactFiberCompleteWork = function (config, hostContext, hydrationContext) {
             var oldProps = current.memoizedProps;
             // If we get updated because one of our children updated, we don't
             // have newProps so we'll have to reuse them.
-            // TODO: Split the update API as separate for the props vs. children.
+            // TODO: Split the update api as separate for the props vs. children.
             // Even better would be if children weren't special cased at all tho.
             var instance = workInProgress.stateNode;
             var currentHostContext = getHostContext();
@@ -12445,7 +12445,7 @@ var ReactFiberHydrationContext = function (config) {
 
 // This lets us hook into Fiber to debug what it's doing.
 // See https://github.com/facebook/react/pull/8033.
-// This is not part of the public API, not even for React DevTools.
+// This is not part of the public api, not even for React DevTools.
 // You may only inject a debugTool if you work on React Fiber itself.
 var ReactFiberInstrumentation = {
   debugTool: null
@@ -13886,7 +13886,7 @@ var ReactFiberReconciler$1 = function (config) {
     var expirationTime = void 0;
     // Check if the top-level element is an async wrapper component. If so,
     // treat updates to the root as async. This is a bit weird but lets us
-    // avoid a separate `renderAsync` API.
+    // avoid a separate `renderAsync` api.
     if (enableAsyncSubtreeAPI && element != null && element.type != null && element.type.prototype != null && element.type.prototype.unstable_isAsyncReactComponent === true) {
       expirationTime = computeAsyncExpiration();
     } else {
@@ -14909,7 +14909,7 @@ var didWarnValDefaultVal = false;
 
 /**
  * Implements a <textarea> host component that allows setting `value`, and
- * `defaultValue`. This differs from the traditional DOM API because value is
+ * `defaultValue`. This differs from the traditional DOM api because value is
  * usually set as PCDATA children.
  *
  * If `value` is not supplied (or null/undefined), user actions that affect the
