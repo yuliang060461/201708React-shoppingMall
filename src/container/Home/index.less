@@ -3,17 +3,29 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
+  background:#fff;
   img {
     width: 100%;
     display: block;
   }
   .content-scroll {
-    position: absolute;
+    position: fixed;
     overflow-x: hidden;
     overflow-y: scroll;
     width: 100%;
-    top: 50px;
-    bottom: 50px;
+   top: 50px;
+   bottom: 50px;
+    margin-top:10px;
+    background:#fff;
+    .load-status{
+      text-align: center;
+      color: #c8cccd;
+      background-color: #f6f6f6;
+    }
+    .scroller{
+      padding-bottom: 10px;
+    }
+
   }
   .home-header {
     width: 100%;
@@ -37,6 +49,9 @@
       padding-top: 10px;
       font-size: 14px;
       color: #ff8143;
+      &.active{
+        border-bottom:2px solid #ff8143;
+      }
       img {
         position: absolute;
         height: 12px;
@@ -87,6 +102,22 @@
         display: flex;
         flex-wrap: wrap;
       }
+      .goods-list{
+        background:#fff;
+        margin-top:10px;
+        ul{
+          display:flex;
+          flex-wrap: wrap;
+          padding-bottom:10px;
+          li{
+            width:20%;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
       .jzsx {
         background: #fff;
         li {
@@ -125,7 +156,7 @@
             padding: 2px 3px;
             color: #fff;
             border-radius: 1px;
-            background: #ff6161;
+            background: #ff712b;
             font-size: 9px;
             font-weight: 700;
             line-height: 1;
@@ -142,11 +173,11 @@
             z-index: 99;
             right: 10px;
             bottom: 8px;
-            border: 1px solid lightcoral;
+            border: 1px solid #ff712b;
             width: 30px;
             height: 20px;
             text-align: center;
-            color: lightcoral;
+            color: #ff712b;
           }
         }
       }
