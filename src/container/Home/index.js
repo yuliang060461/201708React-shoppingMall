@@ -14,13 +14,15 @@ class Home extends Component {
     }
 
     render() {
+        console.log(this.props.loading,this.props.page);
         return (
             <div className="mall-home">
                 <div className="home-header">
                     <span>多点超市 <img src={require('../../images/2hours.png')} alt=""/></span>
                     <span>全球精选</span>
                 </div>
-                <div className="content-scroll" ref="content">
+                <div className="content-scroll"  ref="content">
+                    <div className="scroller">
                     <Slider sliders={this.props.sliders}/>
                     <div className="pannel">
                             {this.props.sliders.length > 0 ? <div className="active1">
@@ -81,10 +83,21 @@ class Home extends Component {
                                         </li>)}
                                     </ul>
                                 </section>
-                            </div>:null}
+                            </div>
+                             :null}
                         </div>
-                    <Loading/>
+                        {
+                            this.props.loading ?
+                                <Loading/> : this.props.page<=2 ? null :  <div
+                                className="load-status">
+                                已经到底了哦！
+                            </div>
+                        }
+                    </div>
+
+
                 </div>
+
             </div>
         )
     }

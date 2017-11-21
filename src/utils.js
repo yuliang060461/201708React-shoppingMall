@@ -6,7 +6,7 @@ export function upMore(element,callback){
       let scrollTop = element.scrollTop;
       let clientHeight = element.clientHeight;
       let scrollHeight = element.scrollHeight;
-      if(scrollTop+clientHeight+10>scrollHeight){
+      if(scrollTop+clientHeight+50>scrollHeight){
         callback();
       }
     },80)

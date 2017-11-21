@@ -2,11 +2,11 @@
 * 所有action-type
 * */
 
-
 //购物车页面；
 export const ADD_SHOP='ADD_SHOP';
-
-
+//开始获取数据
+export const FETCH_START = 'FETCH_START';
+//获取首页数据
 export const GETHOMEDATA='GETHOMEDATA';
 //注册
 export const FETCH_REGISTER='FETCH_REGISTER';
