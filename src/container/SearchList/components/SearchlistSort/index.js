@@ -4,7 +4,7 @@ export default class SearchlistSort extends Component{
     render(){
         return(
             <div>
-                <ul>
+                <ul className='sort-con'>
                     <li className='border-right'>
                         <div className='img-wrapper'>
                             <img src="https://img.dmallcdn.com/20161112/be1de141-cedc-497f-bcc5-f31c06a66270_360x360H" alt=""/>
