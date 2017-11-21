@@ -137,7 +137,7 @@ console.log(users);
 
 app.post('/login', function (req, res) {
     let user = req.body;
-    let oldUser = users.find(item => item.mobile == user.mobile && item.password == user.password);
+    let oldUser = users.find(item => item.usertel == user.mobile && item.password == user.password);
     if(oldUser){
         req.session.user = user;//把用户写入会话对象中
         res.json({code:0,message:'登录成功!',user});
@@ -161,7 +161,7 @@ app.post('/login', function (req, res) {
 
 app.post('/register', function (req, res) {
     let user = req.body;//{mobile,password}
-    let oldUser = users.find(item => item.mobile == user.mobile);
+    let oldUser = users.find(item => item.usertel == user.usertel);
     if (oldUser) {
         res.json({code: 1, message: '用户名重复'});
     } else {

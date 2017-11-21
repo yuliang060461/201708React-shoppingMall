@@ -1,5 +1,5 @@
 module.exports = [
-    {"username": "higo", "password": "higo", "cartList": []},
-    { "username": "2","password": "3","cartList": []},
-    {"username": "3333", "password": "aaa", "cartList": []},
-    {"username": "111", "password": "111", "cartList": []}];
+    {"usertel": "higo", "password": "higo", "cartList": []},
+    { "usertel": "2","password": "3","cartList": []},
+    {"usertel": "3333", "password": "aaa", "cartList": []},
+    {"usertel": "111", "password": "111", "cartList": []}];
