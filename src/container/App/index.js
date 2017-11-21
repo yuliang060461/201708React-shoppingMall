@@ -8,6 +8,8 @@ import createHistory from 'history/createHashHistory';
 const history = createHistory();
 import {ConnectedRouter} from 'react-router-redux';
 import ShoppingCart from './../ShoppingCart';
+import Login from "../Login/index";
+import Register from "../Register/index";
 export default class App extends Component{
     render(){
         return (
@@ -17,6 +19,8 @@ export default class App extends Component{
                     <Route path="/home" component={Home}/>
                     <Route path="/profile" component={Profile}/>
                     <Route path="/shoppingcart" component={ShoppingCart}/>
+                    <Route path="/login" component={Login}/>
+                    <Route path="/register" component={Register}/>
                     <Route path="/list" component={List}/>
                     <Tab/>
                 </div>
