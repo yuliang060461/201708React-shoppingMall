@@ -115,6 +115,11 @@ app.get("/getBus/:name",function (req,res) {
     res.set('Content-Type','application/json');
         getBus(function (data) {
             // 找到数组下面
+            // data.filter((req,res)=>{
+            //     return
+            //
+            // })
+
 
 
             res.end(JSON.stringify(data));
