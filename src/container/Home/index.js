@@ -112,7 +112,8 @@ class Home extends Component {
                                     </section>
                                 </div>
                             </div> : null}</div>
-                    </div> :  <div className="content-scroll">
+                    </div> :
+                        <div className="content-scroll">
                         <Slider sliders={this.props.hSliders}/>
                         {this.props.hSliders.length > 0 ?
                             <div className="pannel">
