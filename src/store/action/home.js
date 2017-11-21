@@ -6,10 +6,10 @@ import {fetchHomeData} from '../../api/home'
 export default {
     getHomeDate(){
         return dispatch=>{
-            fetchHomeData().then(sliders=>{
+            fetchHomeData().then(data=>{
                 dispatch({
                     type:types.GETHOMEDATA,
-                    payload:sliders.data.pageModules
+                    payload:data
                 })
 
             })
