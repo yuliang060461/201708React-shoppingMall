@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import {createHashHistory} from 'history'
+import {NavLink} from 'react-router-dom'
 import './index.less'
 import SearchBar from "../../components/SearchBar/index";
 let history = createHashHistory();
@@ -15,6 +16,7 @@ export default class Search extends Component{
         this.setState({
             value:e.target.innerHTML
         })
+        console.log(e.target.innerHTML);
         // this.searchInput.focus();
     }
     handleChange =(value)=>{

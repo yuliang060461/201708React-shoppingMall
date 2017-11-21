@@ -10,15 +10,18 @@ export default class SearchBar extends Component{
     handleKeyDown = (e)=>{
         if(e.keyCode===13){
             if(e.target.value){
-                history.push('/searchlist?keyword='+e.target.value);
+                history.push('/searchlist/global/?keyword='+e.target.value);
             }
         }
+    }
+    back = ()=>{
+        history.goBack();
     }
     render(){
         return(
             <div>
                 <div className='search-bar'>
-                    <span><img src={require('../../images/left.png')} alt=""/></span>
+                    <span onClick={this.back}><img src={require('../../images/left.png')} alt=""/></span>
                     <img src={require('../../images/search.png')} alt="" className='search-img'/>
                     <input type="text" className='search-input' onKeyDown={this.handleKeyDown} value={this.props.value} onChange={(e)=>this.props.handleChange(e.target.value)}/>
                 </div>
