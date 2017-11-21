@@ -1,6 +1,10 @@
 let express = require('express');
 let fs=require("fs");
 let app = express();
+var cookieParser=require("cookie-parser");
+app.use(cookieParser());
+
+
 
 app.use(function(req,res,next){
     //允许的来源
@@ -26,17 +30,39 @@ app.get("/globalselect",function (req,res) {
 });
 
 
+let session=require("express-session");
+// app.use(session({
+//     resave:true,//每次请求借宿，都要重新保存不管修改没
+//     saveUninitialized:true,
+//     secret:"zfpx"//加密的秘钥
+// }))
 
 
-// function read(cb) {
-//     fs.readFile('./globalselect/sliders.json','utf8',function (err,data) {
-//         if(err || data.length==0){ //如果文件不存在或者内容是空 传递空数组
-//             cb([]);
-//         }else{
-//             cb(JSON.parse(data));
-//         }
-//     })
-// }
-// function write(data,cb) {
-//     fs.writeFile('./globalselect/sliders.json',JSON.stringify(data),cb);
-// }
+// 当使用cookieParse多了两个方法和属性
+app.get("/index",function (req,res) {
+    var visted=req.cookies.visited;
+    if(visted){
+            res.send("老朋友")
+    }else{
+        res.cookie("visited","1")
+        res.send("新朋友")
+    }
+
+})
+
+
+
+app.get("/duodianchaoshi",function (req,res) {
+    res.set('Content-Type','application/json');
+   fs.createReadStream("./duodianchaoshi/duodianchaoshi.json").pipe(res)
+});
+
+app.get("/hotSale",function (req,res) {
+    res.set('Content-Type','application/json');
+    fs.createReadStream("./hotSale/hotSale.json").pipe(res)
+});
+app.get("/worthBuy",function (req,res) {
+    res.set('Content-Type','application/json');
+    fs.createReadStream("./worthBuy/worthBuy.json").pipe(res)
+});
+app.listen(9000);
