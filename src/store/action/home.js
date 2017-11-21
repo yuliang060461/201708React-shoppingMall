@@ -2,7 +2,7 @@
  * Created by L on 2017/11/20.
  */
 import * as types from '../action-types';
-import {fetchHomeData} from '../../api/home'
+import {fetchHomeData,fetchHotHomeData} from '../../api/home'
 export default {
     getHomeDate(){
         return (dispatch,getState)=>{
@@ -29,5 +29,15 @@ export default {
             }
         }
 
+    },
+    getHotHomeData(){
+        return dispatch=>{
+            fetchHotHomeData().then(data=>{
+                dispatch({
+                    type:types.GETHOTHOMEDATA,
+                    payload:data
+                })
+            })
+        }
     }
 }

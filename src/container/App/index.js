@@ -5,6 +5,7 @@ import Home from "../Home/index";
 import List from '../List/index';
 import Tab from "../../components/Tab/index";
 import createHistory from 'history/createHashHistory';
+import Vip from "../Vip/index"
 const history = createHistory();
 import {ConnectedRouter} from 'react-router-redux';
 import Search from '../../container/Search'
@@ -26,6 +27,8 @@ export default class App extends Component{
                     <Route path="/list" component={List}/>
                     <Route path="/search" component={Search}/>
                     <Route path="/searchlist" component={SearchList}/>
+                    <React path="/vip" component={Vip}/>
+
                     <Tab/>
                 </div>
             </ConnectedRouter>

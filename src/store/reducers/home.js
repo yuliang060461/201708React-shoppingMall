@@ -2,11 +2,14 @@
  * Created by L on 2017/11/20.
  */
 import * as types from '../action-types';
-let initState = {
-    sliders: [],
-    zhuTiLeYuan: {
-        titleUrl: '',
-        dataList: []
+
+let initState={
+    sliders:[],
+    hSliders:[],
+    zhuTiLeYuan:{
+        titleUrl:'',
+        dataList:[]
+
     },
     advertising: [],
     chaoShiYou: {
@@ -61,6 +64,12 @@ export default function (state = initState, action) {
                 page:state.page+1
 
             };
+
+        case types.GETHOTHOMEDATA:
+            return{
+                ...state,
+                hSliders:[...action.payload.sliders]
+            }
         default :
             return state;
     }

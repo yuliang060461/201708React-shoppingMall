@@ -3,6 +3,7 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
+  background:#fff;
   img {
     width: 100%;
     display: block;
@@ -14,6 +15,8 @@
     width: 100%;
    top: 50px;
    bottom: 50px;
+    margin-top:10px;
+    background:#fff;
     .load-status{
       text-align: center;
       color: #c8cccd;
@@ -22,6 +25,7 @@
     .scroller{
       padding-bottom: 10px;
     }
+
   }
   .home-header {
     width: 100%;
@@ -45,6 +49,9 @@
       padding-top: 10px;
       font-size: 14px;
       color: #ff8143;
+      &.active{
+        border-bottom:2px solid #ff8143;
+      }
       img {
         position: absolute;
         height: 12px;
@@ -94,6 +101,22 @@
       .panel-body-3-3 {
         display: flex;
         flex-wrap: wrap;
+      }
+      .goods-list{
+        background:#fff;
+        margin-top:10px;
+        ul{
+          display:flex;
+          flex-wrap: wrap;
+          padding-bottom:10px;
+          li{
+            width:20%;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+        }
       }
       .jzsx {
         background: #fff;

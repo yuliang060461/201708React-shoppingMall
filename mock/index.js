@@ -25,7 +25,7 @@ app.use(cookieParser());
 
 app.use(function(req,res,next){
     //允许的来源
-    res.header('Access-Control-Allow-Origin','http://localhost:8080');
+    res.header('Access-Control-Allow-Origin','http://localhost:8081');
     //允许客户端请求的方法
     res.header('Access-Control-Allow-Methods','GET,POST,OPTIONS,PUT,DELETE');
     //允许客户端发送的请求头
