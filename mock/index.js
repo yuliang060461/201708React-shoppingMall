@@ -108,29 +108,19 @@ app.post("/writeBus",function (req,res) {
 })}
     );
 
-
+//前端传递 参数 名字是  用户名
 app.get("/getBus/:name",function (req,res) {
     let username=req.params.name;
-
     res.set('Content-Type','application/json');
         getBus(function (data) {
-            // 找到数组下面
-            // data.filter((req,res)=>{
-            //     return
-            //
-            // })
 
-
-
-            res.end(JSON.stringify(data));
+            let prouct=data.filter((item,index)=>{
+                return   item.usertel == username;
+            });
+            res.end(JSON.stringify(prouct[0].cartList));
+            // 购物车页面请求后，得到数据渲染
         });
 });
-
-
-
-let users = require("./userList");
-console.log(users);
-
 
 app.post('/login', function (req, res) {
     let user = req.body;
@@ -174,6 +164,23 @@ app.post('/validate',function(req,res){
     }else{
         res.json({code:1});
     }
+});
+
+app.post("/loginout",function (req,res) {
+
+    //根据发送的用户名
+    // 删除 这个用户下的 session
+    req.session.user=null;
+     res.status(200);
+});
+
+
+app.post("/search",function (req,res) {
+    res.set('Content-Type','application/json');
+    //根据发送的用户名
+    // 删除 这个用户下的 session
+    req.session.user=null;
+    res.status(200);
 });
 
 
