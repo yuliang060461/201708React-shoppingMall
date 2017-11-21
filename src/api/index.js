@@ -1,4 +1,3 @@
-
 const HOST ='Http://localhost:3000';
 export function get(url) {
     return fetch(HOST+url,{
