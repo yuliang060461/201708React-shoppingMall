@@ -7,7 +7,7 @@ let cookieParser=require("cookie-parser");
 app.use(cookieParser( ));
 
 //session中间件
-// let session = require('express-session');
+let session = require('express-session');
 //boydParser中间件
 let bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
