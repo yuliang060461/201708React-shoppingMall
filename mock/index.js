@@ -88,7 +88,7 @@ app.get("/worthBuy",function (req,res) {
 
 
 app.post("/writeBus",function (req,res) {
-
+        res.set('Content-Type','application/json');
     let str ="";
     req.on('data',function (chunk) {
         str+=chunk;
@@ -110,12 +110,10 @@ app.post("/writeBus",function (req,res) {
 
 
 app.get("/getBus",function (req,res) {
-// 查询所有
+    res.set('Content-Type','application/json');
         getBus(function (data) {
             res.end(JSON.stringify(data));
         });
-
-    
 });
 
 
@@ -160,7 +158,7 @@ app.post('/register', function (req, res) {
     }
 });
 
-app.get('/validate',function(req,res){
+app.post('/validate',function(req,res){
     if(req.session.user){//如果会话对象中有user的话，表示已登录
         res.json({code:0,user:req.session.user});
     }else{
