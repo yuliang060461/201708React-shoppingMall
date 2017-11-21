@@ -57,7 +57,7 @@ app.use(session({
 
 
 function getBus(cb) {
-    fs.readFile('./bus/bus.json','utf8',function (err,data) {
+    fs.readFile('./userList.json','utf8',function (err,data) {
         if(err || data.length==0){ //如果文件不存在或者内容是空 传递空数组
             cb([]);
         }else{
@@ -66,7 +66,7 @@ function getBus(cb) {
     })
 }
 function writeBus(data,cb) {
-    fs.writeFile('./bus/bus.json',JSON.stringify(data),cb);
+    fs.writeFile('./userList.json',JSON.stringify(data),cb);
 }
 
 
@@ -109,9 +109,14 @@ app.post("/writeBus",function (req,res) {
     );
 
 
-app.get("/getBus",function (req,res) {
+app.get("/getBus/:name",function (req,res) {
+    let username=req.params.name;
+
     res.set('Content-Type','application/json');
         getBus(function (data) {
+            // 找到数组下面
+
+
             res.end(JSON.stringify(data));
         });
 });
@@ -124,7 +129,7 @@ console.log(users);
 
 app.post('/login', function (req, res) {
     let user = req.body;
-    let oldUser = users.find(item => item.usertel == user.mobile && item.password == user.password);
+    let oldUser = users.find(item => item.usertel == user.usertel && item.password == user.password);
     if(oldUser){
         req.session.user = user;//把用户写入会话对象中
         res.json({code:0,message:'登录成功!',user});
