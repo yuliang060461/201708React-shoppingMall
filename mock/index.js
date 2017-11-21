@@ -41,10 +41,10 @@ app.use(function(req,res,next){
 });
 app.listen(3000);
 
-app.get("/globalselect",function (req,res) {
-    res.set('Content-Type','text/plain');
-   fs.createReadStream("./globalselect/sliders.json").pipe(res)
-});
+// app.get("/globalselect",function (req,res) {
+//     res.set('Content-Type','text/plain');
+//    fs.createReadStream("./globalselect/globalselect.json").pipe(res)
+// });
 
 
 app.use(session({
@@ -110,22 +110,11 @@ app.post("/writeBus",function (req,res) {
 
 
 app.get("/getBus",function (req,res) {
-    if(id>=0){ //查询某一个
-        getBus(function (products) {
-            let product = products.find(item=>item.id===id);
-            let result = {product};
-            if(product){
-                result.err = 0;
-            }else{
-                result.err = 1;
-            }
-            res.end(JSON.stringify(result));
+// 查询所有
+        getBus(function (data) {
+            res.end(JSON.stringify(data));
         });
-    }else{ // 查询所有
-        getBook(function (data) {
-            res.end(JSON.stringify(data.reverse()));
-        });
-    }
+
     
 });
 
