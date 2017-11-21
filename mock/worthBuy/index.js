@@ -128,7 +128,7 @@ app.get("/getBus/:name",function (req,res) {
 
 
 
-let users = require("./userList");
+let users = require("../userList");
 console.log(users);
 
 
