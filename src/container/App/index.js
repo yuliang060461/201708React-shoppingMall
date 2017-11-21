@@ -1,11 +1,8 @@
 import React,{Component} from 'react';
 import {Route} from 'react-router-dom'
 import Profile from "../Profile/index";
-
 import Home from "../Home/index";
-
 import List from '../List/index';
-
 import Tab from "../../components/Tab/index";
 import createHistory from 'history/createHashHistory';
 const history = createHistory();
