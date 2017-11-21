@@ -26,7 +26,7 @@ app.use(function (req,res,next) {
     }
 });
 app.get('/shopping',function (req, res) {
-        res.json(getShopping);
+  res.json(getShopping);
 });
 
 
