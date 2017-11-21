@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import actions from '../../store/action/home';
-import Slider from './Slider'
+import Slider from './Slider';
+import Loading from './Loading';
+import {upMore} from '../../utils'
 import './index.less'
 class Home extends Component {
     componentDidMount() {
+        if(this.props.sliders.length==0){
         this.props.getHomeDate();
+        }
+        upMore(this.refs.content,this.props.getHomeDate)
     }
 
     render() {
@@ -15,11 +20,10 @@ class Home extends Component {
                     <span>多点超市 <img src={require('../../images/2hours.png')} alt=""/></span>
                     <span>全球精选</span>
                 </div>
-                <div className="content-scroll">
+                <div className="content-scroll" ref="content">
                     <Slider sliders={this.props.sliders}/>
-                    {this.props.sliders.length > 0 ?
-                        <div className="pannel">
-                            <div className="active1">
+                    <div className="pannel">
+                            {this.props.sliders.length > 0 ? <div className="active1">
                                 <section className="ztly">
                                     <div className="panel-title"><img src={this.props.zhuTiLeYuan.titleUrl} alt=""/>
                                     </div>
@@ -38,7 +42,6 @@ class Home extends Component {
                                 <section className="cx_img">
                                     <a href=''><img src={this.props.advertising[0].imageUrl} alt=""/></a>
                                 </section>
-
                                 <section className="csyx">
                                     <div className="panel-title"><img src={this.props.chaoShiYou.titleUrl} alt=""/>
                                     </div>
@@ -78,8 +81,9 @@ class Home extends Component {
                                         </li>)}
                                     </ul>
                                 </section>
-                            </div>
-                        </div> : null}
+                            </div>:null}
+                        </div>
+                    <Loading/>
                 </div>
             </div>
         )
