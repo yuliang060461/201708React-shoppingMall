@@ -1,0 +1,27 @@
+.carousel-wrapper{
+  position: relative;
+  img{
+    width:100%;
+  }
+  .dots{
+    position: absolute;
+    width:100%;
+    bottom:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span{
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border-radius: 50%;
+      background: #000;
+      opacity: .2;
+      margin: 0 5px;
+      &.active{
+        background-color: #ff712b;
+        opacity: 1;
+      }
+    }
+  }
+}
