@@ -1,0 +1,24 @@
+{
+
+  "hasMore":true,
+  "shoppingList":[
+    {
+      "id":1,
+      "product":"牛奶",
+      "price":190,
+      "own_num":1,
+      "shopping_num":1,
+      "preferential":"",
+      "other":""
+    },
+    {
+      "id":1,
+      "product":"牛奶",
+      "price":190,
+      "own_num":1,
+      "shopping_num":1,
+      "preferential":"",
+      "other":""
+    }
+  ]
+}
