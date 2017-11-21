@@ -4,7 +4,9 @@ import xx1 from '../images/xx.jpg';
 import xx2 from '../images/ss.jpg';
 import yw from '../images/yw.jpg';
 import qd from '../images/qiandao.png';
+import ajax from '../../Vip/ajax'
 export default class Viphome extends Component {
+
     render() {
         return (
             <div className="vip-header">
@@ -23,6 +25,7 @@ export default class Viphome extends Component {
                                 <em className="log">立享优惠</em>
                                 <span className="code"></span>
                                 <span className="codeP">会员专属
+
                             </span>
                             </div>
                         </div>
