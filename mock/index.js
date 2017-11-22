@@ -21,7 +21,7 @@ app.use(function(req,res,next){
     //允许客户端发送Cookie
     res.header('Access-Control-Allow-Credentials',"true");
     //当客户端发向服务器发post跨域的时候，会先发送OPTIONS请求。如果服务器返回的响应头Access-Control-Allow-Methods里有POST的话，才会再次发送POST请求
-    if(req.method == 'OPTIONS'){
+    if(req.method === 'OPTIONS'){
         res.end();
     }else{
         next();
@@ -34,7 +34,7 @@ app.use(session({
 }))
 function getBus(cb) {
     fs.readFile('./userList.json','utf8',function (err,data) {
-        if(err || data.length==0){ //如果文件不存在或者内容是空 传递空数组
+        if(err || data.length === 0){ //如果文件不存在或者内容是空 传递空数组
             cb([]);
         }else{
             cb(JSON.parse(data));
@@ -98,12 +98,12 @@ app.get("/getBus/:name",function (req,res) {
         getBus(function (data) {
 
             let prouct=data.filter((item,index)=>{
-                return   item.usertel == username;
+                return   item.usertel === username;
             });
             res.end(JSON.stringify(prouct[0].cartList));
             // 购物车页面请求后，得到数据渲染
         });
-})
+});
 
 
 //登录态
@@ -137,7 +137,7 @@ app.post('/register', function (req, res) {
     // 注册后
     let user = req.body;
     //{mobile,password}
-    let oldUser = users.find(item => item.usertel == user.usertel);
+    let oldUser = users.find(item => item.usertel === user.usertel);
     if (oldUser) {
         res.json({code: 1, message: '用户名重复'});
     } else {
@@ -163,6 +163,36 @@ app.get("/loginout",function (req,res) {
     req.session.user=null;
      res.json({code:0,message:"退出成功"});
 });
+
+app.post("/reset",function (req,res) {
+        // 读取操作
+        // 写操作
+    // 给我 用户名，用户名的password 更改
+    //  usertel  reset  passpord
+    let user = req.body;
+    let usertel=user.usertel;
+    let password=user.password;
+
+
+  getBus(function (data) {
+      // 读取的对象
+      data=JSON.parse(data);
+      data.forEach((item,index)=>{
+          if(item.username===user.username){
+              item.usertel=usertel;
+              item.password=password;
+          }
+          writeBus(data,function () {
+              res.send({message:"用户账号密码更改成功"})
+          })
+          res.send({message:"此用户不存在"})
+
+      })
+
+
+  })
+
+})
 
 // 搜索 请求为 /search？str=“要输入的值”
 
