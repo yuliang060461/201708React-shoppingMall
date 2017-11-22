@@ -13,7 +13,7 @@ let fs=require("fs");
 app.use(cookieParser());
 app.use(function(req,res,next){
     //允许的来源
-    res.header('Access-Control-Allow-Origin','http://localhost:8080');
+    res.header('Access-Control-Allow-Origin','http://localhost:8081');
     //允许客户端请求的方法
     res.header('Access-Control-Allow-Methods','GET,POST,OPTIONS,PUT,DELETE');
     //允许客户端发送的请求头
@@ -110,8 +110,12 @@ app.get("/getBus/:name",function (req,res) {
 
 
 //登录态
+
+let users=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+//获取 userList 数组
 app.post('/login', function (req, res) {
     let user = req.body;
+    //请求userlist
     let oldUser = users.find(item => item.usertel == user.usertel && item.password == user.password);
     if(oldUser){
         req.session.user = user;//把用户写入会话对象中
