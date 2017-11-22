@@ -1,7 +1,12 @@
 import React,{Component} from 'react';
 import {NavLink} from 'react-router-dom'
 import './index.less'
-export default class Tab extends Component{
+import actions from '../../store/action/session'
+import {connect} from 'react-redux'
+class Tab extends Component{
+    componentDidMount(){
+        this.props.validate();
+    }
     render(){
         return (
             <nav className="tab">
@@ -29,3 +34,4 @@ export default class Tab extends Component{
         )
     }
 }
+export default connect(state=>state.session,actions)(Tab);

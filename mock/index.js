@@ -199,6 +199,7 @@ app.post("/reset",function (req,res) {
 app.get("/search",function (req,res) {
     res.set('Content-Type','application/json');
     let string=req.query.str;
+    console.log(string);
     fs.readFile("./search/search.json","utf8",function (err,data) {
        data=JSON.parse(data);
         let searchProduct=data.filter(item=>{
@@ -206,14 +207,19 @@ app.get("/search",function (req,res) {
         });
         if(searchProduct.length ===0){
             let i=0;
-            while (i<4){
+            while (i<6){
                  let random= Math.round(Math.random()*(18-1)+1);
                 searchProduct[i]=data[random];
                 i++;
             }
-            res.json({dataList:searchProduct,message:"很抱歉,没有找到"+string+"商品,为您推荐今日热卖商品",number:1})
+            setTimeout(()=>{
+                res.json({dataList:data,message:"很抱歉,没有找到"+string+"商品,为您推荐今日热卖商品",number:1})
+            },1000)
         }else{
-            res.json({dataList:searchProduct,number:0})
+            setTimeout(()=>{
+                res.json({dataList:searchProduct,number:0})
+            },1000)
+
         }
     })
 });

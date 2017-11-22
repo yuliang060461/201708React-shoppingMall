@@ -11,8 +11,11 @@ export default class SearchBar extends Component{
         if(e.keyCode===13){
             if(e.target.value){
                 history.push('/searchlist/global/?keyword='+e.target.value);
+                this.props.searchKey(e.target.value)
             }
+
         }
+
     }
     back = ()=>{
         history.goBack();
