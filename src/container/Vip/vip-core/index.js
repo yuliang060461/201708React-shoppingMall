@@ -24,8 +24,8 @@ export default class Vipcore extends Component {
                 </div>
 
                 <div className="vip-center">
-                    <span className="left">积分 <em>5</em></span>
-                    <span className="right">成长值 <em>0</em></span>
+                    <p className="left">积分 <em>5</em></p>
+                    <p className="right">成长值 <em>0</em></p>
                 </div>
 
                 <div className="vip-bottom">

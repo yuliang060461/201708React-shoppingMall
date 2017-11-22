@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
 import './index.less';
-import xx1 from '../images/xx.jpg';
-import xx2 from '../images/ss.jpg';
-import yw from '../images/yw.jpg';
 import qd from '../images/qiandao.png';
-import ajax from '../../Vip/ajax'
+import {Link} from 'react-router-dom'
 export default class Viphome extends Component {
+    constructor() {
+        super();
+        this.state = {}
+    }
 
     render() {
+        console.log(this.props);
+
+      let sliders=this.props.slider.sliders||[];
         return (
             <div className="vip-header">
                 <div className="vip-header-up">
@@ -16,7 +20,7 @@ export default class Viphome extends Component {
                         <div className="left">
                             <div className="left-s">
                                 <span className="crown"></span>
-                                <span className="crowmP">会员中心</span>
+                                <span  className="crowmP">会员中心</span>
                             </div>
 
                         </div>
@@ -70,44 +74,19 @@ export default class Viphome extends Component {
                     </div>
                 </div>
                 <div className="vip-down">
+                    {/*<ul className="vip-downs">
+                     <li className="vip-down-ls">
+                     <img src={xx1} alt=""/>
+                     </li>
+                     </ul>*/}
                     <ul className="vip-downs">
-                        <li className="vip-down-ls">
-                            <img src={xx1} alt=""/>
-                        </li>
-                        <li className="vip-down-ls">
-                            <img src={xx2} alt=""/>
-                        </li>
-                        <li className="vip-down-ls">
-                            <img src={yw} alt=""/>
-                        </li>
-                        <li className="vip-down-ls">
-                            <img src={xx1} alt=""/>
-                        </li>
-                        <li className="vip-down-ls">
-                            <img src={xx2} alt=""/>
-                        </li>
-                        <li className="vip-down-ls">
-                            <img src={yw} alt=""/>
-                        </li>
-                        <li className="vip-down-ls">
-                            <img src={xx1} alt=""/>
-                        </li>
-                        <li className="vip-down-ls">
-                            <img src={xx2} alt=""/>
-                        </li>
-                        <li className="vip-down-ls">
-                            <img src={yw} alt=""/>
-                        </li>
-                        <li className="vip-down-ls">
-                            <img src={xx1} alt=""/>
-                        </li>
-                        <li className="vip-down-ls">
-                            <img src={xx2} alt=""/>
-                        </li>
-                        <li className="vip-down-ls">
-                            <img src={yw} alt=""/>
-                        </li>
-
+                        {
+                           sliders.map((item, index) => (
+                                <li className="vip-down-ls" key={index}>
+                                    <img src={item.imageUrl} alt=""/>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
                 <div className="give">
