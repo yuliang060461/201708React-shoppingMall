@@ -1,54 +1,62 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import actions from '../../store/action/home';
-import Slider from './Slider'
+import {upMore} from '../../utils';
+import Market from './Market';
+import Global from './Global';
 import './index.less'
 class Home extends Component {
-    componentDidMount() {
-        this.props.getHomeDate();
+    constructor() {
+        super();
+        this.state = {
+            tab: true
+        }
     }
+
+    componentDidMount() {
+        if (this.props.sliders.length == 0) {
+            this.props.getHomeDate();
+
+        }
+        upMore(this.refs.content, this.props.getHomeDate);
+
+        this.props.getHotHomeData();
+
+    }
+
+    handleClick = (e)=> {
+        if (e.target.innerHTML === '全球精选') {
+            this.setState({
+                tab: false
+            })
+        } else {
+            this.setState({
+                tab: true
+            })
+        }
+
+    }
+
     render() {
+        console.log(this.props.loading, this.props.page);
         return (
             <div className="mall-home">
-                <div className="home-header">
-                    <span>多点超市 <img src={require('../../images/2hours.png')} alt=""/></span>
-                    <span>全球精选</span>
+                <div className="home-header" onClick={this.handleClick}>
+                    <span className={this.state.tab ? 'active' : ''}>多点超市 <img src={require('../../images/2hours.png')}
+                                                                               alt=""/></span>
+                    <span className={this.state.tab ? '' : 'active'}>全球精选</span>
                 </div>
-                <div className="content-scroll">
-                   <Slider sliders={this.props.sliders}/>
-                    <div className="pannel">
-                        <div className="active1">
-                            <section className="ztly">
 
-                                <div className="panel-title"><img src={this.props.panelTitle.panelTitle1.imageUrl} alt=""/></div>
-                                {this.props.panelBody.panelBody1.images.length>0?
-                                <div className="panel-body panel-body-1-2">
-                                    <a className="col-6 row-1" href=""><img src={this.props.panelBody.panelBody1.images[0].imageUrl} alt=""/></a>
-                                    <span className="col-6 row-1">
-                                        <a className="row-2" href=""><img src={this.props.panelBody.panelBody1.images[1].imageUrl} alt=""/></a>
-                                        <a className="row-2" href=""><img src={this.props.panelBody.panelBody1.images[2].imageUrl} alt=""/></a>
-                                    </span>
-                                </div>:null}
-                            </section>
-                            <section>
-                                <a href=''><img src={this.props.panelBottom.images1.imageUrl} alt=""/></a>
-                            </section>
-                            <section className="csyx">
-                                <div className="panel-title"><img src={this.props.panelTitle.panelTitle2.imageUrl} alt=""/></div>
-                                <ul className="panel-body panel-body-3-3">{
-                                    this.props.panelBody.panelBody2.images.length>0?
-                                        this.props.panelBody.panelBody2.images.map((item,index)=><li className="col-3" key={index}>
-                                            <img src={item.imageUrl} alt=""/></li>)
-                                    :null
-                                }</ul>
-
-
-
-                            </section>
+                {
+                    this.state.tab ?
+                        <div className="content-scroll" ref="content">
+                            <Market {...this.props}/></div>
+                        :
+                        <div className="content-scroll">
+                            <Global {...this.props}/>
                         </div>
+                }
 
-                    </div>
-                </div>
             </div>
         )
     }
