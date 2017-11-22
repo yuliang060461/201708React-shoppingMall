@@ -13,6 +13,7 @@ import SearchList from "../SearchList/index";
 import ShoppingCart from './../ShoppingCart';
 import Login from "../Login/index";
 import Register from "../Register/index";
+import UpdatePwd from "../UpdatePwd/index";
 export default class App extends Component{
     render(){
         return (

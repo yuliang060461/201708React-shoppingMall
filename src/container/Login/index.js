@@ -5,6 +5,7 @@ import Account from "./Account/index";
 import Fast from "./Fast/index";
 import {NavLink,Route} from 'react-router-dom'
 import {CSSTransition,TransitionGroup} from 'react-transition-group'
+import '../jubugundong/index.less'
 export default class Login extends Component{
     constructor(){
         super();
@@ -17,7 +18,7 @@ export default class Login extends Component{
     }
     render(){
         return (
-            <div className="loign">
+            <div className="loign-my">
                 <HeaderMy title="欢迎来到多点商城" beizhu="注册"/>
                 <img src="http://img.dmallcdn.com/common/964135f3-19de-4ab7-a9ba-512b10acd452_750H" alt=""/>
                 <div className="type-select" onMouseOver={this.select}>
