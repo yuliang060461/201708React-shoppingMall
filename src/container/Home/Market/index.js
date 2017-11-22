@@ -2,6 +2,9 @@ import React,{Component} from 'react';
 import Slider from '../Slider';
 import Loading from '../Loading';
 export default class Home extends Component{
+    addToCart=()=>{
+
+    }
     render(){
         return (
             <div>
@@ -59,8 +62,8 @@ export default class Home extends Component{
                                     <div className="panel-title"><img src={this.props.jzsx.titleUrl}
                                                                       alt=""/></div>
                                     <ul className="panel-body panel-body-3-3">
-                                        {this.props.jzsx.dataList.map((item, index)=><li className="col-3"
-                                                                                         key={index}>
+                                        {this.props.jzsx.dataList.map((item, index)=>
+                                            <li className="col-3" key={index}>
                                             <img src={item.img} alt=""/>
                                             <div>
                                                 <div className="good-desc">
@@ -70,7 +73,7 @@ export default class Home extends Component{
                                                 </div>
                                                 {item.label.length > 0 ?
                                                     <div className="tj_label">{item.label}</div> : null}
-                                                <div className="add-btn">+</div>
+                                                <div ref="" className="add-btn" onClick={this.addToCart}>+</div>
                                             </div>
                                         </li>)}
                                     </ul>

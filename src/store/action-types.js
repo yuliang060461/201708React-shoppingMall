@@ -21,6 +21,8 @@ export const GETHOMEDATA='GETHOMEDATA';
 export const FETCH_REGISTER='FETCH_REGISTER';
 //登录
 export const FETCH_LOGIN='FETCH_LOGIN';
+//添加购物车
+export const ADD_TO_CART='ADD_TO_CART';
 
 
 //热销轮播图数据

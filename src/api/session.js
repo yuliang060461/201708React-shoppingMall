@@ -5,3 +5,6 @@ export function fetchRegister(data) {
 export function fetchLogin(data) {
     post('/login',data)
 }
+export function fetchAdd(data,name) {
+    post('/writeBus/'+name,data)
+}

@@ -97,6 +97,7 @@ app.post("/writeBus/:name",function (req,res) {
 //前端传递 参数 名字是  用户名
 app.get("/getBus/:name",function (req,res) {
     let username=req.params.name;
+    console.log(username);
     res.set('Content-Type','application/json');
         getBus(function (data) {
 

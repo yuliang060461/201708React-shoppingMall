@@ -56,7 +56,6 @@ class Home extends Component {
                             <Global {...this.props}/>
                         </div>
                 }
-
             </div>
         )
     }

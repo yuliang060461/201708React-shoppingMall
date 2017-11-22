@@ -1,7 +1,7 @@
 /**
  * Created by zhaoyingying on 2017/11/21.
  */
-import {fetchRegister,fetchLogin} from '../../api/session'
+import {fetchRegister,fetchLogin,fetchAdd} from '../../api/session'
 import * as types from '../action-types'
 export default {
     //注册行为
@@ -30,6 +30,15 @@ export default {
                     dispatch.push('/profile')
                 }
             });
+        }
+    },
+    goodAdd(good,name){
+        return dispatch=>{
+           dispatch({
+               type:types.ADD_TO_CART,
+               payload:fetchAdd(good,name)
+
+           })
         }
     }
 }
