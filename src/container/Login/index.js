@@ -5,6 +5,7 @@ import Account from "./Account/index";
 import Fast from "./Fast/index";
 import {NavLink,Route} from 'react-router-dom'
 import {CSSTransition,TransitionGroup} from 'react-transition-group'
+import '../jubugundong/index.less'
 export default class Login extends Component{
     constructor(){
         super();

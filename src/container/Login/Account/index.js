@@ -1,10 +1,7 @@
 import React,{Component} from 'react';
 import '../../Register/index.less'
 import './index.less'
-import TelInput from "../TelInput/index";
-import PasswordInput from "../PasswordInput/index";
 import Btn from "../../../components/Btn/index";
-import CheckInput from "../CheckInput/index";
 import actions from '../../../store/action/session'
 import {connect} from 'react-redux'
 class Account extends Component{

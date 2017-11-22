@@ -55,7 +55,7 @@ export default {
                 if(code==0){
                     dispatch({
                         type:types.LOGIN_OUT,
-                        payload:{user:null,code:null,message:null}
+                        payload:{user:null,code:null,code:null}
                     });
                 }
             });
