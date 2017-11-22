@@ -33,13 +33,12 @@ export const UPDATE_PWD='UPDATE_PWD';
 
 
 //热销轮播图数据
-<<<<<<< HEAD
-export const GETHOTHOMEDATA = 'GETHOTHOMEDATA';
+
 
 //获取商品列表信息
 export const LOAD_GOODS='LOAD_GOODS';
-=======
-export const GETHOTHOMEDATA = 'GETHOTHOMEDATA'
+
+export const GETHOTHOMEDATA = 'GETHOTHOMEDATA';
 
 //搜索 模块
 export const SEARCHSTART = 'SEARCHSTART';
@@ -48,4 +47,4 @@ export const SEARCHBYHOT = 'SEARCHBYHOT';
 export const SEARCHBYPRICE = 'SEARCHBYPRICE';
 
 
->>>>>>> be97fde9ca82fb7b02b39d6c325ef47c9b00647f
+
