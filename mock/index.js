@@ -31,7 +31,7 @@ app.use(session({
     resave:true,//每次请求借宿，都要重新保存不管修改没
     saveUninitialized:true,
     secret:"zfpx"//加密的秘钥
-}))
+}));
 function getBus(cb) {
     fs.readFile('./userList.json','utf8',function (err,data) {
         if(err || data.length === 0){ //如果文件不存在或者内容是空 传递空数组
@@ -65,30 +65,27 @@ app.get("/worthBuy",function (req,res) {
 //  传递 你点击的str
 // 请求体 要携带 当前点击物品的  {  当前书的信息 }
 app.post("/writeBus/:name",function (req,res) {
-        res.set('Content-Type','application/json');
-    let username=req.params.name;
-    let str ="";
-    req.on('data',function (chunk) {
-        str+=chunk;
-    });
-    //
-    req.on('end',function (req,res) {
-        let product = JSON.parse(str); //前端传递的商品对象
-        getBus(function (products) { //读取用户信息
+    res.set('Content-Type', 'application/json');
+    let username = req.params.name;
+    let str = "";
+    str = req.body;
 
-          let userCart=products[username].cartList;//用户购物车
+    let product = JSON.parse(str); //前端传递的商品对象
+    getBus(function (products) { //读取用户信息
 
-            //如果 传入的 id 和  已有的id相同 数量加一，否则 不加
-           userCart.forEach((item,index)=>{
-                item.id===product.id?userCart.push(product):item.number+1
-            });
+        let userCart = products[username].cartList;//用户购物车
+        //如果 传入的 id 和  已有的id相同 数量加一，否则不加;
 
-             //将获取的书和原有的拼在一起
-            writeBus(products,function () { // 将书写入到json中成功后返回添加后的那一项
-                res.end(JSON.stringify(product));
-            })
+        userCart.forEach((item, index) => {
+            item.id === product.id ? userCart.push(product) : item.number + 1
         });
-})});
+
+        //将获取的书和原有的拼在一起
+        writeBus(JSON.stringify(products), function () { // 将书写入到json中成功后返回添加后的那一项
+            res.end(JSON.stringify(product));
+        })
+    });
+});
 
 //购物车请求数据
 //前端传递 参数 名字是  用户名
@@ -103,6 +100,15 @@ app.get("/getBus/:name",function (req,res) {
             res.end(JSON.stringify(prouct[0].cartList));
             // 购物车页面请求后，得到数据渲染
         });
+});
+
+//庄伟红
+let commodity = require('./commodity');
+
+app.get('/commodity',function (req,res) {
+    /*let {offset,limit} = req.params;
+     console.log(offset, limit);*/
+    res.json(commodity);
 });
 
 
@@ -135,14 +141,15 @@ app.post('/login', function (req, res) {
 
 app.post('/register', function (req, res) {
     // 注册后
-    let user = req.body;
+    let user = req.body();
     //{mobile,password}
     let oldUser = users.find(item => item.usertel === user.usertel);
     if (oldUser) {
         res.json({code: 1, message: '用户名重复'});
     } else {
+        user.cartList=[];
         users.push(user);
-        fs.writeFileSync("./userList.json",users);
+        fs.writeFileSync("./userList.json",JSON.stringify(users));
         //后台向前台返回数据的时候需要一个编码，0表示成功，1表示失败
         res.json({code: 0, message: '用户注册成功'});
     }
