@@ -12,6 +12,7 @@ const history = createHistory();
 import {ConnectedRouter} from 'react-router-redux';
 import Login from "../Login/index";
 import Register from "../Register/index";
+import UpdatePwd from "../UpdatePwd/index";
 export default class App extends Component{
     render(){
         return (

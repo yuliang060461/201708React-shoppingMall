@@ -5,9 +5,9 @@ import TelInput from "../Login/TelInput/index";
 import CheckInput from "../Login/CheckInput/index";
 import PasswordInput from "../Login/PasswordInput/index";
 import Btn from "../../components/Btn/index";
-import actions from '../../store/actions/session'
+import actions from '../../store/action/session'
 import {connect} from 'react-redux'
-export default class Register extends Component{
+class Register extends Component{
     constructor(){
         super();
         this.state={count:60,liked:true,message:null};
@@ -33,6 +33,7 @@ export default class Register extends Component{
         let usertel=this.usertel.value;
         let userCheck=this.usercheck.value;
         let password=this.password.value;
+        console.log(usertel, password);
         if(this.num&&this.num==userCheck){
             this.props.register({usertel,password});
         }else {
@@ -64,11 +65,10 @@ export default class Register extends Component{
                 {this.state.message?<div>{this.state.message}</div>:null}
                 <br/>
                 <Btn title="提交" submit={this.submit}/>
-
             </div>
 
 
         )
     }
 }
-connect(state=>state.session)(Register)
+export default connect(state=>state.session,actions)(Register)

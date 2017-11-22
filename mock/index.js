@@ -14,7 +14,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 
-
 let fs=require("fs");
 
 
@@ -121,12 +120,11 @@ app.get("/getBus",function (req,res) {
 
 
 let users = require("./userList");
-console.log(users);
 
 
 app.post('/login', function (req, res) {
     let user = req.body;
-    let oldUser = users.find(item => item.usertel == user.mobile && item.password == user.password);
+    let oldUser = users.find(item => item.usertel == user.usertel && item.password == user.password);
     if(oldUser){
         req.session.user = user;//把用户写入会话对象中
         res.json({code:0,message:'登录成功!',user});
@@ -168,6 +166,24 @@ app.get('/validate',function(req,res){
     }
 });
 
+app.get('/loginout',function (req,res) {
+    req.session.user = null;
+    res.json({code:0,message:'退出成功'})
+});
 
+app.post('/reset', function (req, res) {
+    let user = req.body;
+    let oldUser = users.forEach(function(item){
+        console.log(item);
+        if (item.usertel == user.usertel) {
+            item.password = user.password;
+
+            res.json({ code: 0, message: '密码修改成功!'});
+        } else {
+            res.json({code:1,message:'用户名不存在'})
+        }
+    });
+    console.log(users);
+});
 app.listen(9000);
 

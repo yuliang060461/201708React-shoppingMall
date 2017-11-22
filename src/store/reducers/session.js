@@ -5,11 +5,17 @@ let initState={
     message:null
 }
 export default function (state=initState,action) {
-    switch (action,type){
+    switch (action.type){
         case types.FETCH_REGISTER:
-            return action.payload;
+            return {...state,...action.payload};
         case types.FETCH_LOGIN:
             return action.payload;
+        case types.VALIDATE:
+            return action.payload;
+        case types.LOGIN_OUT:
+            return {...initState};
+        case types.UPDATE_PWD:
+            return {...state,...action.payload}
         default:
             return state;
     }
