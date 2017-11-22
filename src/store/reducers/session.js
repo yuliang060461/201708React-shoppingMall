@@ -13,7 +13,7 @@ export default function (state=initState,action) {
         case types.VALIDATE:
             return action.payload;
         case types.LOGIN_OUT:
-            return {...initState};
+            return {a:0};
         case types.UPDATE_PWD:
             return {...state,...action.payload}
         default:

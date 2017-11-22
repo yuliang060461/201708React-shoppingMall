@@ -1,7 +1,7 @@
 /**
  * Created by zhaoyingying on 2017/11/21.
  */
-import {fetchRegister,fetchLogin,fetchValidate,fetchUpdatePwd} from '../../api/session'
+import {fetchRegister,fetchLogin,fetchValidate,fetchLoginout,fetchUpdatePwd} from '../../api/session'
 import * as types from '../action-types'
 import {push} from 'react-router-redux'
 export default {
@@ -50,12 +50,12 @@ export default {
     //用户退出
     loginOut(){
         return dispatch=>{
-            fetchValidate().then(payload=>{
+            fetchLoginout().then(payload=>{
                 let {code}=payload;
                 if(code==0){
                     dispatch({
                         type:types.LOGIN_OUT,
-                        payload:{user:null,code:null,code:null}
+                        payload:{user:null,code:null,message:null}
                     });
                 }
             });
