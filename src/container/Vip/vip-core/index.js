@@ -24,61 +24,75 @@ export default class Vipcore extends Component {
                 </div>
 
                 <div className="vip-center">
-                    <p className="left">积分 <em>5</em></p>
-                    <p className="right">成长值 <em>0</em></p>
+                    <p className="left">积分 <em className="left-s">5</em></p>
+                    <p className="right">成长值 <em className="right-s">0</em></p>
                 </div>
 
                 <div className="vip-bottom">
                     <i className="bottom-p">会员专属权益</i>
                     <div className="bottom-down">
-                            <span className="list-down-ls">
+                        <span className="list-down-ls">
                                 <i className="iconfont icon-yifahuo"></i>
-                                <p>新手特权</p>
+                                <p className="down-p">新手特权</p>
                             </span>
                         <span className="list-down-ls">
                                 <i className="iconfont icon-sousuo"></i>
-                                <p>线下特惠</p>
+                                <p className="down-p">线下特惠</p>
                             </span>
                         <span className="list-down-ls">
                                 <i className="iconfont icon-fenxiang1"></i>
-                                <p>积分加价购</p>
+                                <p className="down-p">积分加价购</p>
                             </span>
                         <span className="list-down-ls">
                                 <i className="iconfont icon-xiangji1"></i>
-                                <p>全部权益</p>
-                            </span>
-                        <span className="list-down-ls">
-                                <i className="iconfont icon-gouwuche"></i>
-                                <p>新手特权</p>
-                            </span>
-                        <span className="list-down-ls">
-                                <i className="iconfont icon-wode"></i>
-                                <p>线下特惠</p>
-                            </span>
-                        <span className="list-down-ls">
-                                <i className="iconfont icon-yifahuo"></i>
-                                <p>新手特权</p>
+                                <p className="down-p">全部权益</p>
                             </span>
                         <span className="list-down-ls">
                                 <i className="iconfont icon-sousuo"></i>
-                                <p>线下特惠</p>
+                                <p className="down-p">线下特惠</p>
+                            </span>
+                        <span className="list-down-ls">
+                                <i className="iconfont icon-yifahuo"></i>
+                                <p className="down-p">新手特权</p>
+                            </span>
+                        <span className="list-down-ls">
+                                <i className="iconfont icon-sousuo"></i>
+                                <p className="down-p">线下特惠</p>
                             </span>
                         <span className="list-down-ls">
                                 <i className="iconfont icon-fenxiang1"></i>
-                                <p>积分加价购</p>
+                                <p className="down-p">积分加价购</p>
+                            </span>
+                        <span className="list-down-ls">
+                                <i className="iconfont icon-fenxiang1"></i>
+                                <p className="down-p">积分加价购</p>
                             </span>
                         <span className="list-down-ls">
                                 <i className="iconfont icon-xiangji1"></i>
-                                <p>全部权益</p>
+                                <p className="down-p">全部权益</p>
                             </span>
                         <span className="list-down-ls">
-                                <i className="iconfont icon-gouwuche"></i>
-                                <p>新手特权</p>
+                                <i className="iconfont icon-sousuo"></i>
+                                <p className="down-p">线下特惠</p>
                             </span>
                         <span className="list-down-ls">
-                                <i className="iconfont icon-wode"></i>
-                                <p>线下特惠</p>
+                                <i className="iconfont icon-yifahuo"></i>
+                                <p className="down-p">新手特权</p>
                             </span>
+                        <span className="list-down-ls">
+                                <i className="iconfont icon-fenxiang1"></i>
+                                <p className="down-p">积分加价购</p>
+                            </span>
+                        <span className="list-down-ls">
+                                <i className="iconfont icon-xiangji1"></i>
+                                <p className="down-p">全部权益</p>
+                            </span>
+                        <span className="list-down-ls">
+                                <i className="iconfont icon-sousuo"></i>
+                                <p className="down-p">线下特惠</p>
+                            </span>
+
+
                     </div>
                 </div>
             </div>
