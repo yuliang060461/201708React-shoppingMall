@@ -4,6 +4,7 @@
 import * as types from '../action-types';
 let initState={
     sliders:[],
+    hSliders:[],
     zhuTiLeYuan:{
         titleUrl:'',
         dataList:[]
@@ -73,6 +74,12 @@ export default function (state = initState, action) {
 
                 }*/
             };
+
+        case types.GETHOTHOMEDATA:
+            return{
+                ...state,
+                hSliders:[...action.payload.sliders]
+            }
         default :
             return state;
     }
