@@ -1,7 +1,7 @@
 let express = require('express');
 let app = express();
 
-
+/*
 //cookie插件
 let cookieParser=require("cookie-parser");
 app.use(cookieParser( ));
@@ -19,13 +19,14 @@ let fs=require("fs");
 
 
 app.use(cookieParser());
+*/
 
 
 
 
 app.use(function(req,res,next){
     //允许的来源
-    res.header('Access-Control-Allow-Origin','http://localhost:8081');
+    res.header('Access-Control-Allow-Origin','http://localhost:8080');
     //允许客户端请求的方法
     res.header('Access-Control-Allow-Methods','GET,POST,OPTIONS,PUT,DELETE');
     //允许客户端发送的请求头
@@ -47,6 +48,7 @@ app.listen(3000);
 // });
 
 
+/*
 app.use(session({
     resave:true,//每次请求借宿，都要重新保存不管修改没
     saveUninitialized:true,
@@ -142,6 +144,7 @@ app.post('/login', function (req, res) {
         res.json({code:1,message:'登录失败!'});
     }
 });
+*/
 
 
 // 当使用cookieParse多了两个方法和属性
@@ -156,7 +159,7 @@ app.post('/login', function (req, res) {
 //
 // });
 
-app.post('/register', function (req, res) {
+/*app.post('/register', function (req, res) {
     let user = req.body;//{mobile,password}
     let oldUser = users.find(item => item.usertel == user.usertel);
     if (oldUser) {
@@ -174,8 +177,14 @@ app.post('/validate',function(req,res){
     }else{
         res.json({code:1});
     }
+});*/
+
+let commodity = require('./commodity');
+
+app.get('/commodity',function (req,res) {
+    /*let {offset,limit} = req.params;
+    console.log(offset, limit);*/
+    res.json(commodity);
 });
 
-
-app.listen(9000);
 

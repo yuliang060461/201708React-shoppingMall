@@ -14,4 +14,7 @@ export const FETCH_REGISTER='FETCH_REGISTER';
 export const FETCH_LOGIN='FETCH_LOGIN';
 
 //热销轮播图数据
-export const GETHOTHOMEDATA = 'GETHOTHOMEDATA'
+export const GETHOTHOMEDATA = 'GETHOTHOMEDATA';
+
+//获取商品列表信息
+export const LOAD_GOODS='LOAD_GOODS';

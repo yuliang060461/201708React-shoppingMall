@@ -50,4 +50,40 @@
       background: url("../../../../mock/images/sprit.png") 290px -410px;
     }
   }
+  .choose-address{
+    z-index: 100;
+    position: fixed;
+    bottom:0;
+    width:100%;
+    padding:0 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+    li{
+      padding: 10px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #eee;
+      img{
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+      }
+      p{
+        display: inline-block;
+        width: 200px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+      }
+      .close-button{
+        position: absolute;
+        right: 20px;
+        top:10px;
+        color: orangered;
+      }
+    }
+    li:nth-child(1){
+      color: #999;
+    }
+
+  }
 }
