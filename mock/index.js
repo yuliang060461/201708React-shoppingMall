@@ -42,9 +42,6 @@ function getBus(cb) {
     })
 }
 
-
-
-
 function writeBus(data,cb) {
     fs.writeFile('./userList.json',JSON.stringify(data),cb);
 }
@@ -142,7 +139,6 @@ app.post('/register', function (req, res) {
     //{mobile,password}
     let oldUser = users.find(item => item.usertel == user.usertel);
     if (oldUser) {
-        fs.readFile("./userList",f)
         res.json({code: 1, message: '用户名重复'});
     } else {
         users.push(user);
@@ -160,15 +156,16 @@ app.post('/validate',function(req,res){
     }
 });
 
-app.post("/loginout",function (req,res) {
+app.get("/loginout",function (req,res) {
 
     //根据发送的用户名
     // 删除 这个用户下的 session
     req.session.user=null;
-     res.status(200);
+     res.json({code:0,message:"退出成功"});
 });
 
 // 搜索 请求为 /search？str=“要输入的值”
+
 app.get("/search",function (req,res) {
     res.set('Content-Type','application/json');
     let string=req.query.str;
@@ -194,8 +191,8 @@ app.get("/search",function (req,res) {
 
 app.all("*",function(req,res){
     res.send("404");
-})
+});
 
-app.listen(3000);
+app.listen(3000)
 
 
