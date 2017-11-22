@@ -1,13 +1,48 @@
 import React,{Component} from 'react';
-import {Link} from 'react-router-dom'
+import {Link,Route} from 'react-router-dom'
 import './index.less'
-import actions from '../../store/actions/session'
+import actions from '../../store/action/session'
 import {connect} from 'react-redux'
-export default class Profile extends Component{
+import UpdatePwd from "../UpdatePwd/index";
+class Profile extends Component{
+    constructor(){
+        super();
+        this.state={isShow:false,pwdShow:false}
+    }
+    handleShow=(e)=>{
+        this.setState({
+            isShow:!this.state.isShow
+        });
+    }
+    handlePwd=()=>{
+        this.setState({
+            ...this.state,pwdShow:!this.state.pwdShow
+        });
+    }
+    myLoginout=()=>{
+        this.setState({
+            isShow:false
+        },()=>{
+            this.props.loginOut();
+        });
+    }
+    cancel=()=>{
+        this.setState({
+            ...this.state,pwdShow:!this.state.pwdShow
+        });
+    }
     render(){
         return (
            <div className="profile">
                <section className="profile-header">
+                   {this.props.user? <div className="setting">
+                       <i className="iconfont icon-05 item" onClick={this.handleShow}></i>
+                       {this.state.isShow?<ul className="setList">
+                           <li onClick={this.handlePwd}  className="updat
+                           ePwd item">修改密码</li>
+                           <li onClick={this.myLoginout} className="loginout">退出</li>
+                       </ul>:null}
+                   </div>:null}
                    <div className="my-info">
                        <img className="my-img" src={this.props.user?this.props.user.img:'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3289761550,697278018&fm=27&gp=0.jpg'} alt=""/>
                        <div className="to-login">
@@ -102,8 +137,9 @@ export default class Profile extends Component{
                        </li>
                    </ul>
                </section>
+               {this.state.pwdShow?<UpdatePwd cancel={this.cancel}/>:null}
            </div>
         )
     }
 }
-connect(state=>state.session,actions)(Profile)
+export default connect(state=>state.session,actions)(Profile);

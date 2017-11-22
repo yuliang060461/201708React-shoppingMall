@@ -42,9 +42,6 @@ function getBus(cb) {
     })
 }
 
-
-
-
 function writeBus(data,cb) {
     fs.writeFile('./userList.json',JSON.stringify(data),cb);
 }
@@ -110,9 +107,13 @@ app.get("/getBus/:name",function (req,res) {
 
 
 //登录态
+
+let users=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+//获取 userList 数组
 app.post('/login', function (req, res) {
     let user = req.body;
-    let oldUser = users.find(item => item.usertel == user.usertel && item.password == user.password);
+    //请求userlist
+    let oldUser = users.find(item => item.usertel === user.usertel && item.password === user.password);
     if(oldUser){
         req.session.user = user;//把用户写入会话对象中
         res.json({code:0,message:'登录成功!',user});
@@ -133,12 +134,15 @@ app.post('/login', function (req, res) {
 // });
 
 app.post('/register', function (req, res) {
-    let user = req.body;//{mobile,password}
+    // 注册后
+    let user = req.body;
+    //{mobile,password}
     let oldUser = users.find(item => item.usertel == user.usertel);
     if (oldUser) {
         res.json({code: 1, message: '用户名重复'});
     } else {
         users.push(user);
+        fs.writeFileSync("./userList.json",users);
         //后台向前台返回数据的时候需要一个编码，0表示成功，1表示失败
         res.json({code: 0, message: '用户注册成功'});
     }
@@ -152,18 +156,20 @@ app.post('/validate',function(req,res){
     }
 });
 
-app.post("/loginout",function (req,res) {
+app.get("/loginout",function (req,res) {
 
     //根据发送的用户名
     // 删除 这个用户下的 session
     req.session.user=null;
-     res.status(200);
+     res.json({code:0,message:"退出成功"});
 });
 
 // 搜索 请求为 /search？str=“要输入的值”
+
 app.get("/search",function (req,res) {
     res.set('Content-Type','application/json');
     let string=req.query.str;
+    console.log(string);
     fs.readFile("./search/search.json","utf8",function (err,data) {
        data=JSON.parse(data);
         let searchProduct=data.filter(item=>{
@@ -171,14 +177,19 @@ app.get("/search",function (req,res) {
         });
         if(searchProduct.length ===0){
             let i=0;
-            while (i<4){
+            while (i<6){
                  let random= Math.round(Math.random()*(18-1)+1);
                 searchProduct[i]=data[random];
                 i++;
             }
-            res.json({dataList:searchProduct,message:"很抱歉,没有找到"+string+"商品,为您推荐今日热卖商品",number:1})
+            setTimeout(()=>{
+                res.json({dataList:data,message:"很抱歉,没有找到"+string+"商品,为您推荐今日热卖商品",number:1})
+            },1000)
         }else{
-            res.json({dataList:searchProduct,number:0})
+            setTimeout(()=>{
+                res.json({dataList:searchProduct,number:0})
+            },1000)
+
         }
     })
 });
@@ -186,8 +197,8 @@ app.get("/search",function (req,res) {
 
 app.all("*",function(req,res){
     res.send("404");
-})
+});
 
-app.listen(3000);
+app.listen(3000)
 
 

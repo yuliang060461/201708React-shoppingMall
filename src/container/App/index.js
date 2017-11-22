@@ -32,7 +32,6 @@ export default class App extends Component{
                     <Route path="/vip" component={Vip}/>
                     <Route path="/vipcore" component={Vipcore}/>
                     <Route path="/viphomelog" component={VipHomeLog}/>
-
                     <Tab/>
                 </div>
             </ConnectedRouter>
