@@ -13,7 +13,7 @@ let fs=require("fs");
 app.use(cookieParser());
 app.use(function(req,res,next){
     //允许的来源
-    res.header('Access-Control-Allow-Origin','http://localhost:8081');
+    res.header('Access-Control-Allow-Origin','http://localhost:8080');
     //允许客户端请求的方法
     res.header('Access-Control-Allow-Methods','GET,POST,OPTIONS,PUT,DELETE');
     //允许客户端发送的请求头
@@ -116,7 +116,7 @@ let users=JSON.parse(fs.readFileSync("./userList.json","utf8"));
 app.post('/login', function (req, res) {
     let user = req.body;
     //请求userlist
-    let oldUser = users.find(item => item.usertel == user.usertel && item.password == user.password);
+    let oldUser = users.find(item => item.usertel === user.usertel && item.password === user.password);
     if(oldUser){
         req.session.user = user;//把用户写入会话对象中
         res.json({code:0,message:'登录成功!',user});
@@ -137,12 +137,16 @@ app.post('/login', function (req, res) {
 // });
 
 app.post('/register', function (req, res) {
-    let user = req.body;//{mobile,password}
+    // 注册后
+    let user = req.body;
+    //{mobile,password}
     let oldUser = users.find(item => item.usertel == user.usertel);
     if (oldUser) {
+        fs.readFile("./userList",f)
         res.json({code: 1, message: '用户名重复'});
     } else {
         users.push(user);
+        fs.writeFileSync("./userList.json",users);
         //后台向前台返回数据的时候需要一个编码，0表示成功，1表示失败
         res.json({code: 0, message: '用户注册成功'});
     }
