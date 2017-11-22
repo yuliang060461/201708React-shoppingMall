@@ -22,3 +22,10 @@ export const FETCH_LOGIN='FETCH_LOGIN';
 //热销轮播图数据
 export const GETHOTHOMEDATA = 'GETHOTHOMEDATA'
 
+//搜索 模块
+export const SEARCHSTART = 'SEARCHSTART';
+export const SEARCHDATA = 'SEARCHDATA';
+export const SEARCHBYHOT = 'SEARCHBYHOT';
+export const SEARCHBYPRICE = 'SEARCHBYPRICE';
+
+

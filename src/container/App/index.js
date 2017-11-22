@@ -28,7 +28,6 @@ export default class App extends Component{
                     <Route path="/search" component={Search}/>
                     <Route path="/searchlist" component={SearchList}/>
                     <Route path="/vip" component={Vip}/>
-
                     <Tab/>
                 </div>
             </ConnectedRouter>
