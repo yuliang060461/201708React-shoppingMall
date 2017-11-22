@@ -48,7 +48,7 @@ function writeBus(data,cb) {
 //首页数据
 app.get("/duodianchaoshi",function (req,res) {
     res.set('Content-Type','application/json');
-   fs.createReadStream("./duodianchaoshi/duodianchaoshi.json").pipe(res)
+    fs.createReadStream("./duodianchaoshi/duodianchaoshi.json").pipe(res)
 });
 //热门数据
 app.get("/hotSale",function (req,res) {
@@ -74,32 +74,36 @@ app.post("/writeBus/:name",function (req,res) {
     getBus(function (products) { //读取用户信息
 
         let userCart = products[username].cartList;//用户购物车
-        //如果 传入的 id 和  已有的id相同 数量加一，否则不加;
+
+
+        //如果 传入的 id 和  已有的id相同 数量加一，否则 不加
 
         userCart.forEach((item, index) => {
             item.id === product.id ? userCart.push(product) : item.number + 1
         });
 
         //将获取的书和原有的拼在一起
+
         writeBus(JSON.stringify(products), function () { // 将书写入到json中成功后返回添加后的那一项
             res.end(JSON.stringify(product));
         })
     });
 });
 
+
 //购物车请求数据
 //前端传递 参数 名字是  用户名
 app.get("/getBus/:name",function (req,res) {
     let username=req.params.name;
     res.set('Content-Type','application/json');
-        getBus(function (data) {
+    getBus(function (data) {
 
-            let prouct=data.filter((item,index)=>{
-                return   item.usertel === username;
-            });
-            res.end(JSON.stringify(prouct[0].cartList));
-            // 购物车页面请求后，得到数据渲染
+        let prouct=data.filter((item,index)=>{
+            return   item.usertel === username;
         });
+        res.end(JSON.stringify(prouct[0].cartList));
+        // 购物车页面请求后，得到数据渲染
+    });
 });
 
 //庄伟红
@@ -110,6 +114,7 @@ app.get('/commodity',function (req,res) {
      console.log(offset, limit);*/
     res.json(commodity);
 });
+
 
 
 //登录态
@@ -168,12 +173,12 @@ app.get("/loginout",function (req,res) {
     //根据发送的用户名
     // 删除 这个用户下的 session
     req.session.user=null;
-     res.json({code:0,message:"退出成功"});
+    res.json({code:0,message:"退出成功"});
 });
 
 app.post("/reset",function (req,res) {
-        // 读取操作
-        // 写操作
+    // 读取操作
+    // 写操作
     // 给我 用户名，用户名的password 更改
     //  usertel  reset  passpord
     let user = req.body;
@@ -181,23 +186,23 @@ app.post("/reset",function (req,res) {
     let password=user.password;
 
 
-  getBus(function (data) {
-      // 读取的对象
-      data=JSON.parse(data);
-      data.forEach((item,index)=>{
-          if(item.username===user.username){
-              item.usertel=usertel;
-              item.password=password;
-          }
-          writeBus(data,function () {
-              res.send({message:"用户账号密码更改成功"})
-          })
-          res.send({message:"此用户不存在"})
+    getBus(function (data) {
+        // 读取的对象
+        data=JSON.parse(data);
+        data.forEach((item,index)=>{
+            if(item.username===user.username){
+                item.usertel=usertel;
+                item.password=password;
+            }
+            writeBus(data,function () {
+                res.send({message:"用户账号密码更改成功"})
+            })
+            res.send({message:"此用户不存在"})
 
-      })
+        })
 
 
-  })
+    })
 
 })
 
@@ -208,14 +213,14 @@ app.get("/search",function (req,res) {
     let string=req.query.str;
     console.log(string);
     fs.readFile("./search/search.json","utf8",function (err,data) {
-       data=JSON.parse(data);
+        data=JSON.parse(data);
         let searchProduct=data.filter(item=>{
-        return  item.name.indexOf(string) !== -1
+            return  item.name.indexOf(string) !== -1
         });
         if(searchProduct.length ===0){
             let i=0;
             while (i<6){
-                 let random= Math.round(Math.random()*(18-1)+1);
+                let random= Math.round(Math.random()*(18-1)+1);
                 searchProduct[i]=data[random];
                 i++;
             }
@@ -236,6 +241,6 @@ app.all("*",function(req,res){
     res.send("404");
 });
 
-app.listen(3000);
+app.listen(3001);
 
 

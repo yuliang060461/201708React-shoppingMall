@@ -3,6 +3,8 @@
 * */
 import {combineReducers} from 'redux';
 
+
+import commodity from './commodity';
 import {routerReducer} from 'react-router-redux';
 import cart from './cart'
 import search from './search'
@@ -14,7 +16,9 @@ export default combineReducers({
     routerReducer,
     cart,
     home,
+    commodity,
     search,
     vip,
     session
+
 })
