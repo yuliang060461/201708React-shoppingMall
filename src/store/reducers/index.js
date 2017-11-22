@@ -8,7 +8,7 @@ import cart from './cart'
 import search from './search'
 import home from './home'
 import session from './session'
-import cart from './cart';
+
 import vip from './vip'
 export default combineReducers({
     routerReducer,
