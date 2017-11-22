@@ -5,7 +5,7 @@ import Home from "../Home/index";
 import List from '../List/index';
 import Tab from "../../components/Tab/index";
 import createHistory from 'history/createHashHistory';
-import Vip from "../Vip/index"
+import Vip from "../Vip/index";
 const history = createHistory();
 import {ConnectedRouter} from 'react-router-redux';
 import Search from '../../container/Search'

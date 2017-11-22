@@ -9,14 +9,22 @@
     display: block;
   }
   .content-scroll {
-    position: absolute;
+    position: fixed;
     overflow-x: hidden;
     overflow-y: scroll;
     width: 100%;
-    top: 50px;
-    bottom: 50px;
-    margin-top:10px;
+   top: 50px;
+   bottom: 50px;
     background:#fff;
+    .load-status{
+      text-align: center;
+      color: #c8cccd;
+      background-color: #f6f6f6;
+    }
+    .scroller{
+      padding-bottom: 10px;
+    }
+
   }
   .home-header {
     width: 100%;
@@ -147,7 +155,7 @@
             padding: 2px 3px;
             color: #fff;
             border-radius: 1px;
-            background: #ff6161;
+            background: #ff712b;
             font-size: 9px;
             font-weight: 700;
             line-height: 1;
@@ -164,11 +172,11 @@
             z-index: 99;
             right: 10px;
             bottom: 8px;
-            border: 1px solid lightcoral;
+            border: 1px solid #ff712b;
             width: 30px;
             height: 20px;
             text-align: center;
-            color: lightcoral;
+            color: #ff712b;
           }
         }
       }

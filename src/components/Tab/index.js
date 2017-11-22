@@ -5,7 +5,7 @@ export default class Tab extends Component{
     render(){
         return (
             <nav className="tab">
-                <NavLink exact to="/home">
+                <NavLink exact to="/">
                     <i className="iconfont icon-shouye"></i>
                     <span>首页</span>
                 </NavLink>
