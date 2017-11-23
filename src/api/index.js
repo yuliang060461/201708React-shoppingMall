@@ -1,4 +1,4 @@
-const HOST ='Http://localhost:3000';
+const HOST ='Http://localhost:3001';
 export function get(url) {
     return fetch(HOST+url,{
         method:'get',

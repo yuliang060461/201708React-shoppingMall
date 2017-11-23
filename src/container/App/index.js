@@ -10,10 +10,11 @@ const history = createHistory();
 import {ConnectedRouter} from 'react-router-redux';
 import Search from '../../container/Search'
 import SearchList from "../SearchList/index";
-import ShoppingCart from './../ShoppingCart';
+import ShoppingCart from '../ShoppingCart';
 import Login from "../Login/index";
 import Register from "../Register/index";
-import UpdatePwd from "../UpdatePwd/index";
+import Vipcore from "../Vip/vip-core/index";
+import VipHomeLog from "../Vip/vip-home-log/index";
 export default class App extends Component{
     render(){
         return (
@@ -22,13 +23,15 @@ export default class App extends Component{
                     <Route exact path="/" component={Home}/>
                     <Route path="/home" component={Home}/>
                     <Route path="/profile" component={Profile}/>
-                    <Route path="/shoppingcart" component={ShoppingCart}/>
+                    <Route path="/shoppingCart" component={ShoppingCart}/>
                     <Route path="/login" component={Login}/>
                     <Route path="/register" component={Register}/>
                     <Route path="/list" component={List}/>
                     <Route path="/search" component={Search}/>
                     <Route path="/searchlist" component={SearchList}/>
                     <Route path="/vip" component={Vip}/>
+                    <Route path="/vipcore" component={Vipcore}/>
+                    <Route path="/viphomelog" component={VipHomeLog}/>
                     <Tab/>
                 </div>
             </ConnectedRouter>

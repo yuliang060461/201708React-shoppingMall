@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import Viphome from './vip-home';
 import {connect} from 'react-redux';
 import action from '../../store/actionsvip/vip'
-import Vipcore from "./vip-core/index";
 class Vip extends Component{
 
     componentDidMount(){
@@ -19,10 +18,8 @@ class Vip extends Component{
 
         return (
             <div>
-                <Viphome slider={this.props.slider}>
-
-                </Viphome>
-                {/*<Vipcore/>*/}
+               <Viphome slider={this.props.slider}>
+               </Viphome>
             </div>
         )
     }

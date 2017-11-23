@@ -20,7 +20,9 @@ export default class Viphome extends Component {
                         <div className="left">
                             <div className="left-s">
                                 <span className="crown"></span>
-                                <span  className="crowmP">会员中心</span>
+                                <span  className="crowmP">
+                                    <Link to="/vipcore">会员中心</Link>
+                                </span>
                             </div>
 
                         </div>
@@ -28,8 +30,8 @@ export default class Viphome extends Component {
                             <div className="right-s">
                                 <em className="log">立享优惠</em>
                                 <span className="code"></span>
-                                <span className="codeP">会员专属
-
+                                <span className="codeP">
+                                    <Link to="/VipHomeLog">会员专属</Link>
                             </span>
                             </div>
                         </div>
