@@ -8,7 +8,8 @@
     "lowPrice":6.9,
     "number":20,
     "totalPrice":10,
-    "hot":22
+    "hot":22,
+    "isShow":true
   },
   { "id":2,
     "name": "琯溪红心蜜柚  1粒",
@@ -18,7 +19,8 @@
     "lowPrice":6.9,
     "number":87,
     "totalPrice":11,
-    "hot":12
+    "hot":12,
+    "isShow":true
   },
   {
     "id":3,
@@ -29,7 +31,8 @@
     "lowPrice":9.90,
     "number":27,
     "totalPrice":12,
-    "hot":189
+    "hot":189,
+    "isShow":true
   },
   {
     "id":4,
@@ -40,7 +43,8 @@
     "lowPrice":3.9,
     "number":17,
     "totalPrice":13,
-    "hot":169
+    "hot":169,
+    "isShow":true
 
   },
   {
@@ -52,7 +56,8 @@
     "lowPrice":2.9,
     "number":97,
     "totalPrice":14,
-    "hot":14
+    "hot":14,
+    "isShow":true
   },
   {
     "id":6,
@@ -63,7 +68,8 @@
     "lowPrice":2.9,
     "number":17,
     "totalPrice":15,
-    "hot":11
+    "hot":11,
+    "isShow":true
   },
   {"id": 7,
     "hot":"100",
@@ -75,7 +81,8 @@
     "topPrice": 10.30,
     "lowPrice": 6.9,
     "totalPrice":16,
-    "number":11},
+    "number":11,
+    "isShow":true},
   {"id": 8,
     "hot":"99",
     "title":"推荐商品",
@@ -86,7 +93,8 @@
     "topPrice": 4.30,
     "lowPrice": 3.9,
     "totalPrice":17,
-    "number":12},
+    "number":12,
+    "isShow":true},
   {"id": 9,
     "hot":"98",
     "title":"推荐商品",
@@ -97,7 +105,8 @@
     "topPrice": 55.9,
     "lowPrice": 66.7,
     "totalPrice":18,
-    "number":13},
+    "number":13,
+    "isShow":true},
   {"id": 10,
     "hot":"98",
     "title":"推荐商品",
@@ -108,7 +117,8 @@
     "topPrice": 59.8,
     "lowPrice": 44.8,
     "totalPrice":19,
-    "number":16},
+    "number":16,
+    "isShow":true},
   {"id": 11,
     "hot":"94",
     "title":"推荐商品",
@@ -119,7 +129,8 @@
     "topPrice": 1.8,
     "lowPrice": 1.4,
     "totalPrice":20,
-    "number":11},
+    "number":11,
+    "isShow":true},
   {
     "id": 12,
     "hot":"94",
@@ -131,7 +142,8 @@
     "topPrice": 1.8,
     "lowPrice": 1.4,
     "totalPrice":21,
-    "number":12
+    "number":12,
+    "isShow":true
   },
   {
     "id": 13,
@@ -144,7 +156,8 @@
     "topPrice": 55.6,
     "lowPrice": 54.3,
     "totalPrice":22,
-    "number":19
+    "number":19,
+    "isShow":true
   },
   {
     "id": 14,
@@ -157,7 +170,8 @@
     "topPrice": 49.9,
     "lowPrice": 49.9,
     "totalPrice":23,
-    "number":4
+    "number":4,
+    "isShow":true
   },
   {
     "id": 15,
@@ -170,7 +184,8 @@
     "topPrice": 22.9,
     "lowPrice": 22.9,
     "totalPrice":24,
-    "number":4
+    "number":4,
+    "isShow":true
   },
   {
     "id": 16,
@@ -183,7 +198,8 @@
     "topPrice": 21.9,
     "lowPrice": 21.9,
     "totalPrice":25,
-    "number":4
+    "number":4,
+    "isShow":true
   },
   {
     "id": 17,
@@ -196,7 +212,8 @@
     "topPrice": 7.59,
     "lowPrice": 7.59,
     "totalPrice":26,
-    "number":4
+    "number":4,
+    "isShow":true
   },
   {
     "id": 18,
@@ -209,7 +226,8 @@
     "topPrice": 7.59,
     "lowPrice": 7.59,
     "totalPrice":27,
-    "number":4
+    "number":4,
+    "isShow":true
   },
   {
     "id": 19,
@@ -222,6 +240,7 @@
     "topPrice": 7.59,
     "lowPrice": 7.59,
     "totalPrice":28,
-    "number":4
+    "number":4,
+    "isShow":true
   }
 ]

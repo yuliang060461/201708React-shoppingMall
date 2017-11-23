@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import actions from '../../store/actions/home';
+import Slider from './Slider'
 import {NavLink} from 'react-router-dom'
-import actions2 from '../../store/action/home';
+import actions2 from '../../store/actions/home';
 import actions1 from '../../store/action/session';
 import {upMore} from '../../utils';
 import Market from './Market';
