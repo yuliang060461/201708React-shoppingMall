@@ -98,7 +98,6 @@ app.post("/writeBus/:name",function (req,res) {
             res.send({code:1,message:"添加失败"})
         }
 
-
 });
 
 

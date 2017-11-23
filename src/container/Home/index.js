@@ -55,7 +55,7 @@ class Home extends Component {
                 {
                     this.state.tab ?
                         <div className="content-scroll" ref="content">
-                            <Market {...this.props.home}{...this.props.session} goodAdd={this.props.goodAdd}/></div>
+                            <Market {...this.props.home}{...this.props.session} goodAdd={this.props.goodAdd} toDetail={this.props.toDetail}/></div>
                         :
                         <div className="content-scroll">
                             <Global {...this.props.home}/>

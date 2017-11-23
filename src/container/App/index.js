@@ -15,6 +15,8 @@ import Login from "../Login/index";
 import Register from "../Register/index";
 import Vipcore from "../Vip/vip-core/index";
 import VipHomeLog from "../Vip/vip-home-log/index";
+import Detail from '../Detail';
+import './index.less'
 export default class App extends Component{
     render(){
         return (
@@ -32,6 +34,7 @@ export default class App extends Component{
                     <Route path="/vip" component={Vip}/>
                     <Route path="/vipcore" component={Vipcore}/>
                     <Route path="/viphomelog" component={VipHomeLog}/>
+                    <Route path="/detail" component={Detail}/>
                     <Tab/>
                 </div>
             </ConnectedRouter>

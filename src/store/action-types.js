@@ -24,6 +24,9 @@ export const FETCH_LOGIN='FETCH_LOGIN';
 export const ADD_TO_CART='ADD_TO_CART';
 //移除定时器
 export const REMOVE_FLAG='REMOVE_FLAG';
+//查看详情
+export const SET_DETAIL='SET_DETAIL';
+
 
 //验证用户是否登录
 export const VALIDATE='VALIDATE';
