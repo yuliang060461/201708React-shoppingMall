@@ -8,7 +8,6 @@ export default class Fast extends Component{
                     <i className="iconfont icon-shouji"></i>
                     <input type="text" placeholder="手机号"/>
                 </div>
-                <CheckInput/>
                 <div className="input">
                     <i className="iconfont icon-yanzhengma"></i>
                     <input className="check-input" type="text" placeholder="验证码"/>
