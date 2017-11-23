@@ -10,12 +10,17 @@ export default function (state=initState,action) {
             return {...state,...action.payload};
         case types.FETCH_LOGIN:
             return action.payload;
+
+        case types.ADD_TO_CART:
+            return action.payload;
+
         case types.VALIDATE:
             return action.payload;
         case types.LOGIN_OUT:
             return {...initState};
         case types.UPDATE_PWD:
-            return {...state,...action.payload}
+            return {...state,...action.payload};
+
         default:
             return state;
     }

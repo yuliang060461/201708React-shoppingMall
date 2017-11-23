@@ -14,6 +14,22 @@ export function upMore(element,callback){
     },80)
   });
 }
+
+export let goToTop = (ele) => {
+  clearInterval(ele.timer);
+  let win = document.documentElement || document.body;
+  let duration = win.scrollTop;
+  let step = duration / 30;
+  ele.timer = setInterval(() => {
+    duration -= step;
+    if (duration <= 0) {
+      clearInterval(ele.timer);
+      win.scrollTop = 0;
+    }
+    win.scrollTop = duration;
+  }, 10)
+};
+
 //排序
 export function sortByHot(lists){
   return lists.sort(function(a,b){
@@ -25,3 +41,4 @@ export function sortByPrice(lists){
         return a.totalPrice-b.totalPrice;
     })
 }
+
