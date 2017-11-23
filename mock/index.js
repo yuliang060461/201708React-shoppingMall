@@ -182,29 +182,27 @@ app.post("/reset",function (req,res) {
     // 给我 用户名，用户名的password 更改
     //  usertel  reset  passpord
     let user = req.body;
-    let usertel=user.usertel;
-    let password=user.password;
-
-
-    getBus(function (data) {
-        // 读取的对象
-        data=JSON.parse(data);
-        data.forEach((item,index)=>{
-            if(item.username===user.username){
-                item.usertel=usertel;
-                item.password=password;
+    let nm=user.usertel;
+    let pw=user.password;
+    console.log(user);
+    let userList=fs.readFileSync("./userList.json","utf8");
+    userList=JSON.parse(userList);
+    console.log(userList);
+    let olduser=userList.find(item=>item.usertel===nm);
+    if(olduser){
+        userList.forEach((item,index)=>{
+            if(item.usertel===nm){
+                item.password=pw;
             }
-            writeBus(data,function () {
-                res.send({message:"用户账号密码更改成功"})
-            })
-            res.send({message:"此用户不存在"})
+        });
+        fs.writeFileSync("./userList.json",JSON.stringify(userList));
+        res.send({message:"修改完成",usertel:nm,password:pw});
+    }else {
+        res.send({message:"修改错误"});
+    }
+    });
 
-        })
 
-
-    })
-
-})
 
 // 搜索 请求为 /search？str=“要输入的值”
 
