@@ -20,7 +20,10 @@ export const GETHOMEDATA='GETHOMEDATA';
 export const FETCH_REGISTER='FETCH_REGISTER';
 //登录
 export const FETCH_LOGIN='FETCH_LOGIN';
-
+//添加购物车
+export const ADD_TO_CART='ADD_TO_CART';
+//移除定时器
+export const REMOVE_FLAG='REMOVE_FLAG';
 
 //验证用户是否登录
 export const VALIDATE='VALIDATE';
@@ -33,12 +36,18 @@ export const UPDATE_PWD='UPDATE_PWD';
 
 
 //热销轮播图数据
-export const GETHOTHOMEDATA = 'GETHOTHOMEDATA'
+
+
+//获取商品列表信息
+export const LOAD_GOODS='LOAD_GOODS';
+
+export const GETHOTHOMEDATA = 'GETHOTHOMEDATA';
 
 //搜索 模块
 export const SEARCHSTART = 'SEARCHSTART';
 export const SEARCHDATA = 'SEARCHDATA';
 export const SEARCHBYHOT = 'SEARCHBYHOT';
 export const SEARCHBYPRICE = 'SEARCHBYPRICE';
+
 
 

@@ -112,15 +112,16 @@
           "label": "特价",
           "img": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
           "topPrice": 1.30,
-          "lowPrice":6.9
+          "lowPrice":6.9,
+          "isShow":true
         },
         { "id":2,
           "name": "琯溪红心蜜柚  1粒",
           "label": "特价",
           "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
           "topPrice": 10.30,
-          "lowPrice":6.9
-
+          "lowPrice":6.9,
+          "isShow":true
         },
         {
           "id":3,
@@ -128,7 +129,8 @@
           "label": "特价",
           "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
           "topPrice": 10.30,
-          "lowPrice":9.90
+          "lowPrice":9.90,
+          "isShow":true
         },
         {
           "id":4,
@@ -136,8 +138,8 @@
           "label": "特价",
           "img": "https://img.dmallcdn.com/20170928/708c8d0b-367d-40fb-af69-06a58e83ac6d_360x360H",
           "topPrice": 4.30,
-          "lowPrice":3.9
-
+          "lowPrice":3.9,
+          "isShow":true
         },
         {
           "id":5,
@@ -145,7 +147,8 @@
           "label": "",
           "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
           "topPrice":"",
-          "lowPrice":2.9
+          "lowPrice":2.9,
+          "isShow":true
         },
         {
           "id":6,
@@ -153,7 +156,8 @@
           "label": "特价",
           "img": "https://img.dmallcdn.com/20170928/badf7759-1769-42c5-98f1-b36d78cbcf0e_360x360H",
           "topPrice":"5",
-          "lowPrice":2.9
+          "lowPrice":2.9,
+          "isShow":true
         },
         {
           "id":1,
@@ -161,15 +165,16 @@
           "label": "特价",
           "img": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
           "topPrice": 1.30,
-          "lowPrice":6.9
+          "lowPrice":6.9,
+          "isShow":true
         },
         { "id":2,
           "name": "琯溪红心蜜柚  1粒",
           "label": "特价",
           "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
           "topPrice": 10.30,
-          "lowPrice":6.9
-
+          "lowPrice":6.9,
+          "isShow":true
         },
         {
           "id":3,
@@ -177,7 +182,8 @@
           "label": "特价",
           "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
           "topPrice": 10.30,
-          "lowPrice":9.90
+          "lowPrice":9.90,
+          "isShow":true
         },
         {
           "id":4,
@@ -185,8 +191,8 @@
           "label": "特价",
           "img": "https://img.dmallcdn.com/20170928/708c8d0b-367d-40fb-af69-06a58e83ac6d_360x360H",
           "topPrice": 4.30,
-          "lowPrice":3.9
-
+          "lowPrice":3.9,
+          "isShow":true
         },
         {
           "id":5,
@@ -194,7 +200,8 @@
           "label": "",
           "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
           "topPrice":"",
-          "lowPrice":2.9
+          "lowPrice":2.9,
+          "isShow":true
         },
         {
           "id":6,
@@ -202,7 +209,8 @@
           "label": "特价",
           "img": "https://img.dmallcdn.com/20170928/badf7759-1769-42c5-98f1-b36d78cbcf0e_360x360H",
           "topPrice":"5",
-          "lowPrice":2.9
+          "lowPrice":2.9,
+          "isShow":true
         }
 
       ]}
@@ -218,15 +226,16 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
         "topPrice": 1.30,
-        "lowPrice":6.9
+        "lowPrice":6.9,
+        "isShow":true
       },
       { "id":2,
         "name": "琯溪红心蜜柚  1粒",
         "label": "特价",
         "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
         "topPrice": 10.30,
-        "lowPrice":6.9
-
+        "lowPrice":6.9,
+        "isShow":true
       },
       {
         "id":3,
@@ -234,7 +243,8 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
         "topPrice": 10.30,
-        "lowPrice":9.90
+        "lowPrice":9.90,
+        "isShow":true
       },
       {
         "id":4,
@@ -242,7 +252,8 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20170928/708c8d0b-367d-40fb-af69-06a58e83ac6d_360x360H",
         "topPrice": 4.30,
-        "lowPrice":3.9
+        "lowPrice":3.9,
+        "isShow":true
 
       },
       {
@@ -251,7 +262,8 @@
         "label": "",
         "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
         "topPrice":"",
-        "lowPrice":2.9
+        "lowPrice":2.9,
+        "isShow":true
       },
       {
         "id":6,
@@ -259,7 +271,8 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20170928/badf7759-1769-42c5-98f1-b36d78cbcf0e_360x360H",
         "topPrice":"5",
-        "lowPrice":2.9
+        "lowPrice":2.9,
+        "isShow":true
       },
       {
         "id":1,
@@ -267,15 +280,16 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
         "topPrice": 1.30,
-        "lowPrice":6.9
+        "lowPrice":6.9,
+        "isShow":true
       },
       { "id":2,
         "name": "琯溪红心蜜柚  1粒",
         "label": "特价",
         "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
         "topPrice": 10.30,
-        "lowPrice":6.9
-
+        "lowPrice":6.9,
+        "isShow":true
       },
       {
         "id":3,
@@ -283,7 +297,8 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
         "topPrice": 10.30,
-        "lowPrice":9.90
+        "lowPrice":9.90,
+        "isShow":true
       },
       {
         "id":4,
@@ -291,8 +306,8 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20170928/708c8d0b-367d-40fb-af69-06a58e83ac6d_360x360H",
         "topPrice": 4.30,
-        "lowPrice":3.9
-
+        "lowPrice":3.9,
+        "isShow":true
       },
       {
         "id":5,
@@ -300,7 +315,8 @@
         "label": "",
         "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
         "topPrice":"",
-        "lowPrice":2.9
+        "lowPrice":2.9,
+        "isShow":true
       },
       {
         "id":6,
@@ -308,7 +324,8 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20170928/badf7759-1769-42c5-98f1-b36d78cbcf0e_360x360H",
         "topPrice":"5",
-        "lowPrice":2.9
+        "lowPrice":2.9,
+        "isShow":true
       }
 
     ]}
@@ -323,14 +340,16 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
       "topPrice": 1.30,
-      "lowPrice":6.9
+      "lowPrice":6.9,
+      "isShow":true
     },
     { "id":2,
       "name": "琯溪红心蜜柚  1粒",
       "label": "特价",
       "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
       "topPrice": 10.30,
-      "lowPrice":6.9
+      "lowPrice":6.9,
+      "isShow":true
 
     },
     {
@@ -339,7 +358,8 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
       "topPrice": 10.30,
-      "lowPrice":9.90
+      "lowPrice":9.90,
+      "isShow":true
     },
     {
       "id":4,
@@ -347,7 +367,8 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20170928/708c8d0b-367d-40fb-af69-06a58e83ac6d_360x360H",
       "topPrice": 4.30,
-      "lowPrice":3.9
+      "lowPrice":3.9,
+      "isShow":true
 
     },
     {
@@ -356,7 +377,8 @@
       "label": "",
       "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
       "topPrice":"",
-      "lowPrice":2.9
+      "lowPrice":2.9,
+      "isShow":true
     },
     {
       "id":6,
@@ -364,7 +386,8 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20170928/badf7759-1769-42c5-98f1-b36d78cbcf0e_360x360H",
       "topPrice":"5",
-      "lowPrice":2.9
+      "lowPrice":2.9,
+      "isShow":true
     },
     {
       "id":1,
@@ -372,15 +395,16 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
       "topPrice": 1.30,
-      "lowPrice":6.9
+      "lowPrice":6.9,
+      "isShow":true
     },
     { "id":2,
       "name": "琯溪红心蜜柚  1粒",
       "label": "特价",
       "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
       "topPrice": 10.30,
-      "lowPrice":6.9
-
+      "lowPrice":6.9,
+      "isShow":true
     },
     {
       "id":3,
@@ -388,7 +412,8 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
       "topPrice": 10.30,
-      "lowPrice":9.90
+      "lowPrice":9.90,
+      "isShow":true
     },
     {
       "id":4,
@@ -396,8 +421,8 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20170928/708c8d0b-367d-40fb-af69-06a58e83ac6d_360x360H",
       "topPrice": 4.30,
-      "lowPrice":3.9
-
+      "lowPrice":3.9,
+      "isShow":true
     },
     {
       "id":5,
@@ -405,7 +430,8 @@
       "label": "",
       "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
       "topPrice":"",
-      "lowPrice":2.9
+      "lowPrice":2.9,
+      "isShow":true
     },
     {
       "id":6,
@@ -413,7 +439,8 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20170928/badf7759-1769-42c5-98f1-b36d78cbcf0e_360x360H",
       "topPrice":"5",
-      "lowPrice":2.9
+      "lowPrice":2.9,
+      "isShow":true
     }
 
   ]
@@ -427,14 +454,16 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
       "topPrice": 1.30,
-      "lowPrice":6.9
+      "lowPrice":6.9,
+      "isShow":true
     },
     { "id":2,
       "name": "琯溪红心蜜柚  1粒",
       "label": "特价",
       "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
       "topPrice": 10.30,
-      "lowPrice":6.9
+      "lowPrice":6.9,
+      "isShow":true
 
     },
     {
@@ -443,7 +472,8 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
       "topPrice": 10.30,
-      "lowPrice":9.90
+      "lowPrice":9.90,
+      "isShow":true
     },
     {
       "id":4,
@@ -451,7 +481,8 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20170928/708c8d0b-367d-40fb-af69-06a58e83ac6d_360x360H",
       "topPrice": 4.30,
-      "lowPrice":3.9
+      "lowPrice":3.9,
+      "isShow":true
 
     },
     {
@@ -460,7 +491,8 @@
       "label": "",
       "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
       "topPrice":"",
-      "lowPrice":2.9
+      "lowPrice":2.9,
+      "isShow":true
     },
     {
       "id":6,
@@ -468,7 +500,8 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20170928/badf7759-1769-42c5-98f1-b36d78cbcf0e_360x360H",
       "topPrice":"5",
-      "lowPrice":2.9
+      "lowPrice":2.9,
+      "isShow":true
     },
     {
       "id":1,
@@ -476,15 +509,16 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
       "topPrice": 1.30,
-      "lowPrice":6.9
+      "lowPrice":6.9,
+      "isShow":true
     },
     { "id":2,
       "name": "琯溪红心蜜柚  1粒",
       "label": "特价",
       "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
       "topPrice": 10.30,
-      "lowPrice":6.9
-
+      "lowPrice":6.9,
+      "isShow":true
     },
     {
       "id":3,
@@ -492,7 +526,8 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
       "topPrice": 10.30,
-      "lowPrice":9.90
+      "lowPrice":9.90,
+      "isShow":true
     },
     {
       "id":4,
@@ -500,8 +535,8 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20170928/708c8d0b-367d-40fb-af69-06a58e83ac6d_360x360H",
       "topPrice": 4.30,
-      "lowPrice":3.9
-
+      "lowPrice":3.9,
+      "isShow":true
     },
     {
       "id":5,
@@ -509,7 +544,8 @@
       "label": "",
       "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
       "topPrice":"",
-      "lowPrice":2.9
+      "lowPrice":2.9,
+      "isShow":true
     },
     {
       "id":6,
@@ -517,7 +553,8 @@
       "label": "特价",
       "img": "https://img.dmallcdn.com/20170928/badf7759-1769-42c5-98f1-b36d78cbcf0e_360x360H",
       "topPrice":"5",
-      "lowPrice":2.9
+      "lowPrice":2.9,
+      "isShow":true
     }
 
   ]
@@ -532,14 +569,16 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
         "topPrice": 1.30,
-        "lowPrice":6.9
+        "lowPrice":6.9,
+        "isShow":true
       },
       { "id":2,
         "name": "琯溪红心蜜柚  1粒",
         "label": "特价",
         "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
         "topPrice": 10.30,
-        "lowPrice":6.9
+        "lowPrice":6.9,
+        "isShow":true
 
       },
       {
@@ -548,7 +587,8 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
         "topPrice": 10.30,
-        "lowPrice":9.90
+        "lowPrice":9.90,
+        "isShow":true
       },
       {
         "id":4,
@@ -556,7 +596,8 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20170928/708c8d0b-367d-40fb-af69-06a58e83ac6d_360x360H",
         "topPrice": 4.30,
-        "lowPrice":3.9
+        "lowPrice":3.9,
+        "isShow":true
 
       },
       {
@@ -565,7 +606,8 @@
         "label": "",
         "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
         "topPrice":"",
-        "lowPrice":2.9
+        "lowPrice":2.9,
+        "isShow":true
       },
       {
         "id":6,
@@ -573,7 +615,8 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20170928/badf7759-1769-42c5-98f1-b36d78cbcf0e_360x360H",
         "topPrice":"5",
-        "lowPrice":2.9
+        "lowPrice":2.9,
+        "isShow":true
       },
       {
         "id":1,
@@ -581,14 +624,16 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
         "topPrice": 1.30,
-        "lowPrice":6.9
+        "lowPrice":6.9,
+        "isShow":true
       },
       { "id":2,
         "name": "琯溪红心蜜柚  1粒",
         "label": "特价",
         "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
         "topPrice": 10.30,
-        "lowPrice":6.9
+        "lowPrice":6.9,
+        "isShow":true
 
       },
       {
@@ -597,7 +642,8 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
         "topPrice": 10.30,
-        "lowPrice":9.90
+        "lowPrice":9.90,
+        "isShow":true
       },
       {
         "id":4,
@@ -605,7 +651,8 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20170928/708c8d0b-367d-40fb-af69-06a58e83ac6d_360x360H",
         "topPrice": 4.30,
-        "lowPrice":3.9
+        "lowPrice":3.9,
+        "isShow":true
 
       },
       {
@@ -614,7 +661,8 @@
         "label": "",
         "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
         "topPrice":"",
-        "lowPrice":2.9
+        "lowPrice":2.9,
+        "isShow":true
       },
       {
         "id":6,
@@ -622,7 +670,8 @@
         "label": "特价",
         "img": "https://img.dmallcdn.com/20170928/badf7759-1769-42c5-98f1-b36d78cbcf0e_360x360H",
         "topPrice":"5",
-        "lowPrice":2.9
+        "lowPrice":2.9,
+        "isShow":true
       }
 
     ]}

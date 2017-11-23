@@ -1,9 +1,12 @@
 import React,{Component} from 'react'
 import {createHashHistory} from 'history'
 import {NavLink} from 'react-router-dom'
+import {connect} from 'react-redux'
+import actions from '../../store/action/search'
 import './index.less'
 import SearchBar from "../../components/SearchBar/index";
 let history = createHashHistory();
+@connect(state=>state.search,actions)
 export default class Search extends Component{
     constructor(){
         super();
@@ -24,10 +27,14 @@ export default class Search extends Component{
            value
        })
     }
+    searchKey = (value)=>{
+        this.props.searchData(value)
+    }
     render(){
+        console.log(this.props)
         return(
             <div>
-                <SearchBar value={this.state.value} handleChange={this.handleChange}/>
+                <SearchBar value={this.state.value} handleChange={this.handleChange} searchKey={this.searchKey}/>
                 <div className='search-content'>
                     <div className='search-hot'>
                         <p className='clearfix'>

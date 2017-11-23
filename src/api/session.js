@@ -3,7 +3,13 @@ export function fetchRegister(data) {
     return post('/register',data);
 }
 export function fetchLogin(data) {
+
+
     return post('/login',data)
+}
+export function fetchAdd(data,name) {
+    return post('/writeBus/'+name,data)
+
 }
 export function fetchValidate() {
     return get('/validate')
@@ -15,4 +21,5 @@ export function fetchLoginout() {
 
 export function fetchUpdatePwd(data) {
     return post('/reset',data)
+
 }

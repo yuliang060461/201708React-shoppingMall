@@ -1,7 +1,7 @@
 /**
  * Created by zhaoyingying on 2017/11/21.
  */
-import {fetchRegister,fetchLogin,fetchValidate,fetchLoginout,fetchUpdatePwd} from '../../api/session'
+import {fetchRegister,fetchLogin,fetchValidate,fetchLoginout,fetchUpdatePwd,fetchAdd} from '../../api/session'
 import * as types from '../action-types'
 import {push} from 'react-router-redux'
 export default {
@@ -47,6 +47,7 @@ export default {
         }
     },
 
+
     //用户退出
     loginOut(){
         return dispatch=>{
@@ -74,5 +75,22 @@ export default {
                 }
             });
         }
+    },
+    //添加购物车
+    goodAdd(good,name){
+        return dispatch=>{
+            dispatch({
+                type:types.ADD_TO_CART,
+                payload:fetchAdd(good,name)
+
+            })
+        }
+    },
+    //清除显示
+    removeFlag(){
+        return{
+            type:types.REMOVE_FLAG
+        }
     }
+
 }

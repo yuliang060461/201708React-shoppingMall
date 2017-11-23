@@ -3,6 +3,7 @@
  */
 import * as types from '../action-types';
 import {fetchHomeData,fetchHotHomeData} from '../../api/home'
+
 export default {
     getHomeDate(){
         return (dispatch,getState)=>{
@@ -40,4 +41,5 @@ export default {
             })
         }
     }
+
 }
