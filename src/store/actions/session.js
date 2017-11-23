@@ -32,13 +32,5 @@ export default {
             });
         }
     },
-    goodAdd(good,name){
-        return dispatch=>{
-           dispatch({
-               type:types.ADD_TO_CART,
-               payload:fetchAdd(good,name)
 
-           })
-        }
-    }
 }

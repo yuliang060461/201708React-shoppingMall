@@ -2,9 +2,9 @@ import React,{Component} from 'react';
 import Slider from '../Slider';
 import Loading from '../Loading';
 export default class Home extends Component{
-    addToCart=()=>{
-
-    }
+    addToCart=(good,name)=>{
+this.props.goodAdd(good,name)
+    };
     render(){
         return (
             <div>
@@ -73,7 +73,7 @@ export default class Home extends Component{
                                                 </div>
                                                 {item.label.length > 0 ?
                                                     <div className="tj_label">{item.label}</div> : null}
-                                                <div ref="" className="add-btn" onClick={this.addToCart}>+</div>
+                                                <div className="add-btn" onClick={()=>this.addToCart(item,this.props.user.usertel)}>+</div>
                                             </div>
                                         </li>)}
                                     </ul>
