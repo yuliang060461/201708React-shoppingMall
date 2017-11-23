@@ -1,11 +1,29 @@
 import React, {Component} from 'react';
-import './index.less'
+import './index.less';
+import {Link} from 'react-router-dom';
 export default class Vipcore extends Component {
     render() {
         return (
             <div className="vipcore">
-                <div className="vip-header">
+                <div className="myid">
 
+
+                        <span className="myimg ss">
+                        <i className="iconfont icon-houtui"></i>
+                    </span>
+
+
+                    <span className="myvip ss">
+                        我的会员
+                    </span>
+                    <span className="myqy ss">
+                        <p className="aaa">
+                            权益说明
+                        </p>
+
+                    </span>
+                </div>
+                <div className="vip-header">
                     <div className="header-box">
                         <i className="header-box-log"></i>
                     </div>
@@ -14,7 +32,9 @@ export default class Vipcore extends Component {
                             <span className="hig-s-p">无成长值</span>
                             <span className="s1"></span>
                             <span className="s2"></span>
-                            <span className="hig-s-p1">普通会员</span>
+                            <span className="hig-s-p1">
+                                普通会员
+                            </span>
                         </div>
                     </div>
 

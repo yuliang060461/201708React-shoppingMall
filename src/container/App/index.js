@@ -14,7 +14,6 @@ import ShoppingCart from './../ShoppingCart';
 import Login from "../Login/index";
 import Register from "../Register/index";
 import Vipcore from "../Vip/vip-core/index";
-import VipHomeLog from "../Vip/vip-home-log/index";
 export default class App extends Component{
     render(){
         return (
@@ -31,7 +30,7 @@ export default class App extends Component{
                     <Route path="/searchlist" component={SearchList}/>
                     <Route path="/vip" component={Vip}/>
                     <Route path="/vipcore" component={Vipcore}/>
-                    <Route path="/viphomelog" component={VipHomeLog}/>
+
                     <Tab/>
                 </div>
             </ConnectedRouter>
