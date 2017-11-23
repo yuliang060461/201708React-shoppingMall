@@ -18,6 +18,8 @@ import VipHomeLog from "../Vip/vip-home-log/index";
 import Order from "../Profile/Order/index";
 import ConfirmOrder from "../ConfirmOrder/index";
 import PlaceOrder from "../PlaceOrder/index";
+import Detail from '../Detail';
+import './index.less'
 export default class App extends Component{
     render(){
         return (
@@ -38,6 +40,7 @@ export default class App extends Component{
                     <Route path="/order" component={Order}/>
                     <Route path="/confirmorder" component={ConfirmOrder}/>
                     <Route path="/placeorder" component={PlaceOrder}/>
+                    <Route path="/detail" component={Detail}/>
                     <Tab/>
                 </div>
             </ConnectedRouter>

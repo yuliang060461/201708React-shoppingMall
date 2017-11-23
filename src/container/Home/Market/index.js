@@ -7,6 +7,7 @@ export default class Home extends Component{
 this.props.goodAdd(good,name)
     };
     render(){
+        let name=this.props.user?this.props.user.usertel:'0';
         return (
             <div>
                 <div className="scroller">
@@ -15,18 +16,18 @@ this.props.goodAdd(good,name)
                         <div className="pannel">
                             <div className="active1">
                                 <section className="ztly">
-                                    <div className="panel-title"><LazyLoad height={1000}><img src={this.props.zhuTiLeYuan.titleUrl}
+                                    <div className="panel-title"><LazyLoad height={200}><img src={this.props.zhuTiLeYuan.titleUrl}
                                                                       alt=""/></LazyLoad>
                                     </div>
 
 
                                     <div className="panel-body panel-body-1-2">
-                                        <a className="col-6 row-1" href=""><LazyLoad height={1000}><img
+                                        <a className="col-6 row-1" href=""><LazyLoad height={200}><img
                                             src={this.props.zhuTiLeYuan.dataList[0].imageUrl} alt=""/></LazyLoad></a>
                                         <span className="col-6 row-1">
-                                        <a className="row-2" href=""><LazyLoad height={1000}><img
+                                        <a className="row-2" href=""><LazyLoad height={200}><img
                                             src={this.props.zhuTiLeYuan.dataList[1].imageUrl} alt=""/></LazyLoad></a>
-                                        <a className="row-2" href=""><LazyLoad height={1000}><img
+                                        <a className="row-2" href=""><LazyLoad height={200}><img
                                             src={this.props.zhuTiLeYuan.dataList[2].imageUrl} alt=""/></LazyLoad></a>
                                     </span>
 
@@ -65,7 +66,7 @@ this.props.goodAdd(good,name)
                                     <ul className="panel-body panel-body-3-3">
                                         {this.props.jzsx.dataList.map((item, index)=>
                                             <li className="col-3" key={index}>
-                                            <img src={item.img} alt=""/>
+                                            <img src={item.img} alt="" onClick={(event)=>this.props.toDetail(item)}/>
                                             <div>
                                                 <div className="good-desc">
                                                     <span className="title">{item.name}</span>
@@ -74,7 +75,7 @@ this.props.goodAdd(good,name)
                                                 </div>
                                                 {item.label.length > 0 ?
                                                     <div className="tj_label">{item.label}</div> : null}
-                                                <div className="add-btn" onClick={()=>this.addToCart(item,this.props.user.usertel)}>+</div>
+                                                <div className="add-btn" onClick={()=>this.addToCart(item,name)}>+</div>
                                             </div>
                                         </li>)}
                                     </ul>
