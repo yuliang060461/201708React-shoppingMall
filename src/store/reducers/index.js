@@ -4,7 +4,6 @@
 import {combineReducers} from 'redux';
 import {routerReducer} from 'react-router-redux';
 import commodity from './commodity';
-import {routerReducer} from 'react-router-redux';
 import search from './search'
 import home from './home'
 import session from './session'
