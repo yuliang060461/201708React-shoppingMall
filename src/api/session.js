@@ -1,7 +1,25 @@
-import {post} from './index'
+import {post,get} from './index'
 export function fetchRegister(data) {
-    post('/register',data);
+    return post('/register',data);
 }
 export function fetchLogin(data) {
-    post('/login',data)
+
+
+    return post('/login',data)
+}
+export function fetchAdd(data,name) {
+    return post('/writeBus/'+name,data)
+
+}
+export function fetchValidate() {
+    return get('/validate')
+}
+
+export function fetchLoginout() {
+    return get('/loginout')
+}
+
+export function fetchUpdatePwd(data) {
+    return post('/reset',data)
+
 }

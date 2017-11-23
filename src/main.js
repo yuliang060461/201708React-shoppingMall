@@ -6,6 +6,8 @@ import {Provider} from 'react-redux';
 import App from "./container/App/index";
 
 
+
+
 ReactDOM.render(<Provider store={store}>
     <App/>
 </Provider>, document.querySelector('#root'));

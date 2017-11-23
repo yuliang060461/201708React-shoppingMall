@@ -1,0 +1,38 @@
+.list-content{
+  position:fixed;
+  top:50px;
+  bottom:0;
+  width:100%;
+  background:#fff;
+  z-index:200;
+  overflow-y:auto;
+  .list-tab{
+    display:flex;
+    height:50px;
+    border-bottom:1px solid #dedede;
+    li{
+      flex:1;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      a.active{
+        color:lightsalmon;
+      }
+    }
+  }
+}
+.msg-tip{
+  z-index:1000;
+  position:fixed;
+  top:50%;
+  left:50%;
+  width:100px;
+  height:100px;
+  text-align:center;
+  color:#ff8143;
+  background:rgba(0,0,0,.2);
+  margin:-50px 0 0 -50px;
+  padding:10px;
+  border-radius:10px;
+  font-size:20px;
+}

@@ -2,55 +2,69 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import actions from '../../store/actions/home';
 import Slider from './Slider'
+import {NavLink} from 'react-router-dom'
+import actions2 from '../../store/action/home';
+import actions1 from '../../store/action/session';
+import {upMore} from '../../utils';
+import Market from './Market';
+import Global from './Global';
+import Dialog from '../../components/Dialog'
 import './index.less'
 class Home extends Component {
-    componentDidMount() {
-        this.props.getHomeDate();
+    constructor() {
+        super();
+        this.state = {
+            tab: true
+        }
     }
+
+    componentDidMount() {
+        if (this.props.home.sliders.length == 0) {
+            this.props.getHomeDate();
+
+        }
+        upMore(this.refs.content, this.props.getHomeDate);
+
+        this.props.getHotHomeData();
+
+    }
+
+    handleClick = (e)=> {
+        if (e.target.innerHTML === '全球精选') {
+            this.setState({
+                tab: false
+            })
+        } else if(e.target.innerHTML === '多点超市') {
+            this.setState({
+                tab: true
+            })
+        }
+
+    }
+
     render() {
+        let {flag,isShow}=this.props.session;
         return (
             <div className="mall-home">
-                <div className="home-header">
-                    <span>多点超市 <img src={require('../../images/2hours.png')} alt=""/></span>
-                    <span>全球精选</span>
+                {isShow? <Dialog flag={flag} isShow={isShow} removeFlag={this.props.removeFlag}/>:null}
+                <div className="home-header" onClick={this.handleClick}>
+                    <span className={this.state.tab ? 'active' : ''}>多点超市 <img src={require('../../images/2hours.png')}
+                                                                               alt=""/></span>
+                    <span className={this.state.tab ? '' : 'active'}>全球精选</span>
+                    <NavLink to='/search'><span title='搜索商品' className='R'><i className='iconfont icon-sousuo'></i></span></NavLink>
                 </div>
-                <div className="content-scroll">
-                   <Slider sliders={this.props.sliders}/>
-                    <div className="pannel">
-                        <div className="active1">
-                            <section className="ztly">
 
-                                <div className="panel-title"><img src={this.props.panelTitle.panelTitle1.imageUrl} alt=""/></div>
-                                {this.props.panelBody.panelBody1.images.length>0?
-                                <div className="panel-body panel-body-1-2">
-                                    <a className="col-6 row-1" href=""><img src={this.props.panelBody.panelBody1.images[0].imageUrl} alt=""/></a>
-                                    <span className="col-6 row-1">
-                                        <a className="row-2" href=""><img src={this.props.panelBody.panelBody1.images[1].imageUrl} alt=""/></a>
-                                        <a className="row-2" href=""><img src={this.props.panelBody.panelBody1.images[2].imageUrl} alt=""/></a>
-                                    </span>
-                                </div>:null}
-                            </section>
-                            <section>
-                                <a href=''><img src={this.props.panelBottom.images1.imageUrl} alt=""/></a>
-                            </section>
-                            <section className="csyx">
-                                <div className="panel-title"><img src={this.props.panelTitle.panelTitle2.imageUrl} alt=""/></div>
-                                <ul className="panel-body panel-body-3-3">{
-                                    this.props.panelBody.panelBody2.images.length>0?
-                                        this.props.panelBody.panelBody2.images.map((item,index)=><li className="col-3" key={index}>
-                                            <img src={item.imageUrl} alt=""/></li>)
-                                    :null
-                                }</ul>
-
-
-
-                            </section>
+                {
+                    this.state.tab ?
+                        <div className="content-scroll" ref="content">
+                            <Market {...this.props.home}{...this.props.session} goodAdd={this.props.goodAdd}/></div>
+                        :
+                        <div className="content-scroll">
+                            <Global {...this.props.home}/>
                         </div>
-
-                    </div>
-                </div>
+                }
             </div>
         )
     }
 }
-export default connect(state=>state.home, actions)(Home)
+export default connect(state=>state, {...actions1,...actions2})(Home)

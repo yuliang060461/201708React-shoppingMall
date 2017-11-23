@@ -1,0 +1,89 @@
+.list-header{
+  position: absolute;
+  width: 100%;
+  height: 220px;
+  background-image: url("../../../../mock/images/list-bg.jpg");
+  opacity: 10;
+  .list-search{
+    position: absolute;
+    right: 5px;
+    top:5px;
+    width: 30px;
+    height: 30px;
+    i{
+      font-size: 26px;
+      color: #fff;
+    }
+  }
+  .list-logo{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    width: 95px;
+    height:95px;
+    margin-left: -48px;
+    margin-top: -70px;
+    border-radius: 50%;
+  }
+  .list-address{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    margin-left: -110px;
+    margin-top:40px;
+    width: 220px;
+    height: 30px;
+    color: #fff;
+    .text{
+      display: inline-block;
+      width: 185px;
+      height: 30px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap
+    }
+    .more{
+      position: absolute;
+      right: 5px;
+      width: 20px;
+      height: 20px;
+      background: url("../../../../mock/images/sprit.png") 290px -410px;
+    }
+  }
+  .choose-address{
+    z-index: 100;
+    position: fixed;
+    bottom:0;
+    width:100%;
+    padding:0 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+    li{
+      padding: 10px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #eee;
+      img{
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+      }
+      p{
+        display: inline-block;
+        width: 200px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+      }
+      .close-button{
+        position: absolute;
+        right: 20px;
+        top:10px;
+        color: orangered;
+      }
+    }
+    li:nth-child(1){
+      color: #999;
+    }
+
+  }
+}

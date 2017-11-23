@@ -1,53 +1,94 @@
-img{
-  width: 100%;
-  height: 176px;
-}
-.type-select{
-  position: relative;
-  width: 100%;
-  margin-top: 20px;
-  height: 60px;
-  line-height: 60px;
-  border-bottom: 1px solid lightgray;
-  font-size: 18px;
-  color: gray;
-  display: flex;
-  justify-content: space-between;
-  .left-span{
-    padding:0 30px;
+
+.loign-my
+{
+  img{
+    width: 100%;
+    height: 176px;
   }
-  i{
-    font-size: 14px;
-    color: #ff5700;
-  }
-  a{
+  .type-select{
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    height: 60px;
+    line-height: 60px;
+    border-bottom: 1px solid lightgray;
+    font-size: 18px;
     color: gray;
-  }
-  .right-span{
-    padding:0 30px;
-    &:hover{
+    display: flex;
+    justify-content: space-between;
+    .left-span{
+      padding:0 30px;
+    }
+
+    a{
+      color: gray;
+    }
+    .right-span{
+      padding:0 30px;
+      &:hover{
+        border-bottom: 1px solid #ff5700;
+      }
+    }
+    .style-border{
+      position: absolute;
+      top:60px;
+      left: 5%;
+      width: 40%;
+      height: 1px;
+      background-color: #ff5700;
+    }
+    .active{
+      color: #ff5700;
       border-bottom: 1px solid #ff5700;
     }
   }
-  .style-border{
-    position: absolute;
-    top:60px;
-    left: 5%;
-    width: 40%;
-    height: 1px;
-    background-color: #ff5700;
+  .input{
+    position: relative;
+    margin-top:5px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #cccccc;
+    .check-input{
+      padding-left: 45px;
+    }
+    .border{
+      position: absolute;
+      height: 36px;
+      width: 1px;
+      margin-top: 2px;
+      background-color: #ccc;
+      left: 70%;
+    }
+    .verification{
+      position: absolute;
+      left: 75%;
+      width: 80px;
+      height: 34px;
+      line-height: 34px;
+      margin-top: 3px;
+      background-color: #ff5700;
+      border-radius: 20px;
+      color: #fff;
+    }
+    i{
+      position: absolute;
+      left: 10px;
+      font-size:26px;
+      padding: 0;
+      &.eyes{
+       position: absolute;
+       left: 87%;
+      }
+    }
+    input{
+      box-sizing: border-box;
+      width:96%;
+      height: 40px;
+      padding-left: 35px;
+      border-radius: 12px;
+      font-size: 16px;
+    }
   }
-  .active{
-    color: #ff5700;
-    border-bottom: 1px solid #ff5700;
-  }
-}
-.input{
-  position: relative;
-  margin-top:5px;
-  width: 100%;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  color: #cccccc;
 }

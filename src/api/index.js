@@ -1,4 +1,4 @@
-const HOST ='Http://localhost:9000';
+const HOST ='Http://localhost:3001';
 export function get(url) {
     return fetch(HOST+url,{
         method:'get',
@@ -11,7 +11,7 @@ export function get(url) {
 
 export function post(url,data) {
     return fetch(HOST+url,{
-        method:"post",
+        method:"POST",
         credentials:"include",
         headers:{
             "Accept":'application/json',
