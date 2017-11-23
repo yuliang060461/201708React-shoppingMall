@@ -14,11 +14,12 @@ import {connect} from 'react-redux'
 
     confirm=()=>{
         let password=this.newPwd.value;
-        let userTel=this.props.user.usertel;
+        let usertel=this.props.user.usertel;
         let oldPassword=this.props.user.password;
         let oldPwd=this.oldPwd.value;
         if(oldPwd==oldPassword){
-            this.props.updatePwd({userTel,password})
+            this.props.updatePwd({usertel,password});
+            this.props.cancel();
         }else {
             this.setState({
                 error:true
