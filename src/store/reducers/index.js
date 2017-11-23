@@ -3,10 +3,10 @@
 * */
 import {combineReducers} from 'redux';
 import home from './home';
-import {routerReducer} from 'react-router-redux';
 import cart from './cart'
+import {routerReducer} from 'react-router-redux';
 export default combineReducers({
-    routerReducer,
     cart,
-    home
+    home,
+    routerReducer,
 })

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import actions from '../../store/action/home';
+import actions from '../../store/actions/home';
 import Slider from './Slider'
 import './index.less'
 class Home extends Component {

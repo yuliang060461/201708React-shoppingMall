@@ -11,4 +11,5 @@ import createHistory from 'history/createHashHistory';
 const history = createHistory();//用来管理路由历史的
 let router = routerMiddleware(history);
 let store = createStore(reducer,applyMiddleware(thunk,promise,router,logger));
+window.store=store;
 export default store;

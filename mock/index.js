@@ -1,7 +1,5 @@
 let express = require('express');
 let app = express();
-
-
 //cookie插件
 let cookieParser=require("cookie-parser");
 app.use(cookieParser( ));
@@ -111,6 +109,7 @@ app.post("/writeBus",function (req,res) {
 
 app.get("/getBus",function (req,res) {
 // 查询所有
+        res.set('Content-Type','application/json');
         getBus(function (data) {
             res.end(JSON.stringify(data));
         });
