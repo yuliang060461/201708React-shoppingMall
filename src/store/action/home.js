@@ -3,6 +3,7 @@
  */
 import * as types from '../action-types';
 import {fetchHomeData,fetchHotHomeData} from '../../api/home'
+import {fetchAdd} from '../../api/session'
 export default {
     getHomeDate(){
         return (dispatch,getState)=>{
@@ -37,6 +38,15 @@ export default {
                     type:types.GETHOTHOMEDATA,
                     payload:data
                 })
+            })
+        }
+    },
+    goodAdd(good,name){
+        return dispatch=>{
+            dispatch({
+                type:types.ADD_TO_CART,
+                payload:fetchAdd(good,name)
+
             })
         }
     }

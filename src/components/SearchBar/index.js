@@ -10,7 +10,9 @@ export default class SearchBar extends Component{
     handleKeyDown = (e)=>{
         if(e.keyCode===13){
             if(e.target.value){
+                // this.props.log
                 history.push('/searchlist/global/?keyword='+e.target.value);
+                this.props.searchKey();
                 this.props.searchKey(e.target.value)
             }
 
