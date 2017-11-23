@@ -13,7 +13,6 @@ import session from './session'
 import vip from './vip'
 export default combineReducers({
     routerReducer,
-    cart,
     home,
     commodity,
     search,

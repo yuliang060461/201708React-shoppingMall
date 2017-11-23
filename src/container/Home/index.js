@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {NavLink} from 'react-router-dom'
 import actions from '../../store/action/home';
 import {upMore} from '../../utils';
 import Market from './Market';
@@ -29,7 +30,7 @@ class Home extends Component {
             this.setState({
                 tab: false
             })
-        } else {
+        } else if(e.target.innerHTML === '多点超市') {
             this.setState({
                 tab: true
             })
@@ -45,6 +46,7 @@ class Home extends Component {
                     <span className={this.state.tab ? 'active' : ''}>多点超市 <img src={require('../../images/2hours.png')}
                                                                                alt=""/></span>
                     <span className={this.state.tab ? '' : 'active'}>全球精选</span>
+                    <NavLink to='/search'><span title='搜索商品' className='R'><i className='iconfont icon-sousuo'></i></span></NavLink>
                 </div>
 
                 {
