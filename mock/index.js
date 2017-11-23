@@ -271,6 +271,29 @@ app.get("/search",function (req,res) {
         }
     })
 });
+//悦悦这个接口提交数据
+app.post("/order/:name",function (req,res) {
+    let order=req.body;
+    let username = req.params.name;
+    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+    // suerList 是一个数组
+    let index=userList.findIndex((item)=>{return item.usertel==username});
+    if(index>-1){
+        //用户购物车是一个数组
+        //如果 传入的 id 和  已有的id相同 数量加一，否则 不加
+        userList[index].order=order;
+        fs.writeFile("./userList.json",JSON.stringify(userList));
+        res.send({message:"提单提交成功",order:order})
+}});
+// 盈盈 订单请求数据
+app.get("/order/:name",function (req,res) {
+    let username = req.params.name;
+    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+    // suerList 是一个数组
+    let index=userList.findIndex((item)=>{return item.usertel==username});
+    let order=userList[index].order;
+    res.send({message:"地址提交成功",order:order});
+});
 
 
 app.all("*",function(req,res){
