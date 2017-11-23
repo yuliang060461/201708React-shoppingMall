@@ -7,6 +7,7 @@
     "topPrice": 1.30,
     "lowPrice":6.9,
     "number":20,
+    "totalPrice":10,
     "hot":22
   },
   { "id":2,
@@ -16,6 +17,7 @@
     "topPrice": 10.30,
     "lowPrice":6.9,
     "number":87,
+    "totalPrice":11,
     "hot":12
   },
   {
@@ -26,6 +28,7 @@
     "topPrice": 10.30,
     "lowPrice":9.90,
     "number":27,
+    "totalPrice":12,
     "hot":189
   },
   {
@@ -36,6 +39,7 @@
     "topPrice": 4.30,
     "lowPrice":3.9,
     "number":17,
+    "totalPrice":13,
     "hot":169
 
   },
@@ -47,6 +51,7 @@
     "topPrice":"",
     "lowPrice":2.9,
     "number":97,
+    "totalPrice":14,
     "hot":14
   },
   {
@@ -57,6 +62,7 @@
     "topPrice":"5",
     "lowPrice":2.9,
     "number":17,
+    "totalPrice":15,
     "hot":11
   },
   {"id": 7,
@@ -68,6 +74,7 @@
     "img": "https://img.dmallcdn.com/20170331/08925877-b0e7-4ee6-803e-db7f0307b969_360x360H ",
     "topPrice": 10.30,
     "lowPrice": 6.9,
+    "totalPrice":16,
     "number":11},
   {"id": 8,
     "hot":"99",
@@ -78,6 +85,7 @@
     "img": "https://img.dmallcdn.com/20170720/bac0a6f2-bbd4-46bd-8189-cd2f127809ca_360x360H",
     "topPrice": 4.30,
     "lowPrice": 3.9,
+    "totalPrice":17,
     "number":12},
   {"id": 9,
     "hot":"98",
@@ -88,6 +96,7 @@
     "img": "https://img.dmallcdn.com/20160923/cbebedbb-5564-413d-8453-25285d301a90_360x360H",
     "topPrice": 55.9,
     "lowPrice": 66.7,
+    "totalPrice":18,
     "number":13},
   {"id": 10,
     "hot":"98",
@@ -98,6 +107,7 @@
     "img": "https://img.dmallcdn.com/20170817/524ad40f-8614-4246-b9fd-727fd74d68cf_360x360H",
     "topPrice": 59.8,
     "lowPrice": 44.8,
+    "totalPrice":19,
     "number":16},
   {"id": 11,
     "hot":"94",
@@ -108,6 +118,7 @@
     "img": "https://img.dmallcdn.com/20170727/34c017d0-08da-4135-9ab8-5f2fa281a601_360x360H",
     "topPrice": 1.8,
     "lowPrice": 1.4,
+    "totalPrice":20,
     "number":11},
   {
     "id": 12,
@@ -119,6 +130,7 @@
     "img": "https://img.dmallcdn.com/20170720/bac0a6f2-bbd4-46bd-8189-cd2f127809ca_360x360H",
     "topPrice": 1.8,
     "lowPrice": 1.4,
+    "totalPrice":21,
     "number":12
   },
   {
@@ -131,6 +143,7 @@
     "img": "https://img.dmallcdn.com/20160923/cbebedbb-5564-413d-8453-25285d301a90_360x360H",
     "topPrice": 55.6,
     "lowPrice": 54.3,
+    "totalPrice":22,
     "number":19
   },
   {
@@ -143,6 +156,7 @@
     "img": "https://img.dmallcdn.com/20170228/46688805-0feb-47fc-9ea2-2bbd17aea177_360x360H",
     "topPrice": 49.9,
     "lowPrice": 49.9,
+    "totalPrice":23,
     "number":4
   },
   {
@@ -155,6 +169,7 @@
     "img": "https://img.dmallcdn.com/20170720/fdb3db4a-2c5c-4077-8cd4-fbd4a1f6a3c6_360x360H",
     "topPrice": 22.9,
     "lowPrice": 22.9,
+    "totalPrice":24,
     "number":4
   },
   {
@@ -167,6 +182,7 @@
     "img": "https://img.dmallcdn.com/20170505/31592dfa-2f96-4c01-90de-5689a23a80b6_360x360H",
     "topPrice": 21.9,
     "lowPrice": 21.9,
+    "totalPrice":25,
     "number":4
   },
   {
@@ -179,6 +195,7 @@
     "img": "https://img.dmallcdn.com/20160311/f725aed1-2ade-4674-a164-d8bde768eee2_360x360H",
     "topPrice": 7.59,
     "lowPrice": 7.59,
+    "totalPrice":26,
     "number":4
   },
   {
@@ -191,6 +208,7 @@
     "img": "https://img.dmallcdn.com/20160311/f725aed1-2ade-4674-a164-d8bde768eee2_360x360H",
     "topPrice": 7.59,
     "lowPrice": 7.59,
+    "totalPrice":27,
     "number":4
   },
   {
@@ -203,6 +221,7 @@
     "img": "https://img.dmallcdn.com/20160311/f725aed1-2ade-4674-a164-d8bde768eee2_360x360H",
     "topPrice": 7.59,
     "lowPrice": 7.59,
+    "totalPrice":28,
     "number":4
   }
 ]

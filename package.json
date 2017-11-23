@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server --open",
-    "mock": "node ./mock/index.js"
+    "dev": "webpack-dev-server --open"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +22,7 @@
     "mongoose": "^4.12.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-lazyload": "^2.3.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.8",

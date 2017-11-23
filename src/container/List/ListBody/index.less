@@ -1,5 +1,5 @@
 .list-body{
-  z-index: 2;
+  //z-index: 2;
   width: 100%;
   height: 400px;
   position: absolute;
@@ -18,6 +18,9 @@
       float: left;
       padding: 0 8px;
     }
+    li.active{
+      color: orangered;
+    }
   }
   .list-info{
     height: 30px;
@@ -31,22 +34,22 @@
   }
   .goods-list{
     width: 100%;
-    background: #ccc;
+    overflow-y: scroll;
     .good-each{
       float: left;
       margin: 2px;
       padding: 2px;
       box-sizing: border-box;
       width: 32%;
-      height: 120px;
+      height: 140px;
       border: 1px solid #eee;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      .img{
-        width: 95%;
-        height: 80px;
-        display: inline-block;
+      .img-url{
+        width: 80%!important;
+        height: 50px;
+        margin-bottom: 3px;
       }
       .good-seal{
         width: 30px;
@@ -60,6 +63,7 @@
         margin-bottom:2px;
       }
       .good-info{
+        height: 20px;
         font-size: 12px;
         color: #333;
         overflow:hidden;
@@ -77,7 +81,7 @@
         }
         .good-price{
           color: orangered;
-          font-size: 18px;
+          font-size: 12px;
           float: left;
         }
         .good-add{
