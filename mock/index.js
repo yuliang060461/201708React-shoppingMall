@@ -93,9 +93,9 @@ app.post("/writeBus/:name",function (req,res) {
             //将获取的书和原有的拼在一起
            fs.writeFileSync("./userList.json",JSON.stringify(userList));
 
-            res.send({code:0,message:"购物车添加成功"});
+            res.send({code:0,message:"添加成功"});
         }else {
-            res.send({code:1,message:"添加失败不存在该用户"})
+            res.send({code:1,message:"添加失败"})
         }
 
 
