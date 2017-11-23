@@ -26,6 +26,7 @@ export default {
     searchByHot(){
       return dispatch=>{
           searchData().then(data=>{
+              console.log('searchByHot请求');
               dispatch({
                   type:types.SEARCHBYHOT,
                   payload:data

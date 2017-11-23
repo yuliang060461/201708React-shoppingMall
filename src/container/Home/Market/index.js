@@ -15,18 +15,18 @@ this.props.goodAdd(good,name)
                         <div className="pannel">
                             <div className="active1">
                                 <section className="ztly">
-                                    <div className="panel-title"><LazyLoad height={1000}><img src={this.props.zhuTiLeYuan.titleUrl}
+                                    <div className="panel-title"><LazyLoad height={200}><img src={this.props.zhuTiLeYuan.titleUrl}
                                                                       alt=""/></LazyLoad>
                                     </div>
 
 
                                     <div className="panel-body panel-body-1-2">
-                                        <a className="col-6 row-1" href=""><LazyLoad height={1000}><img
+                                        <a className="col-6 row-1" href=""><LazyLoad height={200}><img
                                             src={this.props.zhuTiLeYuan.dataList[0].imageUrl} alt=""/></LazyLoad></a>
                                         <span className="col-6 row-1">
-                                        <a className="row-2" href=""><LazyLoad height={1000}><img
+                                        <a className="row-2" href=""><LazyLoad height={200}><img
                                             src={this.props.zhuTiLeYuan.dataList[1].imageUrl} alt=""/></LazyLoad></a>
-                                        <a className="row-2" href=""><LazyLoad height={1000}><img
+                                        <a className="row-2" href=""><LazyLoad height={200}><img
                                             src={this.props.zhuTiLeYuan.dataList[2].imageUrl} alt=""/></LazyLoad></a>
                                     </span>
 
