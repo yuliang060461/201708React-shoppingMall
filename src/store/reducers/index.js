@@ -2,8 +2,7 @@
 这里用来合并所有的reducer
 * */
 import {combineReducers} from 'redux';
-
-
+import {routerReducer} from 'react-router-redux';
 import commodity from './commodity';
 import {routerReducer} from 'react-router-redux';
 import search from './search'
@@ -12,11 +11,11 @@ import session from './session'
 import cart from './cart'
 import vip from './vip'
 export default combineReducers({
+    cart,
     routerReducer,
     home,
     commodity,
     search,
     vip,
     session
-
 })

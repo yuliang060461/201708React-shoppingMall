@@ -73,7 +73,6 @@ app.post("/writeBus/:name",function (req,res) {
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
     // suerList 是一个数组
     let index=userList.findIndex((item)=>{return item.usertel==username});
-    console.log(index);
     if(index>-1){
             //用户购物车是一个数组
             //如果 传入的 id 和  已有的id相同 数量加一，否则 不加
@@ -83,23 +82,58 @@ app.post("/writeBus/:name",function (req,res) {
             //数组中 有这个id的 那么num+1
             //没有的  userList[index].cartList.push(product)  添加到数组里
             });
-
         let addcart=userList[index].cartList.some((item,index)=>{
 
            return item.id==product.id
         });
-
         addcart? null:userList[index].cartList.push(product);
             //将获取的书和原有的拼在一起
            fs.writeFileSync("./userList.json",JSON.stringify(userList));
 
-            res.send({code:0,message:"购物车添加成功"});
+            res.send({code:0,message:"添加成功"});
         }else {
-            res.send({code:1,message:"添加失败不存在该用户"})
+            res.send({code:1,message:"添加失败"})
         }
-
-
 });
+
+
+// delecte
+
+app.delete("/deleteBus/:name",function (req,res) {
+    res.set('Content-Type', 'application/json');
+    let username = req.params.name;
+    let  product= req.body;
+    //前端传递的商品对象
+    //读取用户信息
+    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+    // suerList 是一个数组
+    let index=userList.findIndex((item)=>{return item.usertel==username});
+    console.log(index);
+    if(index>-1){
+        //用户购物车是一个数组
+        //如果 传入的 id 和  已有的id相同 数量加一，否则 不加
+        userList[index].cartList.forEach((item) => {
+            // 第一个问题就是为什么他们的值不相等？
+            item.id == product.id?--item.number:item.number;
+            //数组中 有这个id的 那么num-1,但是它的值不能为0，当等于0的时候删除该数组
+            //没有的  userList[index].cartList.push(product)  添加到数组里
+        });
+
+        //过滤掉number=0的哪项
+        userList[index].cartList= userList[index].cartList.filter((item)=>{
+           return parseInt(item.number) > 0
+        })
+
+        //将获取的书和原有的拼在一起
+        fs.writeFileSync("./userList.json",JSON.stringify(userList));
+
+        res.send({code:0,message:"购物车删除成功"});
+    }else {
+        res.send({code:1,message:"添加失败不存在该用户"})
+    }
+});
+
+
 
 
 //购物车请求数据
@@ -119,17 +153,12 @@ app.get("/getBus/:name",function (req,res) {
 
 //庄伟红
 let commodity = require('./commodity');
-
 app.get('/commodity',function (req,res) {
     /*let {offset,limit} = req.params;
      console.log(offset, limit);*/
     res.json(commodity);
 });
-
-
-
 //登录态
-
 let users=JSON.parse(fs.readFileSync("./userList.json","utf8"));
 //获取 userList 数组
 app.post('/login', function (req, res) {
@@ -195,10 +224,9 @@ app.post("/reset",function (req,res) {
     let user = req.body;
     let nm=user.usertel;
     let pw=user.password;
-    console.log(user);
+
     let userList=fs.readFileSync("./userList.json","utf8");
     userList=JSON.parse(userList);
-    console.log(userList);
     let olduser=userList.find(item=>item.usertel===nm);
     if(olduser){
         userList.forEach((item,index)=>{
@@ -220,7 +248,6 @@ app.post("/reset",function (req,res) {
 app.get("/search",function (req,res) {
     res.set('Content-Type','application/json');
     let string=req.query.str;
-    console.log(string);
     fs.readFile("./search/search.json","utf8",function (err,data) {
         data=JSON.parse(data);
         let searchProduct=data.filter(item=>{
@@ -243,6 +270,29 @@ app.get("/search",function (req,res) {
 
         }
     })
+});
+//悦悦这个接口提交数据
+app.post("/order/:name",function (req,res) {
+    let order=req.body;
+    let username = req.params.name;
+    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+    // suerList 是一个数组
+    let index=userList.findIndex((item)=>{return item.usertel==username});
+    if(index>-1){
+        //用户购物车是一个数组
+        //如果 传入的 id 和  已有的id相同 数量加一，否则 不加
+        userList[index].order=order;
+        fs.writeFile("./userList.json",JSON.stringify(userList));
+        res.send({message:"提单提交成功",order:order})
+}});
+// 盈盈 订单请求数据
+app.get("/order/:name",function (req,res) {
+    let username = req.params.name;
+    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+    // suerList 是一个数组
+    let index=userList.findIndex((item)=>{return item.usertel==username});
+    let order=userList[index].order;
+    res.send({message:"地址提交成功",order:order});
 });
 
 

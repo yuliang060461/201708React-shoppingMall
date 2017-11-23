@@ -1,38 +1,27 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import './index.less';
-export default class Dialog extends Component{
-    constructor(){
-        super();
-        this.state={
-            isShow:true,
-            flag:true,
-            code:0
-        }
+export default class Dialog extends Component {
+componentDidMount(){
+    clearTimeout(this.timer);
+    if(this.props.isShow){
+        this.timer=setTimeout(()=>{
+            this.props.removeFlag();
+        },3000)
     }
-    componentDidMount(){
-        clearTimeout(this.timer);
-        if(this.state.isShow){
-            this.timer=setTimeout(()=>{
-                this.setState({
-                    isShow:false
-                })
-            },3000)
-        }
-    }
-    render(){
-        let success='iconfont icon-right-1';
-        let error='iconfont icon-chahaozhuanhuan';
+}
+    render() {
+        let success = 'iconfont icon-right-1';
+        let error = 'iconfont icon-chahaozhuanhuan';
         return (
-
-            <div className="dialog">
-                {
-                    this.state.isShow?<div className="dialogBox">
-                        <i className={this.state.flag?success:error}></i>
-                        <div>{this.state.code?'添加失败':'添加成功'}</div>
-                    </div>:null
-                }
-
+            <div>
+                <div className="dialog">
+                    <div className="dialogBox">
+                        <i className={this.props.flag.code ? error : success}></i>
+                        <div>{this.props.flag.message}</div>
+                    </div>
+                </div>
             </div>
+
         )
     }
 }

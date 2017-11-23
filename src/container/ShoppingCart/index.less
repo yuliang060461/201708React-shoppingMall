@@ -68,40 +68,42 @@ textarea {
   width: 100%;
   margin: 0 auto;
 }
-.header{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-  overflow: hidden;
-  position: fixed;
-  left:0;
-  top:0;
-  z-index:100;
-  border-bottom: 2px dashed #ddd;
-  line-height:70px;
-  height:70px;
-  width: 100%;
-  font-size:20px;
-}
 .h70{
   height:70px;
 }
 .h50{
   height:50px;
 }
-.headerReturn{
-}
-.headerTitle{
-  width: 80%;
-  text-align: center;
-  font-size:20px;
-  font-weight:bold;
-}
-.headerBtn{
-  border: none;
-  font-size:20px;
+.shoppingCartWrap{
+  .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    overflow: hidden;
+    position: fixed;
+    left:0;
+    top:0;
+    z-index:100;
+    border-bottom: 2px dashed #ddd;
+    line-height:70px;
+    height:70px;
+    width: 100%;
+    font-size:20px;
+  }
+  .headerReturn{
+  }
+  .headerTitle{
+    width: 80%;
+    text-align: center;
+    font-size:20px;
+    font-weight:bold;
+  }
+  .headerBtn{
+    border: none;
+    font-size:20px;
+  }
 }
 .shoppingCartAddr{
   -webkit-box-sizing: border-box;
@@ -153,7 +155,7 @@ textarea {
   text-align: center;
   height:100px;
   line-height:100px;
-  width:100px;
+  width:80px;
 }
 .shoppingInfoOpt{
   float:left;
@@ -185,8 +187,8 @@ textarea {
 }
 .shoppingPrice{
   overflow: hidden;
-  width:90px;
-  font-size: 14px;
+  width:110px;
+  font-size: 12px;
   color:#f87120;
 }
 .shoppingNum{
@@ -213,6 +215,7 @@ textarea {
   background: #fff;
   width:20px;
   border: none;
+  cursor: pointer;
 }
 .shoppingCartForm{
   -webkit-box-sizing: border-box;
@@ -224,9 +227,6 @@ textarea {
 .shoppingCartForm input{
   line-height:40px;
   margin:0 10px;
-}
-.shoppingPrice{
-  font-size:20px;
 }
 .shoppingNum{
   font-size:20px;
@@ -370,6 +370,14 @@ textarea {
   background: #fef3c1;
   height: 30px;
   line-height:30px;
+
+}
+.shoppingCartList_storeTag{
+  float: right;
+}
+.shoppingCartList_storeTag img{
+  width: 14px;
+  height:14px;
 }
 
 
