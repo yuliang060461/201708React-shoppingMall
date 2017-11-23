@@ -48,18 +48,18 @@ class Register extends Component{
                 <div className="welcome">欢迎来到多点</div>
                 <div className="input">
                     <i className="iconfont icon-shouji"></i>
-                    <input ref={input=>this.usertel=input} type="text" placeholder="手机号"/>
+                    <input required ref={input=>this.usertel=input} type="text" placeholder="手机号"/>
                 </div>
                 <div className="input">
                     <i className="iconfont icon-yanzhengma"></i>
-                    <input ref={input=>this.usercheck=input} className="check-input" type="text" placeholder="验证码"/>
+                    <input required ref={input=>this.usercheck=input} className="check-input" type="text" placeholder="验证码"/>
                     <span className="border"></span>
                     <span onClick={this.handleClick} className="verification">{this.state.liked?'获取验证码':this.state.count+'秒后重发'}</span>
                 </div>
                 {this.num?<div style={{color:'green',padding:"5px 0"}}>验证码是：{this.num}</div>:null}
                 <div className="input">
                     <i className="lock iconfont icon-mima"></i>
-                    <input ref={input=>this.password=input} type="text" placeholder={this.props.text}/>
+                    <input required ref={input=>this.password=input} type="text" placeholder="请输入6-8位数字或字母"/>
                     <i className="eyes iconfont icon-zhengyanjing"></i>
                 </div>
                 {this.state.message?<div>{this.state.message}</div>:null}

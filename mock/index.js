@@ -141,7 +141,7 @@ app.post('/login', function (req, res) {
 
 app.post('/register', function (req, res) {
     // 注册后
-    let user = req.body();
+    let user = req.body;
     //{mobile,password}
     let oldUser = users.find(item => item.usertel === user.usertel);
     if (oldUser) {
@@ -155,7 +155,7 @@ app.post('/register', function (req, res) {
     }
 });
 
-app.post('/validate',function(req,res){
+app.get('/validate',function(req,res){
     if(req.session.user){//如果会话对象中有user的话，表示已登录
         res.json({code:0,user:req.session.user});
     }else{
@@ -178,25 +178,21 @@ app.post("/reset",function (req,res) {
     //  usertel  reset  passpord
     let user = req.body;
     let usertel=user.usertel;
-    let password=user.password;
-
-
     getBus(function (data) {
         // 读取的对象
-        data=JSON.parse(data);
-        data.forEach((item,index)=>{
-            if(item.username===user.username){
-                item.usertel=usertel;
-                item.password=password;
+        console.log(data);
+        // data=JSON.parse(data);
+        data.map((item)=>{
+            if(item.usertel==usertel){
+                return user;
+            }else {
+                return item;
             }
-            writeBus(data,function () {
-                res.send({message:"用户账号密码更改成功"})
-            })
-            res.send({message:"此用户不存在"})
-
         })
-
-
+        writeBus(data,function () {
+            res.send({message:"用户账号密码更改成功"})
+        })
+        res.send({message:"此用户不存在"})
     })
 
 })
