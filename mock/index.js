@@ -97,7 +97,7 @@ app.post("/writeBus/:name",function (req,res) {
 
 
 // delecte
-
+//   购物车进行减法 &&  当数量为0 时 ，删除该商品
 app.delete("/deleteBus/:name",function (req,res) {
     res.set('Content-Type', 'application/json');
     let username = req.params.name;
@@ -135,6 +135,24 @@ app.delete("/deleteBus/:name",function (req,res) {
 });
 
 
+
+//   删除购物车  该购物车为空
+
+app.delete("./deleteB/:name",function (req,res) {
+    res.set('Content-Type', 'application/json');
+    let username = req.params.name;
+    //前端传递的商品对象
+    //读取用户信息
+    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+    // suerList 是一个数组
+    let index=userList.findIndex((item)=>{return item.usertel==username});
+    if(index>-1){
+        //用户购物车是一个数组
+        //如果 传入的 id 和  已有的id相同 数量加一，否则 不加
+        userList[index].cartList=[];
+        //将获取的书和原有的拼在一起
+        fs.writeFileSync("./userList.json",JSON.stringify(userList));
+    }});
 
 
 //购物车请求数据
@@ -272,6 +290,8 @@ app.get("/search",function (req,res) {
         }
     })
 });
+
+
 //悦悦这个接口提交数据
 //  请求体为{order:[{}, {}, {}, {} ]}
 
@@ -304,9 +324,11 @@ app.post("/order/:name",function (req,res) {
         //  提交过来 id 为 1的 的 哪位就把 购物车 id 为 1的删掉
         // 提交过来id为2的也要删掉
         //
-        fs.writeFile("./userList.json",JSON.stringify(userList));
+        fs.writeFileSync("./userList.json",JSON.stringify(userList));
         res.send({message:"提单提交成功",order:order})
 }});
+
+
 // 盈盈 订单请求数据
 app.get("/order/:name",function (req,res) {
     let username = req.params.name;
@@ -327,7 +349,6 @@ app.get("/order/:name",function (req,res) {
 
 app.post("/address/:name",function (req,res) {
     let address=req.body;//传过来请求体
-
     var chars = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
     function generateMixed(n) {
         var res = "";
@@ -345,8 +366,10 @@ app.post("/address/:name",function (req,res) {
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
     let index=userList.findIndex((item)=>{return item.usertel==username});
     userList[index].cartList=[];
-    userList[index].unpaid=address;//未支付的要放在
-    res.send({message:"地址和商品",address:address});
+    userList[index].unpaid=address;//未支付的要放在 userList里
+
+    fs.writeFileSync("./userList.json",JSON.stringify(userList));
+    res.send({message:"地址和商品",serial:address.serial});
 }) ;
 
 
