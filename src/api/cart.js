@@ -7,6 +7,10 @@ export function postOrderData(data,username) {
     return post('/order/'+username,data)
 }
 
+export function postPlusData(data,username) {
+    return post('/writeBus/'+username,data)
+}
+
 export function delShop(data,username) {
     return del('/deleteBus/'+username,data)
 }

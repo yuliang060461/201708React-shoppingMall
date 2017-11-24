@@ -36,6 +36,7 @@ export default class NoEdit extends Component {
                         onSub={this.props.onSub}
                         onPlus={this.props.onPlus}
                         checkShop={this.props.checkShop}
+                        session={this.props.session}
                         cartList={this.props.cartList}
                     />
                     <form action="" className="shoppingCartForm"   style={this.props.isShowList?{"display":'block'}:{"display":'none'}}>
@@ -68,7 +69,8 @@ export default class NoEdit extends Component {
                                 </div>
                             </div>
                             <button type="button" className="pPriceFormBtn"
-                                    onClick={()=> this.props.dataTransfer(this.props.session.user.usertel)}
+                                    onClick={()=> this.props.dataTransfer(
+                                        this.props.session.user.usertel)}
                             >
                                 <span>结算</span> <span>（{this.props.cart.shoppingCart.shopCount}）</span>
                             </button>
