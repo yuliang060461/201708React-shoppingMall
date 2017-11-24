@@ -119,6 +119,7 @@ app.delete("/deleteBus/:name",function (req,res) {
             //没有的  userList[index].cartList.push(product)  添加到数组里
         });
 
+
         //过滤掉number=0的哪项
         userList[index].cartList= userList[index].cartList.filter((item)=>{
            return parseInt(item.number) > 0
@@ -131,6 +132,7 @@ app.delete("/deleteBus/:name",function (req,res) {
     }else {
         res.send({code:1,message:"添加失败不存在该用户"})
     }
+
 });
 
 

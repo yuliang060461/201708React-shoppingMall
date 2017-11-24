@@ -78,18 +78,34 @@ export default {
     },
     //添加购物车
     goodAdd(good,name){
-        return dispatch=>{
-            dispatch({
-                type:types.ADD_TO_CART,
-                payload:fetchAdd(good,name)
+        return (dispatch,getState)=>{
+            let {user} = getState().session;
+            if(user){
+                dispatch({
+                    type:types.ADD_TO_CART,
+                    payload:fetchAdd(good,name)
+                })
+            }else{
+                dispatch(push('/login/account'))
+            }
 
-            })
         }
     },
     //清除显示
     removeFlag(){
         return{
             type:types.REMOVE_FLAG
+        }
+    },
+    toDetail(good){
+        return (dispatch,getState)=>{
+            dispatch({
+                type: types.SET_DETAIL,
+                payload:good
+            });
+            setTimeout(()=>{
+                dispatch(push('/detail'))
+            },1000)
         }
     }
 
