@@ -53,15 +53,24 @@ export default class SearchList extends Component{
     }
     //排序
     searchByGlobal = ()=>{
+        this.setState({
+            value:''
+        })
         this.props.searActions.searchData()
     }
     searchByHot = ()=>{
         console.log('热销')
+        this.setState({
+            value:''
+        })
         this.props.searActions.searchByHot()
     }
     searchByPrice = ()=>{
         console.log('价格')
         console.log(this.props.searActions.searchByPrice)
+        this.setState({
+            value:''
+        })
         this.props.searActions.searchByPrice()
     }
     //按关键字查找
