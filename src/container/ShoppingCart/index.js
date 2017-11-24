@@ -62,7 +62,7 @@ export default class ShoppingCart extends Component {
         return (
             <div className="shoppingCartWrap">
                 {
-                    this.props.session.user==true&&this.props.cart.shoppingCart.cartList.length==0? <NoShopping/> :
+                    this.props.cart.shoppingCart.cartList.length==0? <NoShopping/> :
                         <HaveShopping
                             cartList={this.props.cart.shoppingCart.cartList}
                             isShowList={this.state.isShowList}

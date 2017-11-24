@@ -120,12 +120,15 @@ export default function (state = init, action) {
                 ...state,
                 shoppingCart: {
                     ...state.shoppingCart,
-                    order:{
-                        cartList:action.payload.order.cartList.filter(
-                            (item,index)=>item.isShow==true
-                        )
+                    order:
+                        [
+                             {
+                            cartList:action.payload.order[0].cartList.filter(
+                                 (item,index)=>item.isShow==true
+                                 )
+                             }
+                        ]
                     }
-                }
             };
             default:
             return state;

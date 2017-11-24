@@ -96,9 +96,12 @@ export default {
     //数据传递
     dataTransfer(username){
         return (dispatch,getState) => {
+            let dataAry=[];
             let data = getState().cart.shoppingCart;
+            debugger
             if(data.shopCount>0){
-                postOrderData(data,username).then(payload => {
+
+                postOrderData({order},username).then(payload => {
                     dispatch({
                         type: types.DATA_TRANSFER,
                         payload
