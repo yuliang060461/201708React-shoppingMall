@@ -83,8 +83,7 @@ app.post("/writeBus/:name",function (req,res) {
             //没有的  userList[index].cartList.push(product)  添加到数组里
             });
         let addcart=userList[index].cartList.some((item,index)=>{
-
-           return item.id==product.id
+           return item.id==product.id;
         });
         addcart? null:userList[index].cartList.push(product);
             //将获取的书和原有的拼在一起
@@ -123,7 +122,7 @@ app.delete("/deleteBus/:name",function (req,res) {
         //过滤掉number=0的哪项
         userList[index].cartList= userList[index].cartList.filter((item)=>{
            return parseInt(item.number) > 0
-        })
+        });
 
         //将获取的书和原有的拼在一起
         fs.writeFileSync("./userList.json",JSON.stringify(userList));
@@ -315,27 +314,49 @@ app.get("/order/:name",function (req,res) {
     // suerList 是一个数组
     let index=userList.findIndex((item)=>{return item.usertel==username});
     let order=userList[index].order;
+    // 这个是个order是一个数组
     res.send({message:"地址提交成功",order:order});
 });
 
+
+// post接口，盈盈把地址和商品给我    放在待支付数的数组里      unpaid
+// { chartList}
+
+//  { order:[{},{},{},{},{},{}], receiver:gae, reverte:tel }
+
+
+app.post("/address/:name",function (req,res) {
+    let address=req.body;//传过来请求体
+
+    var chars = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+    function generateMixed(n) {
+        var res = "";
+        for(var i = 0; i < n ; i ++) {
+            var id = Math.ceil(Math.random()*35);
+            res += chars[id];
+        }
+        return res;
+    }
+    address.serial=generateMixed(10)
+    //10位订单标号
+    address.time=new Date().toLocaleString( );
+    // 订单日期
+    let username = req.params.name;//用户名字
+    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+    let index=userList.findIndex((item)=>{return item.usertel==username});
+    userList[index].cartList=[];
+    userList[index].unpaid=address;//未支付的要放在
+    res.send({message:"地址和商品",address:address});
+}) ;
+
+
+
+//全部  待支付  待发货  已发货 已完成
 // post接口，地址给我  地址 和 订单 合并
-
-
 // 传的对象在放入
-
-
-
-
-
-
-
-
-
-
 app.all("*",function(req,res){
     res.send("404");
 });
-
 app.listen(3001);
 
 

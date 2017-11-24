@@ -17,7 +17,7 @@ export default function (state=initState,action) {
             //向原有的订单列表中新添加一单
             return {order:[...state.order,...action.payload.order]};
         case types.FETCH_RECEIVER:
-            return {...state.order,orderList:{...action.payload}};
+            return {order:[...state.order],orderList:{...action.payload}};
         default:
             return state;
     }

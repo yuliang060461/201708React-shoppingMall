@@ -22,7 +22,7 @@ export default {
                     type:types.FETCH_RECEIVER,
                     payload,
                 });
-                dispatch(push('/order'));
+                dispatch(push('/placeorder'));
             });
         }
     }

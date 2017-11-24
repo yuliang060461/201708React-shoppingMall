@@ -4,6 +4,10 @@ import './index.less'
 import actions from '../../store/action/order'
 import {connect} from 'react-redux'
 class ConfirmOrder extends Component{
+    constructor(){
+        super();
+        this.state={show2:false}
+    }
     componentDidMount(){
         //刚进来页面就要获取到订单信息
         this.name=this.props.session.user.usertel;
@@ -19,6 +23,7 @@ class ConfirmOrder extends Component{
     }
     render(){
         let order=this.props.myOrder;
+        console.log(order,'xxxxxxxxxxxxxxxxxx');
         let imgList;
         if(order.length>0){
             imgList=order[order.length-1].cartList.slice(0,4);
