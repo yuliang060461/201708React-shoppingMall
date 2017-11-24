@@ -30,15 +30,24 @@ class Home extends Component {
     }
 
     handleClick = (e)=> {
-        if (e.target.innerHTML === '全球精选') {
-            this.setState({
-                tab: false
-            })
-        } else if(e.target.innerHTML === '多点超市') {
-            this.setState({
-                tab: true
-            })
+        if(e.target.tagName=='SPAN'){
+            this.setState((prevState, props) =>({
+              tab:!prevState.tab
+            }))
         }
+
+        // if (e.target.innerText === '全球精选') {
+        //     this.setState({
+        //         tab: false
+        //     })
+        // }
+        // if(e.target.innerText === '多点超市') {
+        //     this.setState({
+        //         tab: true
+        //     })
+        // }
+        console.log(this.state.tab);
+        // e.target.innerText.log
 
     }
 

@@ -7,6 +7,7 @@ import SearchlistSort from './components/SearchlistSort/index'
 import {connect} from 'react-redux'
 import searActions from '../../store/action/search'
 import sessActions from '../../store/action/session'
+import Dialog from '../../components/Dialog'
 const mapDispatchToProps = (dispatch) => {
     return{
         searActions:bindActionCreators(searActions,dispatch),
@@ -36,7 +37,7 @@ export default class SearchList extends Component{
         console.log('合并的state',this.props.session);
 
         if(this.props.search.searchList.length===0){
-            this.props.searActions.searchData();
+            // this.props.searActions.searchData();
         }
         // console.log(this.scrollCon);
         // upMore(this.scrollCon,this.props.searchData);
@@ -84,9 +85,11 @@ export default class SearchList extends Component{
         this.props.sessActions.goodAdd(good,name)
     }
     render(){
-        console.log(this.props.search.searchList);
+        let {flag,isShow}=this.props.session;
+        console.log(flag,isShow);
         return(
             <div>
+                {isShow? <Dialog flag={flag} isShow={isShow} removeFlag={this.props.sessActions.removeFlag}/>:null}
                 <SearchBar value={this.state.value} handleChange={this.handleChange} searchKey={this.searchKey}/>
                 <div className='list-content' ref={input=>this.scrollCon=input}>
                     <ul className='list-tab'>
