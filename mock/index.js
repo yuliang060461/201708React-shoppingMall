@@ -138,21 +138,44 @@ app.delete("/deleteBus/:name",function (req,res) {
 
 //   删除购物车  该购物车为空
 
-app.delete("./deleteB/:name",function (req,res) {
-    res.set('Content-Type', 'application/json');
-    let username = req.params.name;
-    //前端传递的商品对象
-    //读取用户信息
-    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
-    // suerList 是一个数组
-    let index=userList.findIndex((item)=>{return item.usertel==username});
-    if(index>-1){
-        //用户购物车是一个数组
-        //如果 传入的 id 和  已有的id相同 数量加一，否则 不加
-        userList[index].cartList=[];
-        //将获取的书和原有的拼在一起
-        fs.writeFileSync("./userList.json",JSON.stringify(userList));
-    }});
+//  删除要传入的商品， 传递的商品直接 删掉
+//
+// app.delete("./deleteProduct/:name",function (req,res) {
+//     res.set('Content-Type', 'application/json');
+//     let username = req.params.name;
+//     let  product= req.body;
+//     //前端传递的商品对象
+//     //读取用户信息
+//     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+//     // suerList 是一个数组
+//     let index=userList.findIndex((item)=>{return item.usertel==username});
+//     console.log(index);
+//     if(index>-1){
+//
+//
+//
+//         for (var i = 0; i < order.length; i++) {
+//             var id2 = order[i].id;
+//
+//             for (var j = 0; j < userList[index].cartList.length; j++) {
+//                 var id1 = userList[index].cartList[j].id;
+//                 if(id1==id2){
+//                     userList[index].cartList[j].splice(j,1)
+//                 }
+//             }
+//         }
+//
+//
+//         //将获取的书和原有的拼在一起
+//         fs.writeFileSync("./userList.json",JSON.stringify(userList));
+//
+//         res.send({code:0,message:"购物车删除成功"});
+//     }else {
+//         res.send({code:1,message:"添加失败不存在该用户"})
+//     }
+//
+//
+// });
 
 
 //购物车请求数据
@@ -373,26 +396,15 @@ app.post("/address/:name",function (req,res) {
 }) ;
 
 app.post("/paid",function (req,res) {
-
     let username=req.query;
-
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
     let index=userList.findIndex((item)=>{return item.usertel==username});
-
-
     userList[index].paid=userList[index].unpaid;
-
     userList[index].unpaid=[];
-
     fs.writeFileSync("./userList.json",JSON.parse(userList));
-
     res.send({message:"支付成功"})
     // paid 下面的为 当前支付的，
-
-
-
     // 用户名下的 unpaid 为【】
-
 });
 
 
