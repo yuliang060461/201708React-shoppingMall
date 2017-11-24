@@ -16,11 +16,11 @@ class Vip extends Component {
         return (
             <div>
                 {
-                    this.props.user ? <Viphome slider={this.props.slider}>
+                    this.props.session.user ? <Viphome slider={this.props.vip.slider}>
                     </Viphome> : <Vipsign/>
                 }
             </div>
         )
     }
 }
-export default connect(state => state.vip, {...action, ...action1})(Vip)
+export default connect(state => state, {...action, ...action1})(Vip)
