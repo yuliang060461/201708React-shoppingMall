@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 import './index.less';
-import {Link} from 'react-router-dom';
+import {createHashHistory} from 'history';
+let history =createHashHistory();
 export default class Vipcore extends Component {
+    goback=()=>{
+        history.goBack();
+    };
     render() {
         return (
             <div className="vipcore">
@@ -9,7 +13,7 @@ export default class Vipcore extends Component {
 
 
                         <span className="myimg ss">
-                        <i className="iconfont icon-houtui"></i>
+                        <i className="iconfont icon-houtui" onClick={this.goback}></i>
                     </span>
 
 

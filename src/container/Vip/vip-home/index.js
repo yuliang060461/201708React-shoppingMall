@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import './index.less';
 import qd from '../images/qiandao.png';
-import bj from '../images/bbbbb.jpg'
+import bj from '../images/er.png'
 import {Link} from 'react-router-dom'
-
 export default class Viphome extends Component {
     constructor() {
         super();
@@ -12,12 +11,10 @@ export default class Viphome extends Component {
 
     getHomelog = () => {
         this.setState({isShow: !this.state.isShow})
-
     }
 
     render() {
         console.log(this.props);
-
         let sliders = this.props.slider.sliders || [];
         return (
             <div className="vip-header">
@@ -56,7 +53,7 @@ export default class Viphome extends Component {
 
                             </div>
                         </div>
-                        <div className="give">
+                        <div className="give" onClick={this.getHomelog}>
                             <img className="gives" src={qd} alt=""/>
                         </div>
                         <div className="list-upbar">
@@ -133,7 +130,7 @@ export default class Viphome extends Component {
 
                                 </p>
                                 <button className="btn">
-                                    下载App立享98折
+                                    关注微信优惠更多
                                 </button>
                             </div>
 
@@ -144,9 +141,7 @@ export default class Viphome extends Component {
                     </div> : null
                 }
 
-
             </div>
-
         )
     }
 }
