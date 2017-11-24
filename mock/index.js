@@ -349,7 +349,6 @@ app.get("/order/:name",function (req,res) {
 
 app.post("/address/:name",function (req,res) {
     let address=req.body;//传过来请求体
-
     var chars = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
     function generateMixed(n) {
         var res = "";
@@ -369,8 +368,8 @@ app.post("/address/:name",function (req,res) {
     userList[index].cartList=[];
     userList[index].unpaid=address;//未支付的要放在 userList里
 
-    fs.writeFileSync("./userList.json",JSON.stringify(userList))
-    res.send({message:"地址和商品",address:address});
+    fs.writeFileSync("./userList.json",JSON.stringify(userList));
+    res.send({message:"地址和商品",serial:address.serial});
 }) ;
 
 
