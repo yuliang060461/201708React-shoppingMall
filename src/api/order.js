@@ -7,6 +7,6 @@ export function fetchPaying(name) {
    return get(`/order/${name}`);
 }
 //向后台发送收货想详细信息
-export function fetchReceiver(orderId,data) {
-    return post(`/receiver?orderId=${orderId}`,data);
+export function fetchReceiver(name,data) {
+    return post(`/address/${name}`,data);
 }

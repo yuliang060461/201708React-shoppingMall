@@ -15,18 +15,14 @@ export default {
             })
         }
     },
-    sendReceiver(orderId,data){
+    sendReceiver(name,data){
         return dispatch=>{
-            fetchReceiver(orderId,data
-            ).then(res=>{
-                let {code}=res;
-                if(code==0){
-                    dispatch({
-                        type:types.FETCH_RECEIVER,
-                        payload:{orderId,data}
-                    });
-                    dispatch(push('/order'));
-                }
+            fetchReceiver(name,data).then(payload=>{
+                dispatch({
+                    type:types.FETCH_RECEIVER,
+                    payload,
+                });
+                dispatch(push('/order'));
             });
         }
     }
