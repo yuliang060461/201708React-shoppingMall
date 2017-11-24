@@ -98,9 +98,9 @@ export default {
         return (dispatch,getState) => {
             let dataAry=[];
             let data = getState().cart.shoppingCart;
-            debugger
+            dataAry.push(data);
+            let order=dataAry;
             if(data.shopCount>0){
-
                 postOrderData({order},username).then(payload => {
                     dispatch({
                         type: types.DATA_TRANSFER,
