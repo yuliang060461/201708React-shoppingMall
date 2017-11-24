@@ -16,9 +16,15 @@ export default class Search extends Component{
     }
     handleClick = (e)=>{
       // console.log(e.target.innerHTML);
-        this.setState({
-            value:e.target.innerHTML
-        })
+        if(e.target.tagName.toLowerCase()=='li'){
+            this.setState({
+                value:e.target.innerHTML
+            })
+        };
+        history.push('/searchlist/global/?keyword='+e.target.innerHTML);
+        // this.props.searchKey();
+        this.searchKey();
+        this.searchKey(e.target.innerHTML)
         console.log(e.target.innerHTML);
         // this.searchInput.focus();
     }
@@ -28,7 +34,11 @@ export default class Search extends Component{
        })
     }
     searchKey = (value)=>{
-        this.props.searchData(value)
+        if(value){
+            this.props.searchData(value)
+        }else{
+            this.props.searchData();
+        }
     }
     render(){
         console.log(this.props)
@@ -41,13 +51,13 @@ export default class Search extends Component{
                             <span className='L light-gray'>热门搜索</span>
                             <span className='R'>全球精选</span>
                         </p>
-                        <ul>
-                            <li onClick={this.handleClick}>饺子</li>
+                        <ul onClick={this.handleClick}>
+                            <li>牛奶</li>
                             <li>饭盒</li>
                             <li>面粉</li>
                             <li>婴儿湿巾</li>
                             <li>方便面</li>
-                            <li>饺子</li>
+                            <li>香蕉</li>
                             <li>饭盒</li>
                             <li>面粉</li><li>饺子</li>
                             <li>饭盒</li>
