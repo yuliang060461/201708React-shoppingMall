@@ -10,6 +10,7 @@ import session from './session'
 import cart from './cart'
 import vip from './vip'
 import detail from './detail'
+import myOrder from './order'
 export default combineReducers({
 
     routerReducer,
@@ -19,5 +20,6 @@ export default combineReducers({
     search,
     vip,
     session,
-    detail
+    detail,
+    myOrder
 })

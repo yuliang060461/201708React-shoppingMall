@@ -1,10 +1,20 @@
 import React,{Component} from 'react';
 import HeaderMy from "../../components/Header/index";
 import './index.less'
-export default class ConfirmOrder extends Component{
+import actions from '../../store/action/order'
+import {connect} from 'react-redux'
+class ConfirmOrder extends Component{
     componentDidMount(){
         //刚进来页面就要获取到订单信息
-
+        let name=this.props.session.user.usertel;
+        this.props.getPaying(name);
+    }
+    submitOrder=()=>{
+        let receiver=this.receiver.value;
+        let receivertel=this.receivertel.value;
+        let detailarress=this.detailarress.value;
+        let remarks=this.remarks.value;
+        //向后端发送收货详情
     }
     render(){
         return (
@@ -49,7 +59,7 @@ export default class ConfirmOrder extends Component{
                         </div>
                         <div className="send-item last">
                             <p>备注</p>
-                            <input placeholder="填写安全存放地址,请按门铃等配送相关要求" type="text"/>
+                            <input ref={input=>this.remarks=input} placeholder="填写安全存放地址,请按门铃等配送相关要求" type="text"/>
                         </div>
                     </section>
                     <section className="order-price">
@@ -75,7 +85,8 @@ export default class ConfirmOrder extends Component{
                     </section>
                     <section className="order-detail-img">
                         <div>
-                            <div className="img-list">
+                            {/*{this.props.myOrder.order.img}*/}
+                            {/*<div className="img-list">
                                 <span>1</span>
                                 <img src={require('../../images/order1.jpg')} alt=""/>
                             </div>
@@ -90,7 +101,7 @@ export default class ConfirmOrder extends Component{
                             <div className="img-list">
                                 <span>1</span>
                                 <img src={require('../../images/order1.jpg')} alt=""/>
-                            </div>
+                            </div>*/}
                         </div>
                         <div className="total"><span>共5件</span><i className="iconfont icon-gengduo"></i></div>
                     </section>
@@ -108,9 +119,10 @@ export default class ConfirmOrder extends Component{
                 </div>
                 <div className="confirm-order-footer">
                     <p>合计：<span className="symbol">￥</span><span className="num">23.39</span></p>
-                    <button>提交订单</button>
+                    <button onClick={this.submitOrder}>提交订单</button>
                 </div>
             </div>
         )
     }
 }
+export default connect(state=>({myOrder:state.myOrder,session:state.session}),actions)(ConfirmOrder)
