@@ -11,7 +11,7 @@
         "topPrice": 1.3,
         "lowPrice": 6.9,
         "number": 1,
-        "isShow":true
+        "isShow": true
       },
       {
         "id": 2,
@@ -21,7 +21,7 @@
         "topPrice": 10.3,
         "lowPrice": 6.9,
         "number": 2,
-        "isShow":true
+        "isShow": true
       },
       {
         "id": 3,
@@ -31,7 +31,7 @@
         "topPrice": 10.3,
         "lowPrice": 9.9,
         "number": 10,
-        "isShow":true
+        "isShow": true
       },
       {
         "id": 4,
@@ -41,7 +41,7 @@
         "topPrice": 4.3,
         "lowPrice": 3.9,
         "number": 5,
-        "isShow":true
+        "isShow": true
       },
       {
         "id": 5,
@@ -51,7 +51,7 @@
         "topPrice": "",
         "lowPrice": 2.9,
         "number": 20,
-        "isShow":true
+        "isShow": true
       },
       {
         "id": 6,
@@ -61,7 +61,7 @@
         "topPrice": "5",
         "lowPrice": 2.9,
         "number": 30,
-        "isShow":true
+        "isShow": true
       }
     ]
   },

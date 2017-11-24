@@ -3,13 +3,12 @@ import {Link} from 'react-router-dom';
 import ShoppingList from "./shopList";
 import action from '../../store/actions/cart';
 import {connect} from 'react-redux';
-@connect(state => state.cart, action)
+@connect(state => state, action)
 export default class NoEdit extends Component {
     constructor(props) {
         super(props);
     }
     render() {
-        console.log(this.props.totalCount,'xxxxxxxxxxxxxxx');
         return (
             <div>
                 <div className="header">
@@ -37,7 +36,7 @@ export default class NoEdit extends Component {
                         onSub={this.props.onSub}
                         onPlus={this.props.onPlus}
                         checkShop={this.props.checkShop}
-                        dataList={this.props.dataList}
+                        cartList={this.props.cartList}
                     />
                     <form action="" className="shoppingCartForm"   style={this.props.isShowList?{"display":'block'}:{"display":'none'}}>
                         <div className="purchasePriceOpt">
@@ -54,24 +53,24 @@ export default class NoEdit extends Component {
                                 <div className="vm" style={{marginBottom: '10px'}}>
                                     <span className="fb f20">合计：</span>
                                     <span className="price">
-                                        {parseFloat(this.props.shoppingCart.total).toFixed(2)}
+                                        {parseFloat(this.props.cart.shoppingCart.total).toFixed(2)}
                                         </span>
                                 </div>
                                 <div className="vm">
                                     <span className="">总额 ：</span>
                                     <span className="price">
-                                          {parseFloat(this.props.shoppingCart.total).toFixed(2)}
+                                          {parseFloat(this.props.cart.shoppingCart.total).toFixed(2)}
                                         </span>
                                     <span className="">优惠:</span>
                                     <span className="price">
-                                          {parseFloat(this.props.shoppingCart.cheap).toFixed(2)}
+                                          {parseFloat(this.props.cart.shoppingCart.cheap).toFixed(2)}
                                         </span>
                                 </div>
                             </div>
-                            <button type="button" className="pPriceFormBtn" onClick={()=>
-                                this.props.dataTransfer(this.props.shoppingCart)
-                            }>
-                                <span>结算</span> <span>（{this.props.shoppingCart.shopCount}）</span>
+                            <button type="button" className="pPriceFormBtn"
+                                    onClick={()=> this.props.dataTransfer(this.props.session.user.usertel)}
+                            >
+                                <span>结算</span> <span>（{this.props.cart.shoppingCart.shopCount}）</span>
                             </button>
                         </div>
                     </form>
@@ -81,3 +80,4 @@ export default class NoEdit extends Component {
         )
     }
 }
+//this.props.session.user.username||

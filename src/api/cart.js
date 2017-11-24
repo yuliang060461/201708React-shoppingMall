@@ -1,7 +1,7 @@
 import {get,post} from './index';
-export function getShop() {
-    return get('/getBus');
+export function getShop(username) {
+    return get('/getBus/'+username);
 }
-export function postOrderData(data) {
-    return post('/',data)
+export function postOrderData(data,username) {
+    return post('/order/'+username,data)
 }

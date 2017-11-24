@@ -14,12 +14,13 @@ import ShoppingCart from '../ShoppingCart';
 import Login from "../Login/index";
 import Register from "../Register/index";
 import Vipcore from "../Vip/vip-core/index";
-import VipHomeLog from "../Vip/vip-home-log/index";
+import Vipsign from "../Vip/vip-sign/index";
+import VipHomeLog from "../Vip/vip-home/index";
 import Order from "../Profile/Order/index";
 import ConfirmOrder from "../ConfirmOrder/index";
 import PlaceOrder from "../PlaceOrder/index";
 import Detail from '../Detail';
-import './index.less'
+import './index.less';
 export default class App extends Component{
     render(){
         return (
@@ -36,6 +37,7 @@ export default class App extends Component{
                     <Route path="/searchlist" component={SearchList}/>
                     <Route path="/vip" component={Vip}/>
                     <Route path="/vipcore" component={Vipcore}/>
+                    <Route path="/vipsign" component={Vipsign}/>
                     <Route path="/viphomelog" component={VipHomeLog}/>
                     <Route path="/order" component={Order}/>
                     <Route path="/confirmorder" component={ConfirmOrder}/>

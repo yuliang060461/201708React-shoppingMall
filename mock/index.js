@@ -317,6 +317,7 @@ app.get("/order/:name",function (req,res) {
     res.send({message:"地址提交成功",order:order});
 });
 
+
 // post接口，盈盈把地址和商品给我    放在待支付数的数组里      unpaid
 
 
@@ -328,35 +329,12 @@ app.post("/address/:name",function (req,res) {
     userList[index].order=address;
     res.send({message:"地址和商品",order:order});
 });
-
 //全部  待支付  待发货  已发货 已完成
-//
-
-
-
-
-
-
-
-
-
-
-
+// post接口，地址给我  地址 和 订单 合并
 // 传的对象在放入
-
-
-
-
-
-
-
-
-
-
 app.all("*",function(req,res){
     res.send("404");
 });
-
 app.listen(3001);
 
 
