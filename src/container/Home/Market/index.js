@@ -1,13 +1,14 @@
 import React,{Component} from 'react';
 import Slider from '../Slider';
 import Loading from '../Loading';
-import LazyLoad from 'react-lazyload'
+import LazyLoad from 'react-lazyload';
+
 export default class Home extends Component{
     addToCart=(good,name)=>{
 this.props.goodAdd(good,name)
     };
     render(){
-        let name=this.props.user?this.props.user.usertel:'0';
+        let username=this.props.user?this.props.user.usertel:'-1';
         return (
             <div>
                 <div className="scroller">
@@ -75,7 +76,7 @@ this.props.goodAdd(good,name)
                                                 </div>
                                                 {item.label.length > 0 ?
                                                     <div className="tj_label">{item.label}</div> : null}
-                                                <div className="add-btn" onClick={()=>this.addToCart(item,name)}>+</div>
+                                                <div className="add-btn" onClick={()=>this.addToCart(item,username)}>+</div>
                                             </div>
                                         </li>)}
                                     </ul>
