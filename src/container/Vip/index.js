@@ -1,27 +1,26 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import Viphome from './vip-home';
 import {connect} from 'react-redux';
-import action from '../../store/actionsvip/vip'
-class Vip extends Component{
+import action from '../../store/actionsvip/vip';
+import action1 from '../../store/action/session';
+import Vipsign from "./vip-sign/index";
+// import {createStore} from 'redux';
+// let store = createStore();
+class Vip extends Component {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.getVipData();
-
-        // if(this.props.slider.length>0){
-        //     this.props.getVipData();
-        //     console.log(1);
-        // }
     }
 
-    render(){
-        console.log(this.props);
-
+    render() {
         return (
             <div>
-               <Viphome slider={this.props.slider}>
-               </Viphome>
+                {
+                    this.props.session.user ? <Viphome slider={this.props.vip.slider}>
+                    </Viphome> : <Vipsign/>
+                }
             </div>
         )
     }
 }
-export default connect(state=>state.vip,action)(Vip)
+export default connect(state => state, {...action, ...action1})(Vip)

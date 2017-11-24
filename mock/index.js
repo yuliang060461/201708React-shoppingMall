@@ -274,8 +274,11 @@ app.get("/search",function (req,res) {
     })
 });
 //悦悦这个接口提交数据
+//  请求体为{order:[{}, {}, {}, {} ]}
+
+// 提交后的数据 并且把cart的数量减一
 app.post("/order/:name",function (req,res) {
-    let order=req.body;
+    let order=req.body.order;
     let username = req.params.name;
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
     // suerList 是一个数组
@@ -284,6 +287,24 @@ app.post("/order/:name",function (req,res) {
         //用户购物车是一个数组
         //如果 传入的 id 和  已有的id相同 数量加一，否则 不加
         userList[index].order=order;
+
+        for (var i = 0; i < order.length; i++) {
+            var id2 = order[i].id;
+
+            for (var j = 0; j < userList[index].cartList.length; j++) {
+                var id1 = userList[index].cartList[j].id;
+                if(id1==id2){
+                    userList[index].cartList[j].splice(j,1)
+                }
+            }
+        }
+        //购物车的写入
+
+
+        // 提交 过来 的数据 改变 购物车的数据
+        //  提交过来 id 为 1的 的 哪位就把 购物车 id 为 1的删掉
+        // 提交过来id为2的也要删掉
+        //
         fs.writeFile("./userList.json",JSON.stringify(userList));
         res.send({message:"提单提交成功",order:order})
 }});
@@ -296,6 +317,19 @@ app.get("/order/:name",function (req,res) {
     let order=userList[index].order;
     res.send({message:"地址提交成功",order:order});
 });
+
+// post接口，地址给我  地址 和 订单 合并
+
+
+// 传的对象在放入
+
+
+
+
+
+
+
+
 
 
 app.all("*",function(req,res){
