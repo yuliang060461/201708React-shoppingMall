@@ -19,14 +19,14 @@ class ConfirmOrder extends Component{
         let receivertel=this.receivertel.value;
         let detailarress=this.detailarress.value;
         let remarks=this.remarks.value;
-        this.props.sendReceiver(this.name,{receiver,receivertel,detailarress,remarks,order:this.props.myOrder})
+        this.props.sendReceiver(this.name,this.total,{receiver,receivertel,detailarress,remarks,order:this.props.myOrder})
     }
     render(){
         let order=this.props.myOrder;
-        console.log(order,'xxxxxxxxxxxxxxxxxx');
         let imgList;
         if(order.length>0){
             imgList=order[order.length-1].cartList.slice(0,4);
+            this.total=order[order.length-1].total;
         }
         return (
             <div className="confirm-order">
@@ -81,15 +81,15 @@ class ConfirmOrder extends Component{
                         </div>
                         <div className="order-price-item">
                             <span>促销优惠</span>
-                            <span>- ￥0.00</span>
+                            <span ref={input=>this.cxyh=input}>- ￥0.00</span>
                         </div>
                         <div className="order-price-item">
                             <span>包装费</span>
-                            <span>+ ￥1.00</span>
+                            <span ref={input=>this.bzf=input}>+ ￥1.00</span>
                         </div>
                         <div className="order-price-item">
                             <span>包装费减免</span>
-                            <span>- ￥1.00</span>
+                            <span ref={input=>this.bajm=input}>- ￥<span>1.00</span></span>
                         </div>
                         <div className="last">79元免运费/59~79元仅2元运费<i className="iconfont icon-jinggao"></i></div>
                         <div className="actual-payment"><span>实际支付</span><span className="price">￥{order.length>0?order[order.length-1].total:0}</span></div>

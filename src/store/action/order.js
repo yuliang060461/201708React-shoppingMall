@@ -1,7 +1,7 @@
 /**
  * Created by zhaoyingying on 2017/11/23.
  */
-import {fetchPaying,fetchReceiver} from '../../api/order'
+import {fetchPaying,fetchReceiver,fetchPaid} from '../../api/order'
 import * as types from '../action-types'
 import {push} from 'react-router-redux'
 export default {
@@ -15,14 +15,21 @@ export default {
             })
         }
     },
-    sendReceiver(name,data){
+    sendReceiver(name,total,data){
         return dispatch=>{
-            fetchReceiver(name,data).then(payload=>{
+            fetchReceiver(name,data).then(res=>{
                 dispatch({
                     type:types.FETCH_RECEIVER,
-                    payload,
+                    payload:{...res,total},
                 });
                 dispatch(push('/placeorder'));
+            });
+        }
+    },
+    sendPaid(name){
+        return dispatch=>{
+            fetchPaid(name).then(res=>{
+                dispatch(push('/order'));
             });
         }
     }

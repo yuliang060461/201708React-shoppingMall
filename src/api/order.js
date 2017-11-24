@@ -10,3 +10,8 @@ export function fetchPaying(name) {
 export function fetchReceiver(name,data) {
     return post(`/address/${name}`,data);
 }
+
+//让后台状态变为待发货
+export function fetchPaid(name) {
+    return get(`/paid${name}`);
+}
