@@ -83,8 +83,7 @@ app.post("/writeBus/:name",function (req,res) {
             //没有的  userList[index].cartList.push(product)  添加到数组里
             });
         let addcart=userList[index].cartList.some((item,index)=>{
-
-           return item.id==product.id
+           return item.id==product.id;
         });
         addcart? null:userList[index].cartList.push(product);
             //将获取的书和原有的拼在一起
@@ -123,7 +122,7 @@ app.delete("/deleteBus/:name",function (req,res) {
         //过滤掉number=0的哪项
         userList[index].cartList= userList[index].cartList.filter((item)=>{
            return parseInt(item.number) > 0
-        })
+        });
 
         //将获取的书和原有的拼在一起
         fs.writeFileSync("./userList.json",JSON.stringify(userList));
@@ -317,6 +316,41 @@ app.get("/order/:name",function (req,res) {
     let order=userList[index].order;
     res.send({message:"地址提交成功",order:order});
 });
+
+// post接口，盈盈把地址和商品给我    放在待支付数的数组里      unpaid
+
+
+app.post("/address/:name",function (req,res) {
+    let address=req.body;//传过来请求体
+    let username = req.params.name;//用户名字
+    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+    let index=userList.findIndex((item)=>{return item.usertel==username});
+    userList[index].order=address;
+    res.send({message:"地址和商品",order:order});
+});
+
+//全部  待支付  待发货  已发货 已完成
+//
+
+
+
+
+
+
+
+
+
+
+
+// 传的对象在放入
+
+
+
+
+
+
+
+
 
 
 app.all("*",function(req,res){
