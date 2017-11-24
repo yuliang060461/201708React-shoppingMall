@@ -63,7 +63,21 @@
         "number": 30,
         "isShow": true
       }
-    ]
+    ],
+    "order":[ {
+      "id": 13,
+      "hot":"93",
+      "title":"推荐商品",
+      "type":"牛奶",
+      "name": "蒙牛特仑苏低脂调制牛奶 250ml*12",
+      "label": "特价",
+      "img": "https://img.dmallcdn.com/20160923/cbebedbb-5564-413d-8453-25285d301a90_360x360H",
+      "topPrice": 55.6,
+      "lowPrice": 54.3,
+      "totalPrice":22,
+      "number":19,
+      "isShow":true
+    }]
   },
   {
     "usertel": "2",
