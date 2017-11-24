@@ -3,8 +3,6 @@ export function fetchRegister(data) {
     return post('/register',data);
 }
 export function fetchLogin(data) {
-
-
     return post('/login',data)
 }
 export function fetchAdd(data,name) {

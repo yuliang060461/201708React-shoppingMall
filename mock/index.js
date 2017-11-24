@@ -142,7 +142,6 @@ app.get("/getBus/:name",function (req,res) {
     let username=req.params.name;
     res.set('Content-Type','application/json');
     getBus(function (data) {
-
         let prouct=data.filter((item,index)=>{
             return   item.usertel === username;
         });
