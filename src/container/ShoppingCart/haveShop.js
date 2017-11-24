@@ -15,7 +15,7 @@ export default class HaveShopping extends Component {
                         isAllSelect={this.props.isAllSelect}
                         cancelALLSelect={this.props.cancelALLSelect}
                         onAllSelect={this.props.onAllSelect}
-                        dataList={this.props.dataList}
+                        cartList={this.props.cartList}
                         onEdit={this.props.onEdit}
                     />:
                         <NoEdit
@@ -27,7 +27,7 @@ export default class HaveShopping extends Component {
                             isAllSelect={this.props.isAllSelect}
                             cancelALLSelect={this.props.cancelALLSelect}
                             onAllSelect={this.props.onAllSelect}
-                            dataList={this.props.dataList}
+                            cartList={this.props.cartList}
                             onEdit={this.props.onEdit}
                         />
                 }

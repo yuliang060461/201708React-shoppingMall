@@ -4,19 +4,28 @@ let init = {
         total:0,
         cheap:0,
         shopCount:0,
-        dataList: []
+        cartList: []
     }
 };
 //初始化购物车名称
 export default function (state = init, action) {
     switch (action.type) {
         case types.SHOP_DATA:
-            var countData = action.payload.dataList.filter((item, index) => item.isBuy == true);
-            return {...state, shoppingCart: {
-                total: countData.map((item, index) => item.num * item.lowPrice),
-                cheap: countData.map((item, index) => item.num * (item.topPrice-item.lowPrice)),
-                shopCount:action.payload.dataList.filter((item, index) => item.isBuy == true).length,
-                dataList: action.payload.dataList
+            var countData = action.payload.cartList.filter((item, index) => item.isShow == true);
+            var t=0;
+            var c=0;
+            var l=countData.length;
+            var tAry=countData.map((item, index) =>item.number * parseFloat(item.lowPrice).toFixed(2));
+            var cAry=countData.map((item, index) =>item.number * parseFloat(item.topPrice-item.lowPrice).toFixed(2));
+            tAry.forEach((item,index)=>t+=item);
+            cAry.forEach((item,index)=>t+=item);
+            return {
+                ...state,
+                shoppingCart: {
+                total:t,
+                cheap: c,
+                shopCount:l,
+                cartList: action.payload.cartList
                 }
             }
         case types.ADD_SHOP:
@@ -24,10 +33,10 @@ export default function (state = init, action) {
                 ...state,
                 shoppingCart: {
                     ...state.shoppingCart,
-                    dataList: [
-                        ...state.shoppingCart.dataList.map((item, index) => {
+                    cartList: [
+                        ...state.shoppingCart.cartList.map((item, index) => {
                             if (item.id == action.payload.shop.id) {
-                                item.num = item.num + 1;
+                                item.number = item.number + 1;
                             }
                             return item
                         })
@@ -39,13 +48,16 @@ export default function (state = init, action) {
                 ...state,
                 shoppingCart: {
                     ...state.shoppingCart,
-                    dataList: [
-                        ...state.shoppingCart.dataList.map((item, index) => {
+                    cartList: [
+                        ...state.shoppingCart.cartList.map((item, index) => {
                             if (item.id == action.payload.shop.id) {
-                                if (item.num<1) {
-                                    item.num=1;
-                                    item.isBuy=false;
-                                 }
+                                if (item.number<=1) {
+                                    item.number=1;
+                                    item.isShow=false;
+                                    }
+                                    else{
+                                        item.number=item.number-1
+                                    }
                                 }
                             return item
                         })
@@ -57,10 +69,10 @@ export default function (state = init, action) {
                 ...state,
                 shoppingCart: {
                     ...state.shoppingCart,
-                    dataList: [
-                        ...state.shoppingCart.dataList.map((item, index) => {
+                    cartList: [
+                        ...state.shoppingCart.cartList.map((item, index) => {
                             if (item.id == action.payload.shop.id) {
-                                item.isBuy = !item.isBuy;
+                                item.isShow = !item.isShow;
                             }
                             return item
                         })
@@ -68,19 +80,19 @@ export default function (state = init, action) {
                 }
             };
         case types.DEL_ALL_SHOP:
-            let data = action.payload.dataList.filter((item, index) => item.isBuy == false);
+            let data = action.payload.cartList.filter((item, index) => item.isShow == false);
             return {
                 ...state,
                 shoppingCart: {
                     ...state.shoppingCart,
-                    dataList: data
+                    cartList: data
                 }
             };
         case types.COUNT_AMOUNT:
-            var countData = state.shoppingCart.dataList.filter((item, index) => item.isBuy == true);
+            var countData = state.shoppingCart.cartList.filter((item, index) => item.isShow == true);
             let t=0; let c=0;let l=countData.length;
-            let tAry=countData.map((item, index) =>item.num * parseFloat(item.lowPrice).toFixed(2));
-            let cAry=countData.map((item, index) =>item.num * parseFloat(item.topPrice-item.lowPrice).toFixed(2));
+            let tAry=countData.map((item, index) =>item.number * parseFloat(item.lowPrice).toFixed(2));
+            let cAry=countData.map((item, index) =>item.number * parseFloat(item.topPrice-item.lowPrice).toFixed(2));
             tAry.forEach((item,index)=>t+=item);
             cAry.forEach((item,index)=>t+=item);
             return {
@@ -93,12 +105,16 @@ export default function (state = init, action) {
                 }
             };
         case types.DEL_ONE_SHOP:
-            let delOneData = state.shoppingCart.dataList.filter((item,index) =>item!==action.payload);
+            let delOneData = state.shoppingCart.cartList.filter(
+                (item,index) =>
+                    !(item==action.payload&&item.number==1&&item.isShow==false)
+            );
             return {
+
                 ...state,
                 shoppingCart: {
                     ...state.shoppingCart,
-                    dataList: delOneData
+                    cartList: delOneData
                 }
             };
         case types.DATA_TRANSFER:
@@ -106,10 +122,33 @@ export default function (state = init, action) {
                 ...state,
                 shoppingCart: {
                     ...state.shoppingCart,
-                    dataList: action.payload.dataList.filter((item,index)=>item.isBuy=true)
-                }
+                    order:
+                        [
+                             {
+                            cartList:action.payload.order[0].cartList.filter(
+                                 (item,index)=>item.isShow==true
+                                 )
+                             }
+                        ]
+                    }
             };
             default:
             return state;
     }
 }
+//   case types.DEL_ONE_SHOP:
+//let delOneData = state.shoppingCart.cartList.filter((item,index) =>item!==action.payload);
+//return {
+  //  ...state,
+    //shoppingCart: {
+      //  ...state.shoppingCart,
+        //cartList: delOneData
+    //}
+//};
+//
+//
+//
+//
+//
+//
+// /

@@ -4,7 +4,7 @@ import action from '../../store/actions/cart';
 import './index.less';
 import NoShopping from "./noshop";
 import HaveShopping from "./haveShop";
-@connect(state => state.cart,action)
+@connect((state) =>state,action)
 export default class ShoppingCart extends Component {
     constructor(props) {
         super(props);
@@ -16,17 +16,21 @@ export default class ShoppingCart extends Component {
         }
     }
     componentDidMount() {
-        this.props.getShopping();
+        if(this.props.session.user){
+            this.props.getShopping(this.props.session.user.usertel);
+        }else{
+            this.props.noUser();
+        }
     }
     onEdit = () => {
         this.setState({"isEdit": !this.state.isEdit})
     };
     showList=(e)=>{
-        e.preventDefault();
         this.setState({isShowList:!this.state.isShowList});
     }
     //购物车全选
     storeSelect=()=>{
+        console.log(this.state.isStoreCheck,'kl;--');
         let newState=!this.state.isStoreCheck;
         this.setState({isStoreCheck:newState});
         this.onChildAllSelect(newState);
@@ -38,19 +42,19 @@ export default class ShoppingCart extends Component {
     };
     //列表组件被全选 ()=>{}
     onChildAllSelect=(opt)=>{
-        this.props.shoppingCart.dataList.map((item,index)=>item.isBuy=opt);
+        this.props.cart.shoppingCart.cartList.map((item,index)=>item.isShow=opt);
         this.props.totalCount();
         this.setState({isStoreCheck: opt});
     };
     //触发了一个单选 ，取消全选
     cancelALLSelect=()=>{
-        let status=this.props.shoppingCart.dataList.every((item)=>item.checked==this.state.isAllSelect)&&this.state.isStoreCheck==this.state.isAllSelect;
-     //   let cancelStatus=this.props.shoppingCart.dataList.every((item)=>item.checked==this.state.isAllSelect);
+        let status=this.props.cart.shoppingCart.cartList.every((item)=>item.checked==this.state.isAllSelect)&&this.state.isStoreCheck==this.state.isAllSelect;
         this.setState({isAllSelect: status});
         this.props.totalCount();
     };
     cancelStoreSelect=()=>{
-        let cancelStatus=this.props.shoppingCart.dataList.every((item)=>item.checked==this.state.isStoreCheck);
+        console.log(this.state.isStoreCheck,'kl;--');
+        let cancelStatus=this.props.cart.shoppingCart.cartList.every((item)=>item.checked==this.state.isStoreCheck);
         this.setState({isStoreCheck: cancelStatus});
         this.props.totalCount();
     };
@@ -58,9 +62,9 @@ export default class ShoppingCart extends Component {
         return (
             <div className="shoppingCartWrap">
                 {
-                    this.props.shoppingCart.dataList.length==0? <NoShopping/> :
+                    this.props.cart.shoppingCart.cartList.length==0? <NoShopping/> :
                         <HaveShopping
-                            dataList={this.props.shoppingCart.dataList}
+                            cartList={this.props.cart.shoppingCart.cartList}
                             isShowList={this.state.isShowList}
                             isAllSelect={this.state.isAllSelect}
                             isEdit={this.state.isEdit}
@@ -77,3 +81,10 @@ export default class ShoppingCart extends Component {
         )
     }
 }
+
+//warning.js:33 Warning: A component is changing an uncontrolled in
+// put of type checkbox to be controlled. Input elements should not switch
+// from uncontrolled to controlled (or vice versa). Decide between using a
+// controlled or uncontrolled input element for the lifetime of the component.
+// More info: https://fb.me/react-controlled-components
+//

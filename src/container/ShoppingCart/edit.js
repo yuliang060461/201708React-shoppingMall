@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import ShoppingList from "./shopList";
 import action from '../../store/actions/cart';
 import {connect} from 'react-redux';
-@connect(state => state.cart,action)
+@connect(state => state,action)
 export default class Edit extends Component {
     constructor(props){
         super(props)
@@ -31,7 +31,8 @@ export default class Edit extends Component {
                         checkShop={this.props.checkShop}
                         cancelALLSelect={this.props.cancelALLSelect}
                         onChildAllSelect={this.onChildAllSelect}
-                        dataList={this.props.dataList}
+                        cartList={this.props.cartList}
+                        session={this.props.session}
                     />
                 </div>
                 <div className="delShoppingForm">

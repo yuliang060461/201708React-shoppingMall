@@ -60,3 +60,8 @@ export const SEARCHBYPRICE = 'SEARCHBYPRICE';
 
 
 
+
+
+//订单处理模块
+export const FETCH_PAYING='FETCH_PAYING';
+export const FETCH_RECEIVER='FETCH_RECEIVER';

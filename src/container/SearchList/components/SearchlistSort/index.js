@@ -15,6 +15,7 @@ export default class SearchlistSort extends Component{
         console.log(this.props.message);
         return(
             <div>
+
                 <ul className='sort-con'>
                     {
                         this.props.dataList.map((item,index)=>(

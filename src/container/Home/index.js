@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import actions from '../../store/actions/home';
+import actions from '../../store/action/home';
 import Slider from './Slider'
 import {NavLink} from 'react-router-dom'
-import actions2 from '../../store/actions/home';
+import actions2 from '../../store/action/home';
 import actions1 from '../../store/action/session';
 import {upMore} from '../../utils';
 import Market from './Market';
@@ -30,15 +30,24 @@ class Home extends Component {
     }
 
     handleClick = (e)=> {
-        if (e.target.innerHTML === '全球精选') {
-            this.setState({
-                tab: false
-            })
-        } else if(e.target.innerHTML === '多点超市') {
-            this.setState({
-                tab: true
-            })
+        if(e.target.tagName=='SPAN'){
+            this.setState((prevState, props) =>({
+              tab:!prevState.tab
+            }))
         }
+
+        // if (e.target.innerText === '全球精选') {
+        //     this.setState({
+        //         tab: false
+        //     })
+        // }
+        // if(e.target.innerText === '多点超市') {
+        //     this.setState({
+        //         tab: true
+        //     })
+        // }
+        console.log(this.state.tab);
+        // e.target.innerText.log
 
     }
 

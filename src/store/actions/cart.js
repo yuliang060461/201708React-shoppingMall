@@ -1,34 +1,50 @@
 import * as types from '../action-types';
-import {getShop,postOrderData} from '../../api/cart';
+import {getShop, postOrderData, delShop, postPlusData} from '../../api/cart';
 import {push} from 'react-router-redux';
 export default {
+    //无用户登录
+    noUser(){
+        return dispatch => (
+            dispatch(push('/login'))
+        )
+    },
     //购物渲染
-    getShopping(){
+    getShopping(username){
         return dispatch => {
-            getShop().then(data => {
+            getShop(username).then(cartList => {
                 dispatch(
                     {
                         type: types.SHOP_DATA,
-                        payload: data
+                        payload: {cartList}
                     }
                 )
             });
         }
     },
     //减少购物
-    onSub(shop){
+    onSub(shop, username){
         return (dispatch, getState) => {
             dispatch(
                 {
                     type: types.DEL_SHOP,
                     payload: {shop}
                 }
-            )
+            );
+            if (shop.number < 2) {
+                dispatch(
+                    {
+                        type: types.DEL_ONE_SHOP,
+                        payload: shop
+                    }
+                );
+            }
+            delShop(shop, username);
         }
     },
     //增加购物
-    onPlus(shop){
+    onPlus(shop, username){
         return (dispatch, getState) => {
+            postPlusData(shop, username);
             dispatch(
                 {
                     type: types.ADD_SHOP,
@@ -50,7 +66,6 @@ export default {
     },
     //删除购物
     delAllShop(){
-        debugger
         return (dispatch, getState) => {
             let data = getState().cart.shoppingCart;
             dispatch(
@@ -62,17 +77,16 @@ export default {
         }
     },
     //彻底删除某一项
-    delOneShop(data){
-        debugger
-        return (dispatch, getState) => {
-            dispatch(
-                {
-                    type: types.DEL_ONE_SHOP,
-                    payload: data
-                }
-            )
-        }
-    },
+    /*  delOneShop(data){
+     return (dispatch, getState) => {
+     dispatch(
+     {
+     type: types.DEL_ONE_SHOP,
+     payload: data
+     }
+     )
+     }
+     },*/
     //计算总额
     totalCount(){
         return {
@@ -80,15 +94,21 @@ export default {
         }
     },
     //数据传递
-    dataTransfer(data){
-        return dispatch => {
-            postOrderData(data).then(payload => {
-                dispatch({
-                    type: types.DATA_TRANSFER,
-                    payload
-                });
-//                dispatch(push('/'))
-            })
+    dataTransfer(username){
+        return (dispatch, getState) => {
+            let dataAry = [];
+            let data = getState().cart.shoppingCart;
+            dataAry.push(data);
+            let order = dataAry;
+            if (data.shopCount > 0) {
+                postOrderData({order}, username).then(payload => {
+                    dispatch({
+                        type: types.DATA_TRANSFER,
+                        payload
+                    });
+                    dispatch(push('/confirmorder'))
+                })
+            }
         }
     }
 }

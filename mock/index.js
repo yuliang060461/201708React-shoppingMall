@@ -83,8 +83,7 @@ app.post("/writeBus/:name",function (req,res) {
             //没有的  userList[index].cartList.push(product)  添加到数组里
             });
         let addcart=userList[index].cartList.some((item,index)=>{
-
-           return item.id==product.id
+           return item.id==product.id;
         });
         addcart? null:userList[index].cartList.push(product);
             //将获取的书和原有的拼在一起
@@ -98,7 +97,7 @@ app.post("/writeBus/:name",function (req,res) {
 
 
 // delecte
-
+//   购物车进行减法 &&  当数量为0 时 ，删除该商品
 app.delete("/deleteBus/:name",function (req,res) {
     res.set('Content-Type', 'application/json');
     let username = req.params.name;
@@ -123,7 +122,7 @@ app.delete("/deleteBus/:name",function (req,res) {
         //过滤掉number=0的哪项
         userList[index].cartList= userList[index].cartList.filter((item)=>{
            return parseInt(item.number) > 0
-        })
+        });
 
         //将获取的书和原有的拼在一起
         fs.writeFileSync("./userList.json",JSON.stringify(userList));
@@ -136,6 +135,24 @@ app.delete("/deleteBus/:name",function (req,res) {
 });
 
 
+
+//   删除购物车  该购物车为空
+
+app.delete("./deleteB/:name",function (req,res) {
+    res.set('Content-Type', 'application/json');
+    let username = req.params.name;
+    //前端传递的商品对象
+    //读取用户信息
+    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+    // suerList 是一个数组
+    let index=userList.findIndex((item)=>{return item.usertel==username});
+    if(index>-1){
+        //用户购物车是一个数组
+        //如果 传入的 id 和  已有的id相同 数量加一，否则 不加
+        userList[index].cartList=[];
+        //将获取的书和原有的拼在一起
+        fs.writeFileSync("./userList.json",JSON.stringify(userList));
+    }});
 
 
 //购物车请求数据
@@ -273,9 +290,14 @@ app.get("/search",function (req,res) {
         }
     })
 });
+
+
 //悦悦这个接口提交数据
+//  请求体为{order:[{}, {}, {}, {} ]}
+
+// 提交后的数据 并且把cart的数量减一
 app.post("/order/:name",function (req,res) {
-    let order=req.body;
+    let order=req.body.order;
     let username = req.params.name;
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
     // suerList 是一个数组
@@ -284,9 +306,29 @@ app.post("/order/:name",function (req,res) {
         //用户购物车是一个数组
         //如果 传入的 id 和  已有的id相同 数量加一，否则 不加
         userList[index].order=order;
-        fs.writeFile("./userList.json",JSON.stringify(userList));
+
+        for (var i = 0; i < order.length; i++) {
+            var id2 = order[i].id;
+
+            for (var j = 0; j < userList[index].cartList.length; j++) {
+                var id1 = userList[index].cartList[j].id;
+                if(id1==id2){
+                    userList[index].cartList[j].splice(j,1)
+                }
+            }
+        }
+        //购物车的写入
+
+
+        // 提交 过来 的数据 改变 购物车的数据
+        //  提交过来 id 为 1的 的 哪位就把 购物车 id 为 1的删掉
+        // 提交过来id为2的也要删掉
+        //
+        fs.writeFileSync("./userList.json",JSON.stringify(userList));
         res.send({message:"提单提交成功",order:order})
 }});
+
+
 // 盈盈 订单请求数据
 app.get("/order/:name",function (req,res) {
     let username = req.params.name;
@@ -294,14 +336,73 @@ app.get("/order/:name",function (req,res) {
     // suerList 是一个数组
     let index=userList.findIndex((item)=>{return item.usertel==username});
     let order=userList[index].order;
+    // 这个是个order是一个数组
     res.send({message:"地址提交成功",order:order});
 });
 
 
+// post接口，盈盈把地址和商品给我    放在待支付数的数组里      unpaid
+// { chartList}
+
+//  { order:[{},{},{},{},{},{}], receiver:gae, reverte:tel }
+
+
+app.post("/address/:name",function (req,res) {
+    let address=req.body;//传过来请求体
+    var chars = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+    function generateMixed(n) {
+        var res = "";
+        for(var i = 0; i < n ; i ++) {
+            var id = Math.ceil(Math.random()*35);
+            res += chars[id];
+        }
+        return res;
+    }
+    address.serial=generateMixed(10);
+    //10位订单标号
+    address.time=new Date().toLocaleString( );
+    // 订单日期
+    let username = req.params.name;//用户名字
+    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+    let index=userList.findIndex((item)=>{return item.usertel==username});
+    userList[index].cartList=[];
+    userList[index].unpaid=address;//未支付的要放在 userList里
+
+    fs.writeFileSync("./userList.json",JSON.stringify(userList));
+    res.send({message:"地址和商品",serial:address.serial});
+}) ;
+
+app.post("/paid",function (req,res) {
+
+    let username=req.query;
+
+    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+    let index=userList.findIndex((item)=>{return item.usertel==username});
+
+
+    userList[index].paid=userList[index].unpaid;
+
+    userList[index].unpaid=[];
+
+    fs.writeFileSync("./userList.json",JSON.parse(userList));
+
+    res.send({message:"支付成功"})
+    // paid 下面的为 当前支付的，
+
+
+
+    // 用户名下的 unpaid 为【】
+
+});
+
+
+
+//全部  待支付  待发货  已发货 已完成
+// post接口，地址给我  地址 和 订单 合并
+// 传的对象在放入
 app.all("*",function(req,res){
     res.send("404");
 });
-
 app.listen(3001);
 
 
