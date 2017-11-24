@@ -20,7 +20,7 @@ export default class SearchBar extends Component{
 
     }
     back = ()=>{
-        history.goBack();
+        history.push('/home');
     }
     render(){
         return(

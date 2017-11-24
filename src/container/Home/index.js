@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import actions from '../../store/action/home';
 import Slider from './Slider'
 import {NavLink} from 'react-router-dom'
-import actions2 from '../../store/action/home';
+import actions2 from '../../store/actions/home';
 import actions1 from '../../store/action/session';
 import {upMore} from '../../utils';
 import Market from './Market';
@@ -57,7 +57,7 @@ class Home extends Component {
                 {
                     this.state.tab ?
                         <div className="content-scroll" ref="content">
-                            <Market {...this.props.home}{...this.props.session} goodAdd={this.props.goodAdd}/></div>
+                            <Market {...this.props.home}{...this.props.session} goodAdd={this.props.goodAdd} toDetail={this.props.toDetail}/></div>
                         :
                         <div className="content-scroll">
                             <Global {...this.props.home}/>

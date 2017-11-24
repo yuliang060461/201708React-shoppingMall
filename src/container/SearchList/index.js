@@ -1,13 +1,20 @@
 import React,{Component} from 'react'
 import {Route,NavLink} from 'react-router-dom'
+import {bindActionCreators} from 'redux'
 import './index.less'
 import SearchBar from "../../components/SearchBar/index";
 import SearchlistSort from './components/SearchlistSort/index'
 import {connect} from 'react-redux'
-import actions from '../../store/action/search'
-import {upMore} from '../../utils'
+import searActions from '../../store/action/search'
+import sessActions from '../../store/action/session'
+const mapDispatchToProps = (dispatch) => {
+    return{
+        searActions:bindActionCreators(searActions,dispatch),
+        sessActions:bindActionCreators(sessActions,dispatch)
+    }
+}
 import Loading from '../Home/Loading'
-@connect(state=>state.search,actions)
+@connect(state=>state,mapDispatchToProps)
 export default class SearchList extends Component{
     constructor(){
         super();
@@ -25,12 +32,14 @@ export default class SearchList extends Component{
         })
     }
     componentDidMount(){
-        console.log(this.props.message);
-        if(this.props.searchList.length===0){
-            this.props.searchData();
+        console.log('合并的actions',this.props.searActions);
+        console.log('合并的state',this.props.session);
+
+        if(this.props.search.searchList.length===0){
+            this.props.searActions.searchData();
         }
         // console.log(this.scrollCon);
-        upMore(this.scrollCon,this.props.searchData);
+        // upMore(this.scrollCon,this.props.searchData);
 
         // this.props.searchData();
     }
@@ -39,26 +48,43 @@ export default class SearchList extends Component{
             value
         })
         if(value==''){
-            this.props.searchData()
+            this.props.searActions.searchData()
         }
     }
     //排序
     searchByGlobal = ()=>{
-        this.props.searchData()
+        this.setState({
+            value:''
+        })
+        this.props.searActions.searchData()
     }
     searchByHot = ()=>{
-        this.props.searchByHot()
+        console.log('热销')
+        this.setState({
+            value:''
+        })
+        this.props.searActions.searchByHot()
     }
     searchByPrice = ()=>{
-        this.props.searchByPrice()
+        console.log('价格')
+        console.log(this.props.searActions.searchByPrice)
+        this.setState({
+            value:''
+        })
+        this.props.searActions.searchByPrice()
     }
     //按关键字查找
     searchKey = (value)=>{
         console.log('传进来的key',value)
-        this.props.searchData(value)
+        this.props.searActions.searchData(value)
+    }
+
+    //添加商品
+    goodAdd = (good,name)=>{
+        this.props.sessActions.goodAdd(good,name)
     }
     render(){
-        console.log(this.props.loading);
+        console.log(this.props.search.searchList);
         return(
             <div>
                 <SearchBar value={this.state.value} handleChange={this.handleChange} searchKey={this.searchKey}/>
@@ -69,14 +95,17 @@ export default class SearchList extends Component{
                         <li onClick={this.searchByPrice}><NavLink to='/searchlist/price'>价格</NavLink></li>
                     </ul>
                     {
-                        this.props.searchList.length===0 ? <Loading/> : <SearchlistSort dataList={this.props.searchList} loading={this.props.loading}/>
+                        this.props.search.searchList.length===0 ? <Loading/> : <SearchlistSort goodAdd={this.goodAdd} dataList={this.props.search.searchList} loading={this.props.search.loading} session={this.props.session}/>
                     }
 
                     {/*<Loading/>*/}
                 </div>
                 {
-                    (this.props.message && this.state.value!=='')?<div className='msg-tip'>
-                        商品还没有哦，正在备货中...
+                    (this.props.search.message && this.state.value!=='')?<div>
+                        <div className='dialogBox'>
+                            <i className='iconfont icon-chahaozhuanhuan'></i>
+                            <div>商品不存在</div>
+                        </div>
                     </div>:''
                 }
 

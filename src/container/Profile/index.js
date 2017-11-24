@@ -4,6 +4,7 @@ import './index.less'
 import actions from '../../store/action/session'
 import {connect} from 'react-redux'
 import UpdatePwd from "../UpdatePwd/index";
+import Order from "./Order/index";
 class Profile extends Component{
     constructor(){
         super();
@@ -28,7 +29,7 @@ class Profile extends Component{
     }
     cancel=()=>{
         this.setState({
-            ...this.state,pwdShow:!this.state.pwdShow
+            isShow:false,pwdShow:false
         });
     }
     render(){
@@ -40,7 +41,7 @@ class Profile extends Component{
                        {this.state.isShow?<ul className="setList">
                            <li onClick={this.handlePwd}  className="updat
                            ePwd item">修改密码</li>
-                           <li onClick={this.myLoginout} className="loginout">退出</li>
+                           <li onClick={this.myLoginout} className="loginout item">退出</li>
                        </ul>:null}
                    </div>:null}
                    <div className="my-info">
@@ -56,7 +57,7 @@ class Profile extends Component{
                <section className="my-order-state">
                    <div  className="order">
                        <span className="my-order">我的订单</span>
-                       <p className="all-order">全部订单<i className="iconfont icon-gengduo"></i></p>
+                       <Link to='/order' className="all-order">全部订单<i className="iconfont icon-gengduo"></i></Link>
                    </div>
                    <ul className="order-state">
                        <li className="item-state">

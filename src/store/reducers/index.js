@@ -9,12 +9,15 @@ import home from './home'
 import session from './session'
 import cart from './cart'
 import vip from './vip'
+import detail from './detail'
 export default combineReducers({
-    cart,
+
     routerReducer,
+    cart,
     home,
     commodity,
     search,
     vip,
-    session
+    session,
+    detail
 })
