@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import logo from '../../../../mock/images/list-logo.png';
 import viplist from '../../../../mock/images/vip-1.jpg';
+import {NavLink} from 'react-router-dom'
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import './index.less';
 
@@ -41,7 +42,7 @@ export default class ListHeader extends Component{
     render(){
         return (
             <div className="list-header">
-                <span className="list-search"><i className="iconfont icon-sousuo"/></span>
+                <NavLink to='/search'><span title='搜索商品' className="list-search"><i className='iconfont icon-sousuo'></i></span></NavLink>
                 <img src={logo} className="list-logo"/>
                 <p className="list-address"
                    onClick={() => this.setState({isShowVip: !this.state.isShowVip})}

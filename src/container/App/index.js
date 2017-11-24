@@ -15,6 +15,9 @@ import Login from "../Login/index";
 import Register from "../Register/index";
 import Vipcore from "../Vip/vip-core/index";
 import VipHomeLog from "../Vip/vip-home-log/index";
+import Order from "../Profile/Order/index";
+import ConfirmOrder from "../ConfirmOrder/index";
+import PlaceOrder from "../PlaceOrder/index";
 import Detail from '../Detail';
 import './index.less'
 export default class App extends Component{
@@ -34,6 +37,9 @@ export default class App extends Component{
                     <Route path="/vip" component={Vip}/>
                     <Route path="/vipcore" component={Vipcore}/>
                     <Route path="/viphomelog" component={VipHomeLog}/>
+                    <Route path="/order" component={Order}/>
+                    <Route path="/confirmorder" component={ConfirmOrder}/>
+                    <Route path="/placeorder" component={PlaceOrder}/>
                     <Route path="/detail" component={Detail}/>
                     <Tab/>
                 </div>
