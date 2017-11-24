@@ -358,7 +358,7 @@ app.post("/address/:name",function (req,res) {
         }
         return res;
     }
-    address.serial=generateMixed(10)
+    address.serial=generateMixed(10);
     //10位订单标号
     address.time=new Date().toLocaleString( );
     // 订单日期
@@ -371,6 +371,29 @@ app.post("/address/:name",function (req,res) {
     fs.writeFileSync("./userList.json",JSON.stringify(userList));
     res.send({message:"地址和商品",serial:address.serial});
 }) ;
+
+app.post("/paid",function (req,res) {
+
+    let username=req.query;
+
+    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+    let index=userList.findIndex((item)=>{return item.usertel==username});
+
+
+    userList[index].paid=userList[index].unpaid;
+
+    userList[index].unpaid=[];
+
+    fs.writeFileSync("./userList.json",JSON.parse(userList));
+
+    res.send({message:"支付成功"})
+    // paid 下面的为 当前支付的，
+
+
+
+    // 用户名下的 unpaid 为【】
+
+});
 
 
 
