@@ -104,9 +104,18 @@ export default class Viphome extends Component {
                         <ul className="vip-downs">
                             {
                                 sliders.map((item, index) => (
+
+
+
                                     <li className="vip-down-ls" key={index}>
+
+                                        <Link   to={{pathname:'/detailvip',state:item}} >
                                         <img src={item.imageUrl} alt=""/>
+
+                                        </Link>
+
                                     </li>
+
                                 ))
                             }
                         </ul>

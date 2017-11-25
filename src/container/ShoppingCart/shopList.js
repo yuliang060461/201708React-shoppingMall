@@ -4,6 +4,7 @@ export default class ShoppingList extends Component {
         super(props);
     }
     render() {
+        console.log(this.props,'_____________________________');
         return (
             <div>
                 <div className="shoppingCartList_tag">多点商城</div>
@@ -52,7 +53,7 @@ export default class ShoppingList extends Component {
                                 </div>
                                 <div className="shoppingNum">
                                     <div className="shoppingSub" onClick={()=>{
-                                        this.props.onSub(item);
+                                        this.props.onSub(item,this.props.session.user.usertel);
                                   //      this.props.delOneShop(item);
                                         this.props.totalCount();
                                     }}>
@@ -60,7 +61,7 @@ export default class ShoppingList extends Component {
                                     </div>
                                     <input type="text" value={item.number}/>
                                     <div className="shoppingPlus" onClick={()=>{
-                                        this.props.onPlus(item);
+                                        this.props.onPlus(item,this.props.session.user.usertel);
 
                                         this.props.totalCount();
                                     }} >

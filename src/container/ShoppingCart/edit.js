@@ -32,6 +32,7 @@ export default class Edit extends Component {
                         cancelALLSelect={this.props.cancelALLSelect}
                         onChildAllSelect={this.onChildAllSelect}
                         cartList={this.props.cartList}
+                        session={this.props.session}
                     />
                 </div>
                 <div className="delShoppingForm">
