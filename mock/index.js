@@ -235,6 +235,8 @@ app.post('/register', function (req, res) {
         res.json({code: 1, message: '用户名重复'});
     } else {
         user.cartList=[];
+
+        // 购物车为空数组
         users.push(user);
         fs.writeFileSync("./userList.json",JSON.stringify(users));
         //后台向前台返回数据的时候需要一个编码，0表示成功，1表示失败
@@ -341,8 +343,6 @@ app.post("/order/:name",function (req,res) {
             }
         }
         //购物车的写入
-
-
         // 提交 过来 的数据 改变 购物车的数据
         //  提交过来 id 为 1的 的 哪位就把 购物车 id 为 1的删掉
         // 提交过来id为2的也要删掉
@@ -409,7 +409,7 @@ app.post("/paid",function (req,res) {
 
 
 
-//全部  待支付  待发货  已发货 已完成
+//全部    订单        待支付    待发货  已发货 已完成
 // post接口，地址给我  地址 和 订单 合并
 // 传的对象在放入
 app.all("*",function(req,res){
