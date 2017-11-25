@@ -1,24 +1,73 @@
 {
 "sliders": [
 {
-"imageUrl": "https://img.dmallcdn.com/mIndex/201711/f42ba7b1-df78-4505-adb1-fb2ce787d141_750H"
-},
-{
-"imageUrl": "https://img.dmallcdn.com/mIndex/201711/28dc3057-d487-40b8-90ee-3bfe1ee5cea8_750H"
-},
-{
-"imageUrl": "https://img.dmallcdn.com/mIndex/201711/6d0e6bae-2ba5-4078-95a5-b5a1cbf17853_750H"
-},
-{
-"imageUrl": "https://img.dmallcdn.com/mIndex/201711/f7092682-81ab-49b5-8ed5-0e533999b3a2_750H"
-},
-{
-"imageUrl": "https://img.dmallcdn.com/mIndex/201711/acb9c87a-bd88-473f-94b2-7d657c26278d_750H"
-},
-{
-"imageUrl": "https://img.dmallcdn.com/mIndex/201711/4f3fbbc8-f8ab-4120-b5d8-28f1552dcdf0_750H"
-}
+  "imageUrl": "https://img.dmallcdn.com/mIndex/201711/0bf16f80-9357-43c6-883a-f7f5446ef821_750H",
+  "resource1": "http://img.dmallcdn.com//dshop/201711/3e59d6b8-597d-47c0-9f24-003e6397c039",
+  "resource2": "http://img.dmallcdn.com//dshop/201711/54438b90-aa13-4415-85b3-d2327945eba8",
+  "resource3": "http://img.dmallcdn.com//dshop/201711/2dc3d616-2100-4895-ab04-b7e5f6c5b2cb",
+  "resource4": "http://img.dmallcdn.com//dshop/201711/ada2f17d-9545-4d83-a738-b8034e85c907",
+  "resource5": "http://img.dmallcdn.com//dshop/201711/3e4e7a5b-3a49-49d9-8cb4-815d751f701f"
 
+},
+
+{
+  "imageUrl": "https://img.dmallcdn.com/mIndex/201711/5dfcdb86-9207-4338-9e01-bd41ec119b11_750H",
+  "resource1": "https://img.dmallcdn.com//dshop/201709/2356f83d-e7ab-48bd-9057-f2df78e22fa0",
+  "resource2": "https://img.dmallcdn.com//dshop/201710/4e5e927f-1173-4677-ad7d-f298a05f2f99",
+  "resource3": "https://img.dmallcdn.com//dshop/201710/09f01f0f-4fce-4b5e-9c07-d3a879afa817",
+  "resource4": "https://img.dmallcdn.com//dshop/201710/d28cc7bf-c756-4eed-8f2d-e330165dd49b",
+  "resource5": "https://img.dmallcdn.com//dshop/201711/fc750abd-2efd-4589-8d5a-f2021700e7b1"
+
+  },
+
+{
+  "imageUrl": "https://img.dmallcdn.com/mIndex/201711/208959ec-d90d-43af-8f6e-ccf2cee0d21b_750H",
+  "resource1": "http://img.dmallcdn.com//dshop/201711/3e59d6b8-597d-47c0-9f24-003e6397c039",
+  "resource2": "http://img.dmallcdn.com//dshop/201711/54438b90-aa13-4415-85b3-d2327945eba8",
+  "resource3": "http://img.dmallcdn.com//dshop/201711/2dc3d616-2100-4895-ab04-b7e5f6c5b2cb",
+  "resource4": "http://img.dmallcdn.com//dshop/201711/ada2f17d-9545-4d83-a738-b8034e85c907",
+  "resource5": "http://img.dmallcdn.com//dshop/201711/3e4e7a5b-3a49-49d9-8cb4-815d751f701f"
+},
+{
+  "imageUrl": "https://img.dmallcdn.com/mIndex/201711/49f9d34e-3fb7-48f4-8ef1-319204393cd1_750H",
+  "resource1": "https://img.dmallcdn.com//dshop/201709/2356f83d-e7ab-48bd-9057-f2df78e22fa0",
+  "resource2": "https://img.dmallcdn.com//dshop/201710/4e5e927f-1173-4677-ad7d-f298a05f2f99",
+  "resource3": "https://img.dmallcdn.com//dshop/201710/09f01f0f-4fce-4b5e-9c07-d3a879afa817",
+  "resource4": "https://img.dmallcdn.com//dshop/201710/d28cc7bf-c756-4eed-8f2d-e330165dd49b",
+  "resource5": "https://img.dmallcdn.com//dshop/201711/fc750abd-2efd-4589-8d5a-f2021700e7b1"
+},
+{
+  "imageUrl": "https://img.dmallcdn.com/mIndex/201711/a942c845-d3bd-477a-a758-c42eed2c55de_750H",
+  "resource1": "http://img.dmallcdn.com//dshop/201711/3e59d6b8-597d-47c0-9f24-003e6397c039",
+  "resource2": "http://img.dmallcdn.com//dshop/201711/54438b90-aa13-4415-85b3-d2327945eba8",
+  "resource3": "http://img.dmallcdn.com//dshop/201711/2dc3d616-2100-4895-ab04-b7e5f6c5b2cb",
+  "resource4": "http://img.dmallcdn.com//dshop/201711/ada2f17d-9545-4d83-a738-b8034e85c907",
+  "resource5": "http://img.dmallcdn.com//dshop/201711/3e4e7a5b-3a49-49d9-8cb4-815d751f701f"
+},
+{
+  "imageUrl": "https://img.dmallcdn.com/mIndex/201711/41e6fa28-131f-491f-a47d-e29a9cde4422_750H",
+  "resource1": "https://img.dmallcdn.com//dshop/201709/2356f83d-e7ab-48bd-9057-f2df78e22fa0",
+  "resource2": "https://img.dmallcdn.com//dshop/201710/4e5e927f-1173-4677-ad7d-f298a05f2f99",
+  "resource3": "https://img.dmallcdn.com//dshop/201710/09f01f0f-4fce-4b5e-9c07-d3a879afa817",
+  "resource4": "https://img.dmallcdn.com//dshop/201710/d28cc7bf-c756-4eed-8f2d-e330165dd49b",
+  "resource5": "https://img.dmallcdn.com//dshop/201711/fc750abd-2efd-4589-8d5a-f2021700e7b1"
+},
+  {
+    "imageUrl": "https://img.dmallcdn.com/mIndex/201711/cf13352f-f289-4d36-96f8-19ff6a1d9146_750H",
+    "resource1": "http://img.dmallcdn.com//dshop/201711/3e59d6b8-597d-47c0-9f24-003e6397c039",
+    "resource2": "http://img.dmallcdn.com//dshop/201711/54438b90-aa13-4415-85b3-d2327945eba8",
+    "resource3": "http://img.dmallcdn.com//dshop/201711/2dc3d616-2100-4895-ab04-b7e5f6c5b2cb",
+    "resource4": "http://img.dmallcdn.com//dshop/201711/ada2f17d-9545-4d83-a738-b8034e85c907",
+    "resource5": "http://img.dmallcdn.com//dshop/201711/3e4e7a5b-3a49-49d9-8cb4-815d751f701f"
+  }
+,{
+    "imageUrl": "https://img.dmallcdn.com/mIndex/201711/444ddd6a-2846-453e-8804-c9ad3bf4a32b_750H",
+    "resource1": "https://img.dmallcdn.com//dshop/201709/2356f83d-e7ab-48bd-9057-f2df78e22fa0",
+    "resource2": "https://img.dmallcdn.com//dshop/201710/4e5e927f-1173-4677-ad7d-f298a05f2f99",
+    "resource3": "https://img.dmallcdn.com//dshop/201710/09f01f0f-4fce-4b5e-9c07-d3a879afa817",
+    "resource4": "https://img.dmallcdn.com//dshop/201710/d28cc7bf-c756-4eed-8f2d-e330165dd49b",
+    "resource5": "https://img.dmallcdn.com//dshop/201711/fc750abd-2efd-4589-8d5a-f2021700e7b1"
+  }
 ],
   "nav":[{"urlImage":"https://img.dmallcdn.com/mIndex/201709/74b73f6a-f1ea-4810-9aeb-9a24b6ed1f75_750H"}],
 
@@ -61,7 +110,8 @@
         "img": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
         "topPrice": 1.30,
         "lowPrice":6.9,
-        "isShow":true
+        "isShow":true,
+        "number":1
       },
       { "id":2,
         "name": "琯溪红心蜜柚  1粒",
@@ -69,7 +119,8 @@
         "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
         "topPrice": 10.30,
         "lowPrice":6.9,
-        "isShow":true
+        "isShow":true,
+        "number":1
 
       },
       {
@@ -79,7 +130,8 @@
         "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
         "topPrice": 10.30,
         "lowPrice":9.90,
-        "isShow":true
+        "isShow":true,
+        "number":1
       },
       {
         "id":4,
@@ -88,7 +140,8 @@
         "img": "https://img.dmallcdn.com/20170928/708c8d0b-367d-40fb-af69-06a58e83ac6d_360x360H",
         "topPrice": 4.30,
         "lowPrice":3.9,
-        "isShow":true
+        "isShow":true,
+        "number":1
       },
       {
         "id":5,
@@ -97,7 +150,8 @@
         "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
         "topPrice":"",
         "lowPrice":2.9,
-        "isShow":true
+        "isShow":true,
+        "number":1
       },
       {
         "id":6,
@@ -106,7 +160,8 @@
         "img": "https://img.dmallcdn.com/20170928/badf7759-1769-42c5-98f1-b36d78cbcf0e_360x360H",
         "topPrice":"5",
         "lowPrice":2.9,
-        "isShow":true
+        "isShow":true,
+        "number":1
       },
       {
         "id":1,
@@ -115,7 +170,8 @@
         "img": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
         "topPrice": 1.30,
         "lowPrice":6.9,
-        "isShow":true
+        "isShow":true,
+        "number":1
       },
       { "id":2,
         "name": "琯溪红心蜜柚  1粒",
@@ -123,7 +179,8 @@
         "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
         "topPrice": 10.30,
         "lowPrice":6.9,
-        "isShow":true
+        "isShow":true,
+        "number":1
 
       },
       {
@@ -133,7 +190,8 @@
         "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
         "topPrice": 10.30,
         "lowPrice":9.90,
-        "isShow":true
+        "isShow":true,
+        "number":1
       },
       {
         "id":4,
@@ -142,7 +200,8 @@
         "img": "https://img.dmallcdn.com/20170928/708c8d0b-367d-40fb-af69-06a58e83ac6d_360x360H",
         "topPrice": 4.30,
         "lowPrice":3.9,
-        "isShow":true
+        "isShow":true,
+        "number":1
 
       },
       {
@@ -152,7 +211,8 @@
         "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
         "topPrice":"",
         "lowPrice":2.9,
-        "isShow":true
+        "isShow":true,
+        "number":1
       },
       {
         "id":6,
@@ -161,7 +221,8 @@
         "img": "https://img.dmallcdn.com/20170928/badf7759-1769-42c5-98f1-b36d78cbcf0e_360x360H",
         "topPrice":"5",
         "lowPrice":2.9,
-        "isShow":true
+        "isShow":true,
+        "number":1
       }
 
     ],

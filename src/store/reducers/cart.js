@@ -51,11 +51,13 @@ export default function (state = init, action) {
                     cartList: [
                         ...state.shoppingCart.cartList.map((item, index) => {
                             if (item.id == action.payload.shop.id) {
-                                if (item.number<1) {
+                                if (item.number<=1) {
                                     item.number=1;
                                     item.isShow=false;
-                                 }
-                                 item.number=item.number-1
+                                    }
+                                    else{
+                                        item.number=item.number-1
+                                    }
                                 }
                             return item
                         })

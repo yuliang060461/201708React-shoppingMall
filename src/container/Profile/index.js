@@ -55,7 +55,7 @@ class Profile extends Component{
                    </div>
                </section>
                <section className="my-order-state">
-                   <div  className="order">
+                   <div  className="profile-order">
                        <span className="my-order">我的订单</span>
                        <Link to='/order' className="all-order">全部订单<i className="iconfont icon-gengduo"></i></Link>
                    </div>

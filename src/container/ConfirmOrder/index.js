@@ -1,12 +1,33 @@
 import React,{Component} from 'react';
 import HeaderMy from "../../components/Header/index";
 import './index.less'
-export default class ConfirmOrder extends Component{
+import actions from '../../store/action/order'
+import {connect} from 'react-redux'
+class ConfirmOrder extends Component{
+    constructor(){
+        super();
+        this.state={show2:false}
+    }
     componentDidMount(){
         //刚进来页面就要获取到订单信息
+        this.name=this.props.session.user.usertel;
+        this.props.getPaying(this.name);
 
     }
+    submitOrder=()=>{
+        let receiver=this.receiver.value;
+        let receivertel=this.receivertel.value;
+        let detailarress=this.detailarress.value;
+        let remarks=this.remarks.value;
+        this.props.sendReceiver(this.name,{receiver,receivertel,detailarress,remarks,order:this.props.myOrder})
+    }
     render(){
+        let order=this.props.myOrder;
+        console.log(order,'xxxxxxxxxxxxxxxxxx');
+        let imgList;
+        if(order.length>0){
+            imgList=order[order.length-1].cartList.slice(0,4);
+        }
         return (
             <div className="confirm-order">
                 <HeaderMy title="订单确认"/>
@@ -49,14 +70,14 @@ export default class ConfirmOrder extends Component{
                         </div>
                         <div className="send-item last">
                             <p>备注</p>
-                            <input placeholder="填写安全存放地址,请按门铃等配送相关要求" type="text"/>
+                            <input ref={input=>this.remarks=input} placeholder="填写安全存放地址,请按门铃等配送相关要求" type="text"/>
                         </div>
                     </section>
                     <section className="order-price">
                         <div className="title">订单价格</div>
                         <div className="order-price-item">
                             <span>商品价格</span>
-                            <span>￥23.39</span>
+                            <span>￥{order.length>0?order[order.length-1].total:0}</span>
                         </div>
                         <div className="order-price-item">
                             <span>促销优惠</span>
@@ -71,28 +92,16 @@ export default class ConfirmOrder extends Component{
                             <span>- ￥1.00</span>
                         </div>
                         <div className="last">79元免运费/59~79元仅2元运费<i className="iconfont icon-jinggao"></i></div>
-                        <div className="actual-payment"><span>实际支付</span><span className="price">￥29.99</span></div>
+                        <div className="actual-payment"><span>实际支付</span><span className="price">￥{order.length>0?order[order.length-1].total:0}</span></div>
                     </section>
                     <section className="order-detail-img">
                         <div>
-                            <div className="img-list">
+                            {order.length>0?imgList.map((item,index)=>(<div key={index} className="img-list">
                                 <span>1</span>
-                                <img src={require('../../images/order1.jpg')} alt=""/>
-                            </div>
-                            <div className="img-list">
-                                <span>1</span>
-                                <img src={require('../../images/order1.jpg')} alt=""/>
-                            </div>
-                            <div className="img-list">
-                                <span>1</span>
-                                <img src={require('../../images/order1.jpg')} alt=""/>
-                            </div>
-                            <div className="img-list">
-                                <span>1</span>
-                                <img src={require('../../images/order1.jpg')} alt=""/>
-                            </div>
+                                <img src={item.img} alt=""/>
+                            </div>)):''}
                         </div>
-                        <div className="total"><span>共5件</span><i className="iconfont icon-gengduo"></i></div>
+                        <div className="total"><span>共{order.length>0?order[order.length-1].cartList.length:0}件</span><i className="iconfont icon-gengduo"></i></div>
                     </section>
                     <section className="order-invoice">
                         <span>发票</span>
@@ -107,10 +116,11 @@ export default class ConfirmOrder extends Component{
                     </section>
                 </div>
                 <div className="confirm-order-footer">
-                    <p>合计：<span className="symbol">￥</span><span className="num">23.39</span></p>
-                    <button>提交订单</button>
+                    <p>合计：<span className="symbol">￥</span><span className="num">{order.length>0?order[order.length-1].total:0}</span></p>
+                    <button onClick={this.submitOrder}>提交订单</button>
                 </div>
             </div>
         )
     }
 }
+export default connect(state=>({myOrder:state.myOrder.order,session:state.session}),actions)(ConfirmOrder)
