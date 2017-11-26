@@ -139,4 +139,4 @@ module.exports = {
    ![Mou icon](http://upload.ouliu.net/i/20171126125112f3vay.gif)
    
 ### 购物车（难度★★★★★★★★★★★★★）
-   ![Mou icon](http://upload.ouliu.net/i/20171126125112f3vay.gif)
+   ![Mou icon](http://upload.ouliu.net/i/20171126132418ruwmg.gif)
