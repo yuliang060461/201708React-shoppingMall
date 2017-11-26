@@ -46,7 +46,7 @@ export default class Edit extends Component {
                     </div>
                     <Link to='/' className="delFormAdd">加入收藏夹</Link>
                     <button className="delFormBtn" onClick={()=>{
-                        this.props.delAllShop();
+                        this.props.delAllShop(this.props.session.user.usertel);
                         this.props.totalCount()
                     }}>删除</button>
                 </div>

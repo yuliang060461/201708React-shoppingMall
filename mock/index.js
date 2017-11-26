@@ -138,21 +138,32 @@ app.delete("/deleteBus/:name",function (req,res) {
 
 //   删除购物车  该购物车为空
 
-app.delete("./deleteB/:name",function (req,res) {
+// 删除要传入的商品， 传递的商品直接 删掉 的时false的直接删掉
+
+app.delete("./deleteProduct/:name",function (req,res) {
     res.set('Content-Type', 'application/json');
     let username = req.params.name;
+
+    let  product= req.body;
     //前端传递的商品对象
     //读取用户信息
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
     // suerList 是一个数组
     let index=userList.findIndex((item)=>{return item.usertel==username});
+
+
     if(index>-1){
-        //用户购物车是一个数组
-        //如果 传入的 id 和  已有的id相同 数量加一，否则 不加
-        userList[index].cartList=[];
+        userList[index]=userList[index].filter((req,res)=>{
+                return req.isShow!==true
+            });
         //将获取的书和原有的拼在一起
         fs.writeFileSync("./userList.json",JSON.stringify(userList));
-    }});
+
+        res.send({code:0,message:"购物车删除成功"});
+    }else {
+        res.send({code:1,message:"添加失败不存在该用户"})
+    }
+});
 
 
 //购物车请求数据
@@ -212,6 +223,8 @@ app.post('/register', function (req, res) {
         res.json({code: 1, message: '用户名重复'});
     } else {
         user.cartList=[];
+
+        // 购物车为空数组
         users.push(user);
         fs.writeFileSync("./userList.json",JSON.stringify(users));
         //后台向前台返回数据的时候需要一个编码，0表示成功，1表示失败
@@ -290,46 +303,41 @@ app.get("/search",function (req,res) {
         }
     })
 });
-
-
 //悦悦这个接口提交数据
 //  请求体为{order:[{}, {}, {}, {} ]}
-
 // 提交后的数据 并且把cart的数量减一
 app.post("/order/:name",function (req,res) {
-    let order=req.body.order;
+    let tilOrder=req.body.order;
     let username = req.params.name;
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
-    // suerList 是一个数组
+
     let index=userList.findIndex((item)=>{return item.usertel==username});
-    if(index>-1){
-        //用户购物车是一个数组
-        //如果 传入的 id 和  已有的id相同 数量加一，否则 不加
-        userList[index].order=order;
 
-        for (var i = 0; i < order.length; i++) {
-            var id2 = order[i].id;
-
-            for (var j = 0; j < userList[index].cartList.length; j++) {
-                var id1 = userList[index].cartList[j].id;
-                if(id1==id2){
-                    userList[index].cartList[j].splice(j,1)
-                }
-            }
+    if( userList[index].order==undefined){
+        console.log(1);
+        userList[index].order=[];
+    }
+    var chars = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+    function generateMixed(n) {
+        var res = "";
+        for(var i = 0; i < n ; i ++) {
+            var id = Math.ceil(Math.random()*35);
+            res += chars[id];
         }
-        //购物车的写入
-
-
-        // 提交 过来 的数据 改变 购物车的数据
-        //  提交过来 id 为 1的 的 哪位就把 购物车 id 为 1的删掉
-        // 提交过来id为2的也要删掉
-        //
+        return res;
+    };
+    tilOrder[0].status=0
+    tilOrder[0].serial=generateMixed(10);
+    //10位订单标号
+    tilOrder[0].time=new Date().toLocaleString( );
+    // 订单日期
+    console.log(tilOrder);
+    userList[index].order.push(tilOrder[0]);
+        console.log(userList[index].order);
         fs.writeFileSync("./userList.json",JSON.stringify(userList));
-        res.send({message:"提单提交成功",order:order})
-}});
-
-
-// 盈盈 订单请求数据
+        res.send({message:"提单提交成功",order:tilOrder})
+});
+// 盈盈 订单请求数据  她竟然没用（日）
 app.get("/order/:name",function (req,res) {
     let username = req.params.name;
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
@@ -339,65 +347,65 @@ app.get("/order/:name",function (req,res) {
     // 这个是个order是一个数组
     res.send({message:"地址提交成功",order:order});
 });
-
-
-// post接口，盈盈把地址和商品给我    放在待支付数的数组里      unpaid
+// post接口，盈盈把地址和商品给我    放在待支付数的数组里
 // { chartList}
-
 //  { order:[{},{},{},{},{},{}], receiver:gae, reverte:tel }
-
-
 app.post("/address/:name",function (req,res) {
-    let address=req.body;//传过来请求体
-    var chars = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-    function generateMixed(n) {
-        var res = "";
-        for(var i = 0; i < n ; i ++) {
-            var id = Math.ceil(Math.random()*35);
-            res += chars[id];
-        }
-        return res;
-    }
-    address.serial=generateMixed(10);
-    //10位订单标号
-    address.time=new Date().toLocaleString( );
-    // 订单日期
-    let username = req.params.name;//用户名字
+    let address=req.body;   //传过来请求体
+    let username = req.params.name; //用户名字
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
     let index=userList.findIndex((item)=>{return item.usertel==username});
+  //  userList[index].cartList=[];  支付后才为空，现在不要写
+    // 根据地址找到当前项，这一项
+    userList[index].order.forEach((item)=>{
+        if(item.serial==address){
+            item.status=1;
+            //代表支付成功
+        }
+    });
     userList[index].cartList=[];
-    userList[index].unpaid=address;//未支付的要放在 userList里
-
     fs.writeFileSync("./userList.json",JSON.stringify(userList));
     res.send({message:"地址和商品",serial:address.serial});
 }) ;
 
-app.post("/paid",function (req,res) {
+// 现在 我要全部订单页  支付的 和 为支付的
 
-    let username=req.query;
 
+//
+app.get("/start/:name",function (req,res) {
+    let userName=req.params.name;
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
     let index=userList.findIndex((item)=>{return item.usertel==username});
-
-
-    userList[index].paid=userList[index].unpaid;
-
-    userList[index].unpaid=[];
-
-    fs.writeFileSync("./userList.json",JSON.parse(userList));
-
-    res.send({message:"支付成功"})
-    // paid 下面的为 当前支付的，
-
-
-
-    // 用户名下的 unpaid 为【】
+    let ary=userList[index].order
+    res.send(ary)
 
 });
 
 
+app.get("/load/:name",function (req,res) {
+    let userName=req.params.name;
+    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+    let index=userList.findIndex((item)=>{return item.usertel==username});
 
-//全部  待支付  待发货  已发货 已完成
+    let ary=userList[index].order.filter((item)=>{
+        return item.status===0
+    })
+    res.send(ary)
+
+});
+
+
+app.get("/over/:name",function (req,res) {
+    let userName=req.params.name;
+    let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
+    let index=userList.findIndex((item)=>{return item.usertel==username});
+    let ary=userList[index].order.filter((item)=>{
+        return item.status===1
+    })
+    res.send(ary)
+});
+
+//全部    订单        待支付    待发货  已发货 已完成
 // post接口，地址给我  地址 和 订单 合并
 // 传的对象在放入
 app.all("*",function(req,res){

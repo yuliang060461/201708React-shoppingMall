@@ -14,3 +14,6 @@ export function postPlusData(data,username) {
 export function delShop(data,username) {
     return del('/deleteBus/'+username,data)
 }
+export function delGroupShop(data,username) {
+    return del('/deleteProduct/'+username,data)
+}

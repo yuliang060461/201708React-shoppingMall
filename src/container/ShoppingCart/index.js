@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import action from '../../store/actions/cart';
+import action2 from '../../store/action/session';
 import './index.less';
 import NoShopping from "./noshop";
 import HaveShopping from "./haveShop";
-@connect((state) =>state,action)
+@connect((state) =>state,{...action,...action2})
 export default class ShoppingCart extends Component {
     constructor(props) {
         super(props);
@@ -16,6 +17,10 @@ export default class ShoppingCart extends Component {
         }
     }
     componentDidMount() {
+
+        debugger
+        this.props.validate();
+        debugger;
         if(this.props.session.user){
             this.props.getShopping(this.props.session.user.usertel);
         }else{
@@ -30,7 +35,6 @@ export default class ShoppingCart extends Component {
     }
     //购物车全选
     storeSelect=()=>{
-        console.log(this.state.isStoreCheck,'kl;--');
         let newState=!this.state.isStoreCheck;
         this.setState({isStoreCheck:newState});
         this.onChildAllSelect(newState);
@@ -53,7 +57,6 @@ export default class ShoppingCart extends Component {
         this.props.totalCount();
     };
     cancelStoreSelect=()=>{
-        console.log(this.state.isStoreCheck,'kl;--');
         let cancelStatus=this.props.cart.shoppingCart.cartList.every((item)=>item.checked==this.state.isStoreCheck);
         this.setState({isStoreCheck: cancelStatus});
         this.props.totalCount();
