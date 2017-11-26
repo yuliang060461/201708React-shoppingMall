@@ -4,17 +4,23 @@
 import React,{Component} from 'react';
 import HeaderMy from "../../components/Header/index";
 import './index.less'
-export default class PlaceOrder extends Component{
+import {connect} from 'react-redux'
+import {post} from '../../api/index'
+import actions from '../../store/action/order'
+class PlaceOrder extends Component{
+    confirmpay=()=>{
+        this.props.sendPaid(this.props.user.usertel);
+    }
     render(){
         return (
             <div className="place-order">
                 <HeaderMy title="订单支付"/>
                     <p className="prompt">请在下单后15分钟内完成支付，否则订单将失效</p>
                     <div className="order-fig">
-                        <p>订单编号：</p>
-                        <p>订单金额：</p>
+                        <p>订单编号：{this.props.orderList.serial}</p>
+                        <p>订单金额：{parseFloat(this.props.orderList.total).toFixed(2)}</p>
                     </div>
-                    <div className="need">还需支付：<span>23.99元</span></div>
+                    <div className="need">还需支付：<span>{parseFloat(this.props.orderList.total).toFixed(2)}元</span></div>
                     <div className="pay-style">
                         <div className="left">
                             <i className="iconfont icon-meitongqia"></i>
@@ -45,8 +51,9 @@ export default class PlaceOrder extends Component{
                         </div>
                         <i className="iconfont icon-duihao1"></i>
                     </div>
-                    <div className="confirm-pay">确认支付</div>
+                    <div className="confirm-pay" onClick={this.confirmpay}>确认支付</div>
             </div>
         )
     }
 }
+export default connect(state=>({orderList:state.myOrder.orderList,user:state.session.user}),actions)(PlaceOrder);

@@ -5,6 +5,8 @@ import actions from '../../store/action/session'
 import {connect} from 'react-redux'
 import UpdatePwd from "../UpdatePwd/index";
 import Order from "./Order/index";
+import {createHashHistory} from 'history'
+let history = createHashHistory();
 class Profile extends Component{
     constructor(){
         super();
@@ -55,22 +57,23 @@ class Profile extends Component{
                    </div>
                </section>
                <section className="my-order-state">
-                   <div  className="profile-order">
+                   <div  className="profile-order" >
                        <span className="my-order">我的订单</span>
-                       <Link to='/order' className="all-order">全部订单<i className="iconfont icon-gengduo"></i></Link>
+                       {this.props.user?<Link to='/order/all' className="all-order">全部订单<i className="iconfont icon-gengduo"></i></Link>:<Link to='/login/account' className="all-order">全部订单<i className="iconfont icon-gengduo"></i></Link>}
+
                    </div>
                    <ul className="order-state">
                        <li className="item-state">
                            <i className="iconfont icon-daizhifu"></i>
-                           <span>待支付</span>
+                           <span>{this.props.user?<Link to="/order/paymenting">待支付</Link>:<Link to="/login/account">待支付</Link>}</span>
                        </li>
                        <li className="item-state">
                            <i className="iconfont icon-daifahuo"></i>
-                           <span>待发货</span>
+                           <span>{this.props.user?<Link to="/order/shipping">待发货</Link>:<Link to="/login/account">待发货</Link>}</span>
                        </li>
                        <li className="item-state">
                            <i className="iconfont icon-yifahuo"></i>
-                           <span>已发货</span>
+                           <span>{this.props.user?<Link to="/order/shipped">已发货</Link>:<Link to="/login/account">待发货</Link>}</span>
                        </li>
                    </ul>
                </section>

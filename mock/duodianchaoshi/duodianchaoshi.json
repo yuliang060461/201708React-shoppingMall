@@ -111,7 +111,7 @@
           "name": "国产香蕉 6根",
           "label": "特价",
           "img": "https://img.dmallcdn.com/20171031/813df379-7e70-4b23-b9cd-53cca78c1cb8_360x360H",
-          "topPrice": 1.30,
+          "topPrice": 7,
           "lowPrice":6.9,
           "number":1,
           "isShow":true
@@ -150,7 +150,7 @@
           "name": "香菇 300g/1份",
           "label": "",
           "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
-          "topPrice":"",
+          "topPrice":3,
           "lowPrice":2.9,
           "number":1,
           "isShow":true
@@ -209,7 +209,7 @@
           "name": "香菇 300g/1份",
           "label": "",
           "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
-          "topPrice":"",
+          "topPrice":3,
           "lowPrice":2.9,
           "number":1,
           "isShow":true
@@ -277,7 +277,7 @@
         "name": "香菇 300g/1份",
         "label": "",
         "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
-        "topPrice":"",
+        "topPrice":3,
         "lowPrice":2.9,
         "number":1,
         "isShow":true
@@ -336,7 +336,7 @@
         "name": "香菇 300g/1份",
         "label": "",
         "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
-        "topPrice":"",
+        "topPrice":3,
         "lowPrice":2.9,
         "number":1,
         "isShow":true
@@ -404,7 +404,7 @@
       "name": "香菇 300g/1份",
       "label": "",
       "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
-      "topPrice":"",
+      "topPrice":3,
       "lowPrice":2.9,
       "number":1,
       "isShow":true
@@ -463,7 +463,7 @@
       "name": "香菇 300g/1份",
       "label": "",
       "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
-      "topPrice":"",
+      "topPrice":3,
       "number":1,
       "lowPrice":2.9,
       "isShow":true
@@ -530,7 +530,7 @@
       "name": "香菇 300g/1份",
       "label": "",
       "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
-      "topPrice":"",
+      "topPrice":3,
       "lowPrice":2.9,
       "number":1,
       "isShow":true
@@ -589,7 +589,7 @@
       "name": "香菇 300g/1份",
       "label": "",
       "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
-      "topPrice":"",
+      "topPrice":3,
       "lowPrice":2.9,
       "number":1,
       "isShow":true
@@ -657,7 +657,7 @@
         "name": "香菇 300g/1份",
         "label": "",
         "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
-        "topPrice":"",
+        "topPrice":3,
         "lowPrice":2.9,
         "number":1,
         "isShow":true
@@ -718,7 +718,7 @@
         "name": "香菇 300g/1份",
         "label": "",
         "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
-        "topPrice":"",
+        "topPrice":3,
         "lowPrice":2.9,
         "number":1,
         "isShow":true
