@@ -69,7 +69,6 @@ export default {
         return (dispatch, getState) => {
             let data = getState().cart.shoppingCart;
             console.log(data.cartList);
-            debugger;
             delGroupShop(data.cartList,username);
             dispatch(
                 {
@@ -109,9 +108,7 @@ export default {
                         type: types.DATA_TRANSFER,
                         payload
                     });
-                    debugger;
                     dispatch(push('/confirmorder'))
-                    debugger;
                 })
             }
         }
