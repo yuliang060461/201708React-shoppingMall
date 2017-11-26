@@ -124,12 +124,17 @@ module.exports = {
 
 ## 业务介绍
 
-- 1.注册登录
-
+- 注册登录
    ![Mou icon](http://upload.ouliu.net/i/20171126123733u191v.gif)
-- 2.修改密码
-    <img src="./xxx.png" width = "300" height = "200" alt="图片名称" align=center />
-- 3.首页
-    <img src="./xxx.png" width = "300" height = "200" alt="图片名称" align=center />
-- 4.首页+搜索
-    <img src="./xxx.png" width = "300" height = "200" alt="图片名称" align=center />
+- 修改密码
+     ![Mou icon](http://upload.ouliu.net/i/20171126124500velat.gif)
+- 修改密码
+     ![Mou icon](http://upload.ouliu.net/i/20171126125915hppc9.gif)
+- 首页
+    ![Mou icon](http://upload.ouliu.net/i/20171126124642dxwe8.gif)
+- 首页+搜索
+   ![Mou icon](http://upload.ouliu.net/i/20171126124742jfvkt.gif)
+- 分类页
+   ![Mou icon](http://upload.ouliu.net/i/20171126125112f3vay.gif)
+- 购物车（难度★★★★★★★★★★★★★）
+   ![Mou icon](http://upload.ouliu.net/i/20171126125112f3vay.gif)
