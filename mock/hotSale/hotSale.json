@@ -148,7 +148,7 @@
         "name": "香菇 300g/1份",
         "label": "",
         "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
-        "topPrice":"",
+        "topPrice":4,
         "lowPrice":2.9,
         "isShow":true,
         "number":1
@@ -209,7 +209,7 @@
         "name": "香菇 300g/1份",
         "label": "",
         "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
-        "topPrice":"",
+        "topPrice":4,
         "lowPrice":2.9,
         "isShow":true,
         "number":1

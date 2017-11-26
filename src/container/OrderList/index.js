@@ -5,7 +5,7 @@ export default class OrderList extends Component{
     render(){
         return (
             <div>
-               <OrderContent/>
+               <OrderContent allOrder={this.props.allOrder}/>
                 <NothingFooter/>
             </div>
         )
