@@ -17,10 +17,10 @@ class PlaceOrder extends Component{
                 <HeaderMy title="订单支付"/>
                     <p className="prompt">请在下单后15分钟内完成支付，否则订单将失效</p>
                     <div className="order-fig">
-                        <p>订单编号：{this.props.serial}</p>
-                        <p>订单金额：{this.props.total}</p>
+                        <p>订单编号：{this.props.orderList.serial}</p>
+                        <p>订单金额：{parseFloat(this.props.orderList.total).toFixed(2)}</p>
                     </div>
-                    <div className="need">还需支付：<span>{this.props.total}元</span></div>
+                    <div className="need">还需支付：<span>{parseFloat(this.props.orderList.total).toFixed(2)}元</span></div>
                     <div className="pay-style">
                         <div className="left">
                             <i className="iconfont icon-meitongqia"></i>

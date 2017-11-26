@@ -21,6 +21,8 @@ import ConfirmOrder from "../ConfirmOrder/index";
 import PlaceOrder from "../PlaceOrder/index";
 import Detail from '../Detail';
 import './index.less';
+import Detailvip from "../Vip/detail/index";
+import Todo from "../Vip/todo/index";
 export default class App extends Component{
     render(){
         return (
@@ -43,6 +45,12 @@ export default class App extends Component{
                     <Route path="/confirmorder" component={ConfirmOrder}/>
                     <Route path="/placeorder" component={PlaceOrder}/>
                     <Route path="/detail" component={Detail}/>
+                    <Route path="/detailvip" component={Detailvip}/>
+                    <Route path="/todo" component={Todo}/>
+
+
+
+
                     <Tab/>
                 </div>
             </ConnectedRouter>

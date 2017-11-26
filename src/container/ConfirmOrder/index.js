@@ -77,7 +77,7 @@ class ConfirmOrder extends Component{
                         <div className="title">订单价格</div>
                         <div className="order-price-item">
                             <span>商品价格</span>
-                            <span>￥{order.length>0?order[order.length-1].total:0}</span>
+                            <span>￥{order.length>0?parseFloat(order[order.length-1].total).toFixed(2):0}</span>
                         </div>
                         <div className="order-price-item">
                             <span>促销优惠</span>
@@ -92,7 +92,7 @@ class ConfirmOrder extends Component{
                             <span ref={input=>this.bajm=input}>- ￥<span>1.00</span></span>
                         </div>
                         <div className="last">79元免运费/59~79元仅2元运费<i className="iconfont icon-jinggao"></i></div>
-                        <div className="actual-payment"><span>实际支付</span><span className="price">￥{order.length>0?order[order.length-1].total:0}</span></div>
+                        <div className="actual-payment"><span>实际支付</span><span className="price">￥{order.length>0?parseFloat(order[order.length-1].total).toFixed(2):0}</span></div>
                     </section>
                     <section className="order-detail-img">
                         <div>
