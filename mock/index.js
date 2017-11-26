@@ -380,7 +380,7 @@ app.post("/address/:name",function (req,res) {
 app.get("/start/:name",function (req,res) {
     let userName=req.params.name;
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
-    let index=userList.findIndex((item)=>{return item.usertel==username});
+    let index=userList.findIndex((item)=>{return item.usertel==userName});
     let ary=userList[index].order
     res.send(ary)
 
@@ -390,7 +390,7 @@ app.get("/start/:name",function (req,res) {
 app.get("/load/:name",function (req,res) {
     let userName=req.params.name;
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
-    let index=userList.findIndex((item)=>{return item.usertel==username});
+    let index=userList.findIndex((item)=>{return item.usertel==userName});
 
     let ary=userList[index].order.filter((item)=>{
         return item.status===0
@@ -403,7 +403,7 @@ app.get("/load/:name",function (req,res) {
 app.get("/over/:name",function (req,res) {
     let userName=req.params.name;
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
-    let index=userList.findIndex((item)=>{return item.usertel==username});
+    let index=userList.findIndex((item)=>{return item.usertel==userName});
     let ary=userList[index].order.filter((item)=>{
         return item.status===1
     })
