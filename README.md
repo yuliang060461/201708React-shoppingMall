@@ -138,5 +138,7 @@ module.exports = {
 ### 分类页
    ![Mou icon](http://upload.ouliu.net/i/20171126125112f3vay.gif)
    
-### 购物车（难度★★★★★★★★★★★★★）
+### 购物车（★★★★）
    ![Mou icon](http://upload.ouliu.net/i/20171126132418ruwmg.gif)
+### 订单（★★★★）
+   ![Mou icon](http://upload.ouliu.net/i/2017112616590356eo5.gif)   
