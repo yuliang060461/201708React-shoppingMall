@@ -127,7 +127,7 @@ module.exports = {
 ### 注册登录
    ![Mou icon](http://upload.ouliu.net/i/20171126123733u191v.gif)
 ### 修改密码
-     ![Mou icon](http://upload.ouliu.net/i/201711261309473z4dt.gif)
+    ![Mou icon](http://upload.ouliu.net/i/20171126131157uc9fd.gif)
 ### 首页
     ![Mou icon](http://upload.ouliu.net/i/20171126124642dxwe8.gif)
 ### 会员
