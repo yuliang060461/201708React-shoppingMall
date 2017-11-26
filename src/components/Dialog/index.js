@@ -6,7 +6,7 @@ componentDidMount(){
     if(this.props.isShow){
         this.timer=setTimeout(()=>{
             this.props.removeFlag();
-        },3000)
+        },1000)
     }
 }
     render() {

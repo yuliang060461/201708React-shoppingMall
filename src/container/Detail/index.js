@@ -39,7 +39,7 @@ let history = createHashHistory();
 
                 </div>
 
-                <div className="detail_foot"><i className='iconfont icon-gouwuche'></i><button className="add-btn" onClick={()=>this.addToCart(this.props.detail.good,username)}>加入购物车</button></div>
+                <div className="detail_foot"><Link className='iconfont icon-gouwuche' to='/shoppingCart'></Link><button className="add-btn" onClick={()=>this.addToCart(this.props.detail.good,username)}>加入购物车</button></div>
             </div>
         )
     }
