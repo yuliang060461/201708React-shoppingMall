@@ -1,1 +1,110 @@
-[{"usertel":"5","password":"5","cartList":[],"order":[{"total":60.5,"cheap":-11.300000000000002,"shopCount":3,"cartList":[{"id":5,"name":"香菇 300g/1份","label":"","img":"https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H","topPrice":3,"lowPrice":2.9,"number":3,"isShow":true},{"id":3,"name":"丑桔 4粒","label":"特价","img":"https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H","topPrice":10.3,"lowPrice":9.9,"number":2,"isShow":true},{"id":2,"name":"琯溪红心蜜柚  1粒","label":"特价","img":"https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H","topPrice":10.3,"lowPrice":6.9,"number":3,"isShow":true}],"status":0,"serial":"PQF76H8GFJ","time":"2017-11-26 13:33:39"},{"total":3,"cheap":-0.10000000000000009,"shopCount":1,"cartList":[{"id":5,"name":"香菇 300g/1份","label":"","img":"https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H","topPrice":3,"lowPrice":2.9,"number":1,"isShow":true}],"status":0,"serial":"RF3CYXTEQT","time":"2017-11-26 13:35:31"}]}]
+[
+  {
+    "usertel": "5",
+    "password": "5",
+    "cartList": [
+      {
+        "id": 2,
+        "name": "琯溪红心蜜柚  1粒",
+        "label": "特价",
+        "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
+        "topPrice": 10.3,
+        "lowPrice": 6.9,
+        "number": 1,
+        "isShow": true
+      }
+    ],
+    "order": [
+      {
+        "total": 60.5,
+        "cheap": -11.300000000000002,
+        "shopCount": 3,
+        "cartList": [
+          {
+            "id": 5,
+            "name": "香菇 300g/1份",
+            "label": "",
+            "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
+            "topPrice": 3,
+            "lowPrice": 2.9,
+            "number": 3,
+            "isShow": true
+          },
+          {
+            "id": 3,
+            "name": "丑桔 4粒",
+            "label": "特价",
+            "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
+            "topPrice": 10.3,
+            "lowPrice": 9.9,
+            "number": 2,
+            "isShow": true
+          },
+          {
+            "id": 2,
+            "name": "琯溪红心蜜柚  1粒",
+            "label": "特价",
+            "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
+            "topPrice": 10.3,
+            "lowPrice": 6.9,
+            "number": 3,
+            "isShow": true
+          }
+        ],
+        "status": 0,
+        "serial": "PQF76H8GFJ",
+        "time": "2017-11-26 13:33:39"
+      },
+      {
+        "total": 3,
+        "cheap": -0.10000000000000009,
+        "shopCount": 1,
+        "cartList": [
+          {
+            "id": 5,
+            "name": "香菇 300g/1份",
+            "label": "",
+            "img": "https://img.dmallcdn.com/20171109/58599061-a35c-440f-837a-1e7b47dc3360_360x360H",
+            "topPrice": 3,
+            "lowPrice": 2.9,
+            "number": 1,
+            "isShow": true
+          }
+        ],
+        "status": 0,
+        "serial": "RF3CYXTEQT",
+        "time": "2017-11-26 13:35:31"
+      },
+      {
+        "total": 20.6,
+        "cheap": -3.8000000000000007,
+        "shopCount": 2,
+        "cartList": [
+          {
+            "id": 2,
+            "name": "琯溪红心蜜柚  1粒",
+            "label": "特价",
+            "img": "https://img.dmallcdn.com/20171109/d3f060b7-af23-4e61-a8ee-0a08c1c0018d_360x360H",
+            "topPrice": 10.3,
+            "lowPrice": 6.9,
+            "number": 1,
+            "isShow": true
+          },
+          {
+            "id": 3,
+            "name": "丑桔 4粒",
+            "label": "特价",
+            "img": "https://img.dmallcdn.com/20171109/67f6e3e4-431f-4bdf-b339-5316e323f68d_360x360H",
+            "topPrice": 10.3,
+            "lowPrice": 9.9,
+            "number": 1,
+            "isShow": true
+          }
+        ],
+        "status": 0,
+        "serial": "21I9S6PGNZ",
+        "time": "2017-11-26 13:41:11"
+      }
+    ]
+  }
+]

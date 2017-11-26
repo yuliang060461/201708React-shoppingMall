@@ -140,11 +140,13 @@ app.delete("/deleteBus/:name",function (req,res) {
 
 // 删除要传入的商品， 传递的商品直接 删掉 的时false的直接删掉
 
-app.delete("./deleteProduct/:name",function (req,res) {
+app.all("/deleteProduct/:name",function (req,res) {
     res.set('Content-Type', 'application/json');
     let username = req.params.name;
 
     let  product= req.body;
+
+    console.log(product);
     // 是一个数组
     //前端传递的商品对象
     //读取用户信息
@@ -382,6 +384,7 @@ app.get("/start/:name",function (req,res) {
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
     let index=userList.findIndex((item)=>{return item.usertel==userName});
     let ary=userList[index].order
+    console.log(ary);
     res.send(ary)
 
 });
@@ -391,11 +394,10 @@ app.get("/load/:name",function (req,res) {
     let userName=req.params.name;
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
     let index=userList.findIndex((item)=>{return item.usertel==userName});
-
     let ary=userList[index].order.filter((item)=>{
         return item.status===0
     })
-    res.send(ary)
+    res.json(ary)
 
 });
 
@@ -407,7 +409,7 @@ app.get("/over/:name",function (req,res) {
     let ary=userList[index].order.filter((item)=>{
         return item.status===1
     })
-    res.send(ary)
+    res.json(ary)
 });
 
 //全部    订单        待支付    待发货  已发货 已完成
