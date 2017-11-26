@@ -17,10 +17,7 @@ export default class ShoppingCart extends Component {
         }
     }
     componentDidMount() {
-
-        debugger
         this.props.validate();
-        debugger;
         if(this.props.session.user){
             this.props.getShopping(this.props.session.user.usertel);
         }else{

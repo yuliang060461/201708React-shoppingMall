@@ -54,25 +54,23 @@ export default class SearchList extends Component{
     }
     //排序
     searchByGlobal = ()=>{
-        this.setState({
-            value:''
-        })
-        this.props.searActions.searchData()
+        // this.setState({
+        //     value:''
+        // })
+        this.props.searActions.searchData(this.state.value)
     }
     searchByHot = ()=>{
-        console.log('热销')
-        this.setState({
-            value:''
-        })
-        this.props.searActions.searchByHot()
+        // console.log('热销')
+        // this.setState({
+        //     value:''
+        // })
+        this.props.searActions.searchByHot(this.state.value)
     }
     searchByPrice = ()=>{
-        console.log('价格')
-        console.log(this.props.searActions.searchByPrice)
-        this.setState({
-            value:''
-        })
-        this.props.searActions.searchByPrice()
+        // this.setState({
+        //     value:''
+        // })
+        this.props.searActions.searchByPrice(this.state.value)
     }
     //按关键字查找
     searchKey = (value)=>{

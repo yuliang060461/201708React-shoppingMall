@@ -122,3 +122,14 @@ module.exports = {
 3. reducer 增加 routerReducer
 4. action 跳转路径
 
+## 业务介绍
+
+- 1.注册登录
+
+   ![Mou icon](http://upload.ouliu.net/i/20171126123733u191v.gif)
+- 2.修改密码
+    <img src="./xxx.png" width = "300" height = "200" alt="图片名称" align=center />
+- 3.首页
+    <img src="./xxx.png" width = "300" height = "200" alt="图片名称" align=center />
+- 4.首页+搜索
+    <img src="./xxx.png" width = "300" height = "200" alt="图片名称" align=center />
