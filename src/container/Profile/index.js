@@ -65,15 +65,15 @@ class Profile extends Component{
                    <ul className="order-state">
                        <li className="item-state">
                            <i className="iconfont icon-daizhifu"></i>
-                           <span>待支付</span>
+                           <span>{this.props.user?<Link to="/order/paymenting">待支付</Link>:<Link to="/login/account">待支付</Link>}</span>
                        </li>
                        <li className="item-state">
                            <i className="iconfont icon-daifahuo"></i>
-                           <span>待发货</span>
+                           <span>{this.props.user?<Link to="/order/shipping">待发货</Link>:<Link to="/login/account">待发货</Link>}</span>
                        </li>
                        <li className="item-state">
                            <i className="iconfont icon-yifahuo"></i>
-                           <span>已发货</span>
+                           <span>{this.props.user?<Link to="/order/shipped">已发货</Link>:<Link to="/login/account">待发货</Link>}</span>
                        </li>
                    </ul>
                </section>

@@ -144,14 +144,15 @@ app.delete("./deleteProduct/:name",function (req,res) {
     res.set('Content-Type', 'application/json');
     let username = req.params.name;
     let  product= req.body;
+    // 是一个数组
     //前端传递的商品对象
     //读取用户信息
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
     // suerList 是一个数组
     let index=userList.findIndex((item)=>{return item.usertel==username});
     if(index>-1){
-        userList[index]=userList[index].filter((req,res)=>{
-                return req.isShow!==true
+        userList[index].cartList=product.filter((item,index)=>{
+                return item.isShow!==true
             });
         //将获取的书和原有的拼在一起
         fs.writeFileSync("./userList.json",JSON.stringify(userList));
