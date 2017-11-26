@@ -124,17 +124,23 @@ module.exports = {
 
 ## 业务介绍
 
-- 注册登录
+### 注册登录
    ![Mou icon](http://upload.ouliu.net/i/20171126123733u191v.gif)
-- 修改密码
+   
+### 修改密码
      ![Mou icon](http://upload.ouliu.net/i/20171126124500velat.gif)
-- 修改密码
+     
+### 修改密码
      ![Mou icon](http://upload.ouliu.net/i/20171126125915hppc9.gif)
-- 首页
+     
+### 首页
     ![Mou icon](http://upload.ouliu.net/i/20171126124642dxwe8.gif)
-- 首页+搜索
+    
+### 首页+搜索
    ![Mou icon](http://upload.ouliu.net/i/20171126124742jfvkt.gif)
-- 分类页
+   
+### 分类页
    ![Mou icon](http://upload.ouliu.net/i/20171126125112f3vay.gif)
-- 购物车（难度★★★★★★★★★★★★★）
+   
+### 购物车（难度★★★★★★★★★★★★★）
    ![Mou icon](http://upload.ouliu.net/i/20171126125112f3vay.gif)
