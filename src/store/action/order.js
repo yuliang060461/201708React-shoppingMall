@@ -29,7 +29,7 @@ export default {
     sendPaid(name){
         return dispatch=>{
             fetchPaid(name).then(res=>{
-                dispatch(push('/order'));
+                dispatch(push('/order/all'));
             });
         }
     }

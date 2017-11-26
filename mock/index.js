@@ -365,7 +365,8 @@ app.post("/address/:name",function (req,res) {
   //  userList[index].cartList=[];  支付后才为空，现在不要写
     // 根据地址找到当前项，这一项
     userList[index].order.forEach((item)=>{
-        if(item.serial==address){
+        console.log(address.serial);
+        if(item.serial==address.serial){
             item.status=1;
             //代表支付成功
         }

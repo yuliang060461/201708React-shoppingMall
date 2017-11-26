@@ -19,7 +19,7 @@ class ConfirmOrder extends Component{
         let receivertel=this.receivertel.value;
         let detailarress=this.detailarress.value;
         let remarks=this.remarks.value;
-        this.props.sendReceiver(this.name,this.total,{receiver,receivertel,detailarress,remarks,order:this.props.myOrder})
+        this.props.sendReceiver(this.name,this.total,{receiver,receivertel,detailarress,remarks,serial:this.props.myOrder[this.props.myOrder.length-1].serial,order:this.props.myOrder})
     }
     render(){
         let order=this.props.myOrder;
@@ -123,4 +123,4 @@ class ConfirmOrder extends Component{
         )
     }
 }
-export default connect(state=>({myOrder:state.myOrder.order,session:state.session}),actions)(ConfirmOrder)
+export default connect(state=>({myOrder:state.myOrder.order,session:state.session,orderList:state.orderList}),actions)(ConfirmOrder)

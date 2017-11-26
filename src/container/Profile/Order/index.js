@@ -23,12 +23,11 @@ import NothingFooter from "../../../components/NothingFooter/index";
     handleClick=(e)=>{
         let name=this.props.user.usertel;
         let id=e.target.dataset.id;
-
         if(id==1){
-            get(`/load/${this.name}`,).then(res=>{this.setState({allOrder:res});});
+            get(`/start/${this.name}`,).then(res=>{this.setState({allOrder:res});});
         }
         if(id==2){
-            get(`/start/${this.name}`,).then(res=>{this.setState({allOrder:res});});
+            get(`/load/${this.name}`,).then(res=>{this.setState({allOrder:res});});
         }
         if(id==3){
             get(`/over/${this.name}`,).then(res=>{this.setState({allOrder:res});});

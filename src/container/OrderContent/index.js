@@ -7,18 +7,20 @@ import {post} from '../../api/index'
 export default class OrderContent extends Component{
 
     render(){
-        console.log(this.props.allOrder);
+        console.log(this.props.allOrder,'oooooooooooooooooooooo');
         return (
             <div className="content">
                 <ul className="order-list">
                     {this.props.allOrder.map((item,index)=>(<li key={index} className="item">
+
                         <div className="title">
                             <div className="title1">
                                 <img src={require('../../images/order4.png')} alt=""/>
-                                <span>昌平品超市</span>
+                                <span>下单时间：  {item.time}</span>
                             </div>
                             <span>{item.status==0?'代发货':'待支付'}</span>
                         </div>
+
                         <div className="item-content">
                             <div className="order-img">
                                 {item.cartList.slice(0,3).map((img,index)=>(<img  key={index} src={img.img} alt=""/>))}
