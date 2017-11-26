@@ -1,13 +1,14 @@
 ﻿# React 与 express构建 <font color=rgb(0, 255, 255)>多点商城</font>
- =====================
+
 
 主要技术栈
-- React
+- React全家桶
 - express框架
 
 #如何运行
 ```
-npm init -y
+//clone后，跑环境
+npm install 
 ```
 
 ## 安装后端依赖的模块
