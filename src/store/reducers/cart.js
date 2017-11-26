@@ -1,9 +1,9 @@
 import * as types from '../action-types';
 let init = {
     shoppingCart: {
-        total:0,
-        cheap:0,
-        shopCount:0,
+        total: 0,
+        cheap: 0,
+        shopCount: 0,
         cartList: []
     }
 };
@@ -12,20 +12,21 @@ export default function (state = init, action) {
     switch (action.type) {
         case types.SHOP_DATA:
             var countData = action.payload.cartList.filter((item, index) => item.isShow == true);
-            var t=0;
-            var c=0;
-            var l=countData.length;
-            var tAry=countData.map((item, index) =>item.number * parseFloat(item.lowPrice).toFixed(2));
-            var cAry=countData.map((item, index) =>item.number * parseFloat(item.topPrice-item.lowPrice).toFixed(2));
-            tAry.forEach((item,index)=>t+=item);
-            cAry.forEach((item,index)=>t+=item);
+            var t = 0;
+            var c = 0;
+            var l = countData.length;
+            var tAry = countData.map((item, index) => item.number * item.topPrice);
+            var cAry = countData.map((item, index) => item.number * (item.lowPrice - item.topPrice));
+            tAry.forEach((item, index) => t += item);
+            cAry.forEach((item, index) => c += item);
             return {
                 ...state,
                 shoppingCart: {
-                total:t,
-                cheap: c,
-                shopCount:l,
-                cartList: action.payload.cartList
+                    ...state.shoppingCart,
+                    total: t,
+                    cheap: c,
+                    shopCount: l,
+                    cartList: action.payload.cartList
                 }
             }
         case types.ADD_SHOP:
@@ -51,14 +52,14 @@ export default function (state = init, action) {
                     cartList: [
                         ...state.shoppingCart.cartList.map((item, index) => {
                             if (item.id == action.payload.shop.id) {
-                                if (item.number<=1) {
-                                    item.number=1;
-                                    item.isShow=false;
-                                    }
-                                    else{
-                                        item.number=item.number-1
-                                    }
+                                if (item.number <= 1) {
+                                    item.number = 1;
+                                    item.isShow = false;
                                 }
+                                else {
+                                    item.number = item.number - 1
+                                }
+                            }
                             return item
                         })
                     ]
@@ -90,24 +91,26 @@ export default function (state = init, action) {
             };
         case types.COUNT_AMOUNT:
             var countData = state.shoppingCart.cartList.filter((item, index) => item.isShow == true);
-            let t=0; let c=0;let l=countData.length;
-            let tAry=countData.map((item, index) =>item.number * parseFloat(item.lowPrice).toFixed(2));
-            let cAry=countData.map((item, index) =>item.number * parseFloat(item.topPrice-item.lowPrice).toFixed(2));
-            tAry.forEach((item,index)=>t+=item);
-            cAry.forEach((item,index)=>t+=item);
+            var t = 0;
+            var c = 0;
+            var l = countData.length;
+            var tAry = countData.map((item, index) => item.number * parseFloat(Number(item.topPrice)).toFixed(2));
+            var cAry = countData.map((item, index) => item.number * parseFloat(Number(item.lowPrice) - Number(item.topPrice)).toFixed(2));
+            tAry.forEach((item, index) => t += item);
+            cAry.forEach((item, index) => c += item);
             return {
                 ...state,
                 shoppingCart: {
                     ...state.shoppingCart,
-                    total:t,
-                    cheap:c,
-                    shopCount:l
+                    total: t,
+                    cheap: c,
+                    shopCount: l
                 }
             };
         case types.DEL_ONE_SHOP:
             let delOneData = state.shoppingCart.cartList.filter(
-                (item,index) =>
-                    !(item==action.payload&&item.number==1&&item.isShow==false)
+                (item, index) =>
+                    !(item == action.payload && item.number == 1 && item.isShow == false)
             );
             return {
 
@@ -122,28 +125,28 @@ export default function (state = init, action) {
                 ...state,
                 shoppingCart: {
                     ...state.shoppingCart,
-                    order:
-                        [
-                             {
-                            cartList:action.payload.order[0].cartList.filter(
-                                 (item,index)=>item.isShow==true
-                                 )
-                             }
-                        ]
-                    }
+                    order: [
+                        {
+                            ...state.shoppingCart.order,
+                            cartList: action.payload.order[0].cartList.filter(
+                                (item, index) => item.isShow == true
+                            )
+                        }
+                    ]
+                }
             };
-            default:
+        default:
             return state;
     }
 }
 //   case types.DEL_ONE_SHOP:
 //let delOneData = state.shoppingCart.cartList.filter((item,index) =>item!==action.payload);
 //return {
-  //  ...state,
-    //shoppingCart: {
-      //  ...state.shoppingCart,
-        //cartList: delOneData
-    //}
+//  ...state,
+//shoppingCart: {
+//  ...state.shoppingCart,
+//cartList: delOneData
+//}
 //};
 //
 //

@@ -143,6 +143,7 @@ app.delete("/deleteBus/:name",function (req,res) {
 app.delete("./deleteProduct/:name",function (req,res) {
     res.set('Content-Type', 'application/json');
     let username = req.params.name;
+
     let  product= req.body;
     // 是一个数组
     //前端传递的商品对象
@@ -161,8 +162,6 @@ app.delete("./deleteProduct/:name",function (req,res) {
     }else {
         res.send({code:1,message:"添加失败不存在该用户"})
     }
-
-
 });
 
 

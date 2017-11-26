@@ -1,5 +1,5 @@
 import * as types from '../action-types';
-import {getShop, postOrderData, delShop, postPlusData} from '../../api/cart';
+import {getShop, postOrderData, delShop, delGroupShop} from '../../api/cart';
 import {push} from 'react-router-redux';
 export default {
     //无用户登录
@@ -65,9 +65,12 @@ export default {
         }
     },
     //删除购物
-    delAllShop(){
+    delAllShop(username){
         return (dispatch, getState) => {
             let data = getState().cart.shoppingCart;
+            console.log(data.cartList);
+            debugger;
+            delGroupShop(data.cartList,username);
             dispatch(
                 {
                     type: types.DEL_ALL_SHOP,
@@ -106,7 +109,9 @@ export default {
                         type: types.DATA_TRANSFER,
                         payload
                     });
+                    debugger;
                     dispatch(push('/confirmorder'))
+                    debugger;
                 })
             }
         }

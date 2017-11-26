@@ -4,7 +4,6 @@ export default class ShoppingList extends Component {
         super(props);
     }
     render() {
-        console.log(this.props,'_____________________________');
         return (
             <div>
                 <div className="shoppingCartList_tag">多点商城</div>
@@ -48,8 +47,8 @@ export default class ShoppingList extends Component {
                             <div className="shoppingInfoBox">
                                 <p className="shoppingInfo">{item.name}</p>
                                 <div className="shoppingPrice">
-                                    <span>￥{item.topPrice||null} </span>
-                                    <del>{item.lowPrice||null}</del>
+                                    <span>￥{item.lowPrice||null} </span>
+                                    <del>￥{item.topPrice||null}</del>
                                 </div>
                                 <div className="shoppingNum">
                                     <div className="shoppingSub" onClick={()=>{
