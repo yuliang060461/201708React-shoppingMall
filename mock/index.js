@@ -149,8 +149,6 @@ app.delete("./deleteProduct/:name",function (req,res) {
     let userList=JSON.parse(fs.readFileSync("./userList.json","utf8"));
     // suerList 是一个数组
     let index=userList.findIndex((item)=>{return item.usertel==username});
-
-
     if(index>-1){
         userList[index]=userList[index].filter((req,res)=>{
                 return req.isShow!==true
@@ -332,10 +330,16 @@ app.post("/order/:name",function (req,res) {
     //10位订单标号
     tilOrder[0].time=new Date().toLocaleString( );
     // 订单日期
-    console.log(tilOrder);
     userList[index].order.push(tilOrder[0]);
-        console.log(userList[index].order);
-        fs.writeFileSync("./userList.json",JSON.stringify(userList));
+      //  console.log(userList[index].order);
+
+// 怎么匹配  订单购物车的数据    和 购物车的数据比
+
+
+
+
+    userList[index].cartList=[];
+    fs.writeFileSync("./userList.json",JSON.stringify(userList));
         res.send({message:"提单提交成功",order:tilOrder})
 });
 // 盈盈 订单请求数据  她竟然没用（日）
