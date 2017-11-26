@@ -1,5 +1,5 @@
 import * as types from '../action-types';
-import {getShop, postOrderData, delShop, delGroupShop} from '../../api/cart';
+import {getShop,postPlusData, postOrderData, delShop, delGroupShop} from '../../api/cart';
 import {push} from 'react-router-redux';
 export default {
     //无用户登录
