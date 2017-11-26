@@ -125,7 +125,8 @@ module.exports = {
 ## 业务介绍
 
 - 1.注册登录
-   <img src="http://upload.ouliu.net/i/20171126123733u191v.gifg" width = "300" height = "200" alt="图片名称" align=center />
+
+   ![Mou icon](http://upload.ouliu.net/i/20171126123733u191v.gif)
 - 2.修改密码
     <img src="./xxx.png" width = "300" height = "200" alt="图片名称" align=center />
 - 3.首页

@@ -23,9 +23,9 @@ export default {
 
         }
     },
-    searchByHot(){
+    searchByHot(key){
       return dispatch=>{
-          searchData().then(data=>{
+          searchData(key).then(data=>{
               console.log('searchByHot请求');
               dispatch({
                   type:types.SEARCHBYHOT,
@@ -34,9 +34,9 @@ export default {
           })
       }
     },
-    searchByPrice(){
+    searchByPrice(key){
         return dispatch=>{
-            searchData().then(data=>{
+            searchData(key).then(data=>{
                 dispatch({
                     type:types.SEARCHBYPRICE,
                     payload:data
